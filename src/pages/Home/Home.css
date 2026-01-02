@@ -1,0 +1,6 @@
+.home { padding: 2rem; }
+.hero { display: flex; gap: 2rem; align-items: center; justify-content: space-between; }
+.hero-content h1 { font-size: 2.25rem; margin: 0 0 0.5rem 0; }
+.hero-content p { margin: 0 0 1rem 0; color: #555; }
+.btn { display: inline-block; background:#1e40af; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; }
+.hero-visual { flex:1; height:200px; background:linear-gradient(135deg,#f3f4f6,#e5e7eb); border-radius:8px; }

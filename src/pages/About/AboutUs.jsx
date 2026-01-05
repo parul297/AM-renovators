@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Globe, Shield, Users, Building2, CheckCircle, MapPin, Briefcase, GraduationCap, Star } from 'lucide-react';
+import Footer from '../../components/Footer/Footer';
 
 export default function AboutUs() {
   const timeline = [
@@ -463,6 +464,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

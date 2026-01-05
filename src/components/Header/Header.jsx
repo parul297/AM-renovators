@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,22 +16,22 @@ export default function Header() {
   }, []);
 
   const services = [
-    { name: 'Construction & New Developments', href: '#construction' },
-    { name: 'Renovation & Refurbishment', href: '#renovation' },
-    { name: 'Upgradation & Modernization', href: '#upgradation' },
+    { name: 'Construction & New Developments', href: '/services/new-construction' },
+    { name: 'Renovation & Refurbishment', href: '/services/renovation' },
+    { name: 'Upgradation & Modernization', href: '/services/upgradation' },
     { name: 'Maintenance & AMC', href: '#maintenance' },
     { name: 'Facilities & Asset Management', href: '#facilities' },
     { name: 'NRI Property Management', href: '#nri-services' }
   ];
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', dropdown: services },
-    { name: 'For NRI Clients', href: '#nri-clients', highlight: true },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', dropdown: services,highlight: true },
+    // { name: 'For NRI Clients', href: '#nri-clients', highlight: true },
     { name: 'Projects', href: '#projects' },
     { name: 'Resources', href: '#resources' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -101,46 +102,30 @@ export default function Header() {
                       {activeDropdown === item.name && (
                         <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2">
                           {item.dropdown.map((subItem, subIndex) => (
-                            <a
+                            <Link
                               key={subIndex}
-                              href={subItem.href}
+                              to={subItem.href && subItem.href.startsWith('/') ? subItem.href : { pathname: '/', hash: subItem.href }}
                               className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
+                              onClick={() => setActiveDropdown(null)}
                             >
                               {subItem.name}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       )}
                     </>
                   ) : (
-                    // For simple navigation between pages, use onClick to call parent navigation handler when provided
-                    (item.name === 'Home' || item.name === 'About Us') ? (
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          if (typeof window !== 'undefined' && window.history && window.history.pushState) {
-                            const path = item.name === 'Home' ? '/' : '/about';
-                            if (window.location.pathname !== path) {
-                              window.history.pushState({}, '', path);
-                              const navEvent = new PopStateEvent('popstate');
-                              window.dispatchEvent(navEvent);
-                            }
-                          }
-                        }}
-                        className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${
-                          item.highlight ? 'text-orange-600 hover:text-orange-700' : ''
-                        }`}
-                      >
+                    // Use react-router Link for top-level page navigation; for hash links, navigate to home with hash
+                    item.href && (item.href === '/' || item.href.startsWith('/')) ? (
+                      <Link to={item.href} className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${item.highlight ? 'text-orange-600 hover:text-orange-700' : ''}`}>
                         {item.name}
-                      </a>
+                      </Link>
+                    ) : item.href && item.href.startsWith('#') ? (
+                      <Link to={{ pathname: '/', hash: item.href }} className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${item.highlight ? 'text-orange-600 hover:text-orange-700' : ''}`}>
+                        {item.name}
+                      </Link>
                     ) : (
-                      <a
-                        href={item.href}
-                        className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${
-                          item.highlight ? 'text-orange-600 hover:text-orange-700' : ''
-                        }`}
-                      >
+                      <a href={item.href} className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${item.highlight ? 'text-orange-600 hover:text-orange-700' : ''}`}>
                         {item.name}
                       </a>
                     )
@@ -149,12 +134,9 @@ export default function Header() {
               ))}
 
               {/* CTA Button */}
-              <a
-                href="#quote"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg"
-              >
+              <Link to="/contact" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg">
                 Get a Quote
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -188,47 +170,30 @@ export default function Header() {
                       {activeDropdown === item.name && (
                         <div className="pl-4 space-y-2 mt-2">
                           {item.dropdown.map((subItem, subIndex) => (
-                                <a
+                                <Link
                                   key={subIndex}
-                                  href={subItem.href}
+                                  to={subItem.href && subItem.href.startsWith('/') ? subItem.href : { pathname: '/', hash: subItem.href }}
                                   className="block text-sm text-gray-600 hover:text-blue-900 py-1.5"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                   {subItem.name}
-                                </a>
+                                </Link>
                               ))}
                         </div>
                       )}
                     </>
                   ) : (
-                        // handle Home/About navigation in mobile menu as well
-                        (item.name === 'Home' || item.name === 'About Us') ? (
-                          <a
-                            href="#"
-                            className={`block text-gray-700 font-medium py-2 ${
-                              item.highlight ? 'text-orange-600' : ''
-                            }`}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setIsMobileMenuOpen(false);
-                              const path = item.name === 'Home' ? '/' : '/about';
-                              if (window.location.pathname !== path) {
-                                window.history.pushState({}, '', path);
-                                const navEvent = new PopStateEvent('popstate');
-                                window.dispatchEvent(navEvent);
-                              }
-                            }}
-                          >
+                        // mobile: use Link for page navigation and hash links
+                        item.href && (item.href === '/' || item.href.startsWith('/')) ? (
+                          <Link to={item.href} className={`block text-gray-700 font-medium py-2 ${item.highlight ? 'text-orange-600' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                             {item.name}
-                          </a>
+                          </Link>
+                        ) : item.href && item.href.startsWith('#') ? (
+                          <Link to={{ pathname: '/', hash: item.href }} className={`block text-gray-700 font-medium py-2 ${item.highlight ? 'text-orange-600' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            {item.name}
+                          </Link>
                         ) : (
-                          <a
-                            href={item.href}
-                            className={`block text-gray-700 font-medium py-2 ${
-                              item.highlight ? 'text-orange-600' : ''
-                            }`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
+                          <a href={item.href} className={`block text-gray-700 font-medium py-2 ${item.highlight ? 'text-orange-600' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                             {item.name}
                           </a>
                         )

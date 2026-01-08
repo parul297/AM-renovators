@@ -5,15 +5,6 @@ import Footer from '../../components/Footer/Footer';
 export default function UpgradationService() {
   const [selectedUpgrade, setSelectedUpgrade] = useState('electrical');
   const [openFaq, setOpenFaq] = useState(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    propertyType: 'apartment',
-    budget: '5-10',
-    upgrades: [],
-    message: ''
-  });
 
   const upgradeCategories = {
     electrical: {
@@ -202,37 +193,6 @@ export default function UpgradationService() {
     }
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Thank you for your interest! Our team will contact you shortly.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      propertyType: 'apartment',
-      budget: '5-10',
-      upgrades: [],
-      message: ''
-    });
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
-      setFormData(prev => ({
-        ...prev,
-        upgrades: checked 
-          ? [...prev.upgrades, value]
-          : prev.upgrades.filter(upgrade => upgrade !== value)
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        [name]: value
-      }));
-    }
-  };
-
   return (
     <div className="bg-white">
       {/* Hero Section with Particles */}
@@ -282,8 +242,8 @@ export default function UpgradationService() {
                 Explore Upgrades
                 <ArrowRight size={28} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#contact" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-12 py-6 rounded-full font-bold text-xl transition-all border-2 border-white/30">
-                Get Free Assessment
+              <a href="#roi" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-12 py-6 rounded-full font-bold text-xl transition-all border-2 border-white/30">
+                See ROI Calculator
               </a>
             </div>
 
@@ -371,7 +331,7 @@ export default function UpgradationService() {
                   {upgradeCategories[selectedUpgrade].upgrades.map((upgrade, idx) => (
                     <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-gray-200 hover:shadow-md transition-all">
                       <div className="flex items-start gap-3">
-                        <CheckCircle size={24} className={`flex-shrink-0 mt-1 bg-gradient-to-r ${upgradeCategories[selectedUpgrade].color} bg-clip-text text-transparent`} />
+                        <CheckCircle size={24} className={`flex-shrink-0 mt-1 bg-gradient-to-r ${upgradeCategories[selectedUpgrade].color} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent' }} />
                         <div>
                           <div className="font-bold text-gray-900 mb-1">{upgrade.name}</div>
                           <div className="text-sm text-gray-600">{upgrade.benefit}</div>
@@ -382,7 +342,7 @@ export default function UpgradationService() {
                   ))}
                 </div>
 
-                <a href="#contact" className={`mt-8 inline-flex items-center gap-2 bg-gradient-to-r ${upgradeCategories[selectedUpgrade].color} text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all`}>
+                <a href="#quote" className={`mt-8 inline-flex items-center gap-2 bg-gradient-to-r ${upgradeCategories[selectedUpgrade].color} text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all`}>
                   Get Upgrade Quote
                   <ArrowRight size={20} />
                 </a>
@@ -518,181 +478,67 @@ export default function UpgradationService() {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 to-purple-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-4">Get Your Free Assessment</h2>
-            <p className="text-xl text-gray-300">Our expert will analyze your home and provide a custom upgrade plan</p>
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 relative overflow-hidden">
+        <div className="absolute inset-0">
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-white rounded-full opacity-30"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animation: `pulse ${2 + Math.random() * 2}s ease-in-out infinite`
+              }}
+            ></div>
+          ))}
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            Ready to Upgrade Your Home?
+          </h2>
+          <p className="text-2xl mb-12 text-white/90">
+            Start saving money and increase your property value today
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-6">
+            <a 
+              href="tel:+919876543210"
+              className="bg-white text-orange-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-gray-100 transition-all shadow-2xl inline-flex items-center gap-3"
+            >
+              <Zap size={28} />
+              <div className="text-left">
+                <div className="text-sm opacity-80">Call Now</div>
+                <div>+91 98765 43210</div>
+              </div>
+            </a>
+            
+            <a 
+              href="https://wa.me/919876543210"
+              className="bg-green-500 hover:bg-green-600 text-white px-12 py-6 rounded-full font-bold text-xl transition-all shadow-2xl inline-flex items-center gap-3"
+            >
+              <Battery size={28} />
+              Get Free Assessment
+            </a>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white mb-2">Full Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white/5 border-2 border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:bg-white/10 transition-all"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label className="block text-white mb-2">Email Address *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white/5 border-2 border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:bg-white/10 transition-all"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white mb-2">Phone Number *</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white/5 border-2 border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:bg-white/10 transition-all"
-                    placeholder="+91 98765 43210"
-                  />
-                </div>
-                <div>
-                  <label className="block text-white mb-2">Property Type</label>
-                  <select
-                    name="propertyType"
-                    value={formData.propertyType}
-                    onChange={handleChange}
-                    className="w-full bg-white/5 border-2 border-white/20 rounded-xl p-4 text-white focus:outline-none focus:border-yellow-400 focus:bg-white/10 transition-all"
-                  >
-                    <option value="apartment">Apartment</option>
-                    <option value="independent">Independent House</option>
-                    <option value="villa">Villa</option>
-                    <option value="office">Office</option>
-                    <option value="commercial">Commercial</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-white mb-2">Interested Upgrades</label>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {Object.entries(upgradeCategories).map(([key, category]) => (
-                    <label key={key} className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/10 hover:bg-white/10 transition-all">
-                      <input
-                        type="checkbox"
-                        name="upgrades"
-                        value={key}
-                        checked={formData.upgrades.includes(key)}
-                        onChange={handleChange}
-                        className="text-yellow-400 focus:ring-yellow-400"
-                      />
-                      <span className="text-white text-sm">{category.name}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-white mb-2">Approximate Budget (in Lakhs)</label>
-                <div className="flex gap-4 overflow-x-auto pb-2">
-                  {['1-3', '3-5', '5-10', '10-20', '20+'].map((range) => (
-                    <label key={range} className="flex-shrink-0">
-                      <input
-                        type="radio"
-                        name="budget"
-                        value={range}
-                        checked={formData.budget === range}
-                        onChange={handleChange}
-                        className="sr-only"
-                      />
-                      <div className={`px-6 py-3 rounded-full border-2 transition-all ${formData.budget === range ? 'bg-yellow-400 text-gray-900 border-yellow-400 font-bold' : 'bg-white/5 text-white border-white/20 hover:bg-white/10'}`}>
-                        ₹{range}
-                      </div>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-white mb-2">Additional Information</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full bg-white/5 border-2 border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:bg-white/10 transition-all"
-                  placeholder="Tell us about your current setup, specific concerns, or timeline..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-4 rounded-xl text-lg transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-3"
-              >
-                <Sparkles size={24} />
-                Get Free Assessment & Custom Plan
-                <ArrowRight size={24} />
-              </button>
-            </form>
+          <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">₹7K+</div>
+              <div className="text-white/80 text-sm">Avg. Monthly Savings</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">5-7</div>
+              <div className="text-white/80 text-sm">Years Payback</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">25%</div>
+              <div className="text-white/80 text-sm">Value Increase</div>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      {/* <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Zap className="text-yellow-400" size={32} />
-                <span className="text-2xl font-bold">UpgradeHome</span>
-              </div>
-              <p className="text-gray-400">Transforming homes into modern, efficient living spaces since 2010.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Services</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>Electrical Upgrades</li>
-                <li>Plumbing Solutions</li>
-                <li>HVAC Modernization</li>
-                <li>Smart Home Tech</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Contact</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>📞 +91 98765 43210</li>
-                <li>✉️ hello@upgradehome.com</li>
-                <li>🏢 Mumbai, Bangalore, Delhi</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Working Hours</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>Monday - Friday: 9 AM - 8 PM</li>
-                <li>Saturday: 10 AM - 6 PM</li>
-                <li>Sunday: Emergency Only</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} UpgradeHome. All rights reserved.</p>
-          </div>
-        </div>
-      </footer> */}
-
       <Footer/>
     </div>
   );

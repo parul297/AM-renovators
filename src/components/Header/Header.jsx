@@ -19,9 +19,9 @@ export default function Header() {
     { name: 'Construction & New Developments', href: '/services/new-construction' },
     { name: 'Renovation & Refurbishment', href: '/services/renovation' },
     { name: 'Upgradation & Modernization', href: '/services/upgradation' },
-    { name: 'Maintenance & AMC', href: '#maintenance' },
-    { name: 'Facilities & Asset Management', href: '#facilities' },
-    { name: 'NRI Property Management', href: '#nri-services' }
+    { name: 'Maintenance & AMC', href: '/services/maintenance' },
+    { name: 'Facilities & Asset Management', href: '/services/facilities' },
+    { name: 'NRI Property Management', href: '/services/nri-property' }
   ];
 
   const navItems = [

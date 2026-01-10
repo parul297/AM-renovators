@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,23 +14,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const services = [
-    { name: 'Construction & New Developments', href: '/services/new-construction' },
-    { name: 'Renovation & Refurbishment', href: '/services/renovation' },
-    { name: 'Upgradation & Modernization', href: '/services/upgradation' },
-    { name: 'Maintenance & AMC', href: '/services/maintenance' },
-    { name: 'Facilities & Asset Management', href: '/services/facilities' },
-    { name: 'NRI Property Management', href: '/services/nri-property' }
-  ];
-
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Services', dropdown: services,highlight: true },
-    // { name: 'For NRI Clients', href: '#nri-clients', highlight: true },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Resources', href: '#resources' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Constructions', href: '/services/new-construction' },
+    { name: 'Renovation', href: '/services/renovation' },
+    { name: 'Facilities Management', href: '/services/facilities' },
+    { name: 'NRI Property Management', href: '/services/nri-property' },
   ];
 
   return (
@@ -67,7 +56,7 @@ export default function Header() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <a href="#home" className="flex items-center gap-3">
+              <Link to="/" className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-xl">AM</span>
                 </div>
@@ -75,67 +64,27 @@ export default function Header() {
                   <div className="text-blue-900 font-bold text-lg leading-tight">AM Renovators</div>
                   <div className="text-gray-600 text-xs">& Services</div>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
               {navItems.map((item, index) => (
-                <div
+                <Link
                   key={index}
-                  className="relative"
-                  onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  to={item.href}
+                  className="text-gray-700 hover:text-blue-900 font-medium transition-colors"
                 >
-                  {item.dropdown ? (
-                    <>
-                      <button
-                        className={`flex items-center gap-1 text-gray-700 hover:text-blue-900 font-medium transition-colors ${
-                          item.highlight ? 'text-orange-600 hover:text-orange-700' : ''
-                        }`}
-                      >
-                        {item.name}
-                        <ChevronDown size={16} />
-                      </button>
-                      
-                      {/* Dropdown Menu */}
-                      {activeDropdown === item.name && (
-                        <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2">
-                          {item.dropdown.map((subItem, subIndex) => (
-                            <Link
-                              key={subIndex}
-                              to={subItem.href && subItem.href.startsWith('/') ? subItem.href : { pathname: '/', hash: subItem.href }}
-                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    // Use react-router Link for top-level page navigation; for hash links, navigate to home with hash
-                    item.href && (item.href === '/' || item.href.startsWith('/')) ? (
-                      <Link to={item.href} className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${item.highlight ? 'text-orange-600 hover:text-orange-700' : ''}`}>
-                        {item.name}
-                      </Link>
-                    ) : item.href && item.href.startsWith('#') ? (
-                      <Link to={{ pathname: '/', hash: item.href }} className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${item.highlight ? 'text-orange-600 hover:text-orange-700' : ''}`}>
-                        {item.name}
-                      </Link>
-                    ) : (
-                      <a href={item.href} className={`text-gray-700 hover:text-blue-900 font-medium transition-colors ${item.highlight ? 'text-orange-600 hover:text-orange-700' : ''}`}>
-                        {item.name}
-                      </a>
-                    )
-                  )}
-                </div>
+                  {item.name}
+                </Link>
               ))}
 
-              {/* CTA Button */}
-              <Link to="/contact" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg">
-                Get a Quote
+              {/* Enquiry Button */}
+              <Link 
+                to="/contact" 
+                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg"
+              >
+                Enquiry
               </Link>
             </div>
 
@@ -154,61 +103,24 @@ export default function Header() {
           <div className="lg:hidden bg-white border-t border-gray-200">
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item, index) => (
-                <div key={index}>
-                  {item.dropdown ? (
-                    <>
-                      <button
-                        onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                        className="w-full flex items-center justify-between text-gray-700 font-medium py-2"
-                      >
-                        {item.name}
-                        <ChevronDown
-                          size={16}
-                          className={`transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''}`}
-                        />
-                      </button>
-                      {activeDropdown === item.name && (
-                        <div className="pl-4 space-y-2 mt-2">
-                          {item.dropdown.map((subItem, subIndex) => (
-                                <Link
-                                  key={subIndex}
-                                  to={subItem.href && subItem.href.startsWith('/') ? subItem.href : { pathname: '/', hash: subItem.href }}
-                                  className="block text-sm text-gray-600 hover:text-blue-900 py-1.5"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {subItem.name}
-                                </Link>
-                              ))}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                        // mobile: use Link for page navigation and hash links
-                        item.href && (item.href === '/' || item.href.startsWith('/')) ? (
-                          <Link to={item.href} className={`block text-gray-700 font-medium py-2 ${item.highlight ? 'text-orange-600' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
-                            {item.name}
-                          </Link>
-                        ) : item.href && item.href.startsWith('#') ? (
-                          <Link to={{ pathname: '/', hash: item.href }} className={`block text-gray-700 font-medium py-2 ${item.highlight ? 'text-orange-600' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
-                            {item.name}
-                          </Link>
-                        ) : (
-                          <a href={item.href} className={`block text-gray-700 font-medium py-2 ${item.highlight ? 'text-orange-600' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
-                            {item.name}
-                          </a>
-                        )
-                  )}
-                </div>
+                <Link
+                  key={index}
+                  to={item.href}
+                  className="block text-gray-700 font-medium py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
               
-              {/* Mobile CTA */}
-              <a
-                href="#quote"
+              {/* Mobile Enquiry Button */}
+              <Link
+                to="/contact"
                 className="block text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get a Quote
-              </a>
+                Enquiry
+              </Link>
 
               {/* Mobile Contact Info */}
               <div className="pt-4 mt-4 border-t border-gray-200 space-y-2">

@@ -1,47 +1,59 @@
 import React from 'react';
 import { Award, Globe, Shield, Users, Building2, CheckCircle, MapPin, Briefcase, GraduationCap, Star } from 'lucide-react';
 import Footer from '../../components/Footer/Footer';
+import airport from "../../assets/airportAuthority.png";
+import amana from "../../assets/AMANA.jpeg";
+import core from "../../assets/coreSolution.png";
+import cpwd from "../../assets/CPWD.jpeg";
+import iit from "../../assets/IIT.png";
+import ivr from "../../assets/IVR.jpeg";
+import manage from "../../assets/manage.jpeg";
+import naarm from "../../assets/naarm.png";
+import nakheel from "../../assets/NAkheel.png";
+import niphm from "../../assets/NIPHM.jpeg";
+import ordenance from "../../assets/ordenance.jpeg";
+import oil from "../../assets/oil.jpeg";
 
 export default function AboutUs() {
-  const timeline = [
-    {
-      year: '1998-2010',
-      location: 'India',
-      role: 'Early Career & Foundation',
-      company: 'IVR Constructions Limited',
-      project: 'Begumpet Airport, Hyderabad - Model Airport Project',
-      description: 'Contributed to construction of Domestic and International Terminal Buildings on behalf of Airports Authority of India',
-      icon: Building2
-    },
-    {
-      year: '2010-2015',
-      location: 'Middle East',
-      role: 'International Exposure',
-      company: 'Amana Steel Buildings LLC & Core Construction Company',
-      project: 'Saudi Arabia & Qatar Projects',
-      description: 'Gained comprehensive exposure to diverse construction environments and international quality standards',
-      icon: Globe
-    },
-    {
-      year: '2015-2020',
-      location: 'Dubai, UAE',
-      role: 'Facilities Management Excellence',
-      company: 'Nakheel Properties',
-      project: 'The Gardens & Garden View Villas',
-      description: 'Managed 129 G+2 residential buildings and 208+ duplex villas. Received Letter of Appreciation from Director for outstanding service',
-      icon: Award,
-      highlight: true
-    },
-    {
-      year: '2020-Present',
-      location: 'Hyderabad, India',
-      role: 'CPWD Contractor & Founder',
-      company: 'AM Renovators & Services',
-      project: 'Hyderabad Airport AMC & Multiple Projects',
-      description: 'CPWD Class III contractor serving government institutions, NRI clients, and corporate facilities management',
-      icon: Star
-    }
-  ];
+  // const timeline = [
+  //   {
+  //     year: '1998-2010',
+  //     location: 'India',
+  //     role: 'Early Career & Foundation',
+  //     company: 'IVR Constructions Limited',
+  //     project: 'Begumpet Airport, Hyderabad - Model Airport Project',
+  //     description: 'Contributed to construction of Domestic and International Terminal Buildings on behalf of Airports Authority of India',
+  //     icon: Building2
+  //   },
+  //   {
+  //     year: '2010-2015',
+  //     location: 'Middle East',
+  //     role: 'International Exposure',
+  //     company: 'Amana Steel Buildings LLC & Core Construction Company',
+  //     project: 'Saudi Arabia & Qatar Projects',
+  //     description: 'Gained comprehensive exposure to diverse construction environments and international quality standards',
+  //     icon: Globe
+  //   },
+  //   {
+  //     year: '2015-2020',
+  //     location: 'Dubai, UAE',
+  //     role: 'Facilities Management Excellence',
+  //     company: 'Nakheel Properties',
+  //     project: 'The Gardens & Garden View Villas',
+  //     description: 'Managed 129 G+2 residential buildings and 208+ duplex villas. Received Letter of Appreciation from Director for outstanding service',
+  //     icon: Award,
+  //     highlight: true
+  //   },
+  //   {
+  //     year: '2020-Present',
+  //     location: 'Hyderabad, India',
+  //     role: 'CPWD Contractor & Founder',
+  //     company: 'AM Renovators & Services',
+  //     project: 'Hyderabad Airport AMC & Multiple Projects',
+  //     description: 'CPWD Class III contractor serving government institutions, NRI clients, and corporate facilities management',
+  //     icon: Star
+  //   }
+  // ];
 
   const expertise = [
     {
@@ -136,6 +148,58 @@ export default function AboutUs() {
         </div>
       </section>
 
+{/* Trusted By Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-900 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Star size={16} />
+              Trusted Partners
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Organizations We've Worked With
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Proud to have served leading institutions, government organizations, and corporate clients
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {[
+              { img: airport, name: 'Airport Authority of India' },
+              { img: amana, name: 'Amana Steel Buildings' },
+              { img: core, name: 'Core Construction Company' },
+              { img: cpwd, name: 'CPWD' },
+              { img: iit, name: 'IIT' },
+              { img: ivr, name: 'IVR Constructions' },
+              { img: manage, name: 'Manage' },
+              { img: naarm, name: 'NAARM' },
+              { img: nakheel, name: 'Nakheel Properties' },
+              { img: niphm, name: 'NIPHM' },
+              { img: ordenance, name: 'Ordnance Factory' },
+              { img: oil, name: 'Directorate of Oil & Seeds' }
+            ].map((company, index) => (
+              <div 
+                key={index} 
+                className="group bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-blue-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+              >
+                <img 
+                  src={company.img} 
+                  alt={company.name}
+                  className="w-full h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 italic">
+              ...and many more valued clients across residential, commercial, and institutional sectors
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Founder's Message */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +216,7 @@ export default function AboutUs() {
                   <div>
                     <div className="text-xl font-bold text-gray-900">Ahmed Mohiuddin</div>
                     <div className="text-gray-600">Graduate Civil Engineer</div>
-                    <div className="text-sm text-orange-600 font-semibold">Founder & Proprietor</div>
+                    <div className="text-sm text-orange-600 font-semibold"> Proprietor</div>
                   </div>
                 </div>
               </div>
@@ -167,9 +231,9 @@ export default function AboutUs() {
                 <p>
                   AM Renovators & Services is a professionally managed construction, renovation, upgradation, and facilities management company founded on decades of technical expertise, international exposure, and an uncompromising commitment to quality.
                 </p>
-                <p>
+                {/* <p>
                   I am Ahmed Mohiuddin, a Graduate Civil Engineer with over <strong className="text-blue-900">27 years of hands-on professional experience</strong> across India and the Middle East, including Saudi Arabia, Qatar, and the United Arab Emirates.
-                </p>
+                </p> */}
                 <p>
                   The company brings together extensive project delivery and asset management capabilities, enabling us to deliver solutions that align with <strong className="text-blue-900">international standards</strong> while remaining firmly rooted in local execution excellence.
                 </p>
@@ -186,7 +250,7 @@ export default function AboutUs() {
       </section>
 
       {/* Professional Journey Timeline */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Journey</h2>
@@ -196,14 +260,13 @@ export default function AboutUs() {
           </div>
           
           <div className="relative">
-            {/* Timeline Line */}
+         
             <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-900 via-orange-500 to-blue-900"></div>
-            
-            {/* Timeline Items */}
+       
             <div className="space-y-12">
               {timeline.map((item, index) => (
                 <div key={index} className={`relative grid lg:grid-cols-2 gap-8 ${index % 2 === 0 ? '' : 'lg:text-right'}`}>
-                  {/* Content */}
+             
                   <div className={`${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12 lg:col-start-2'}`}>
                     <div className={`bg-white rounded-xl shadow-lg p-6 border-2 ${item.highlight ? 'border-orange-500' : 'border-gray-200'} hover:shadow-xl transition-shadow`}>
                       <div className="flex items-center gap-3 mb-3">
@@ -233,17 +296,17 @@ export default function AboutUs() {
                     </div>
                   </div>
                   
-                  {/* Timeline Dot */}
+                  
                   <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-blue-900 rounded-full top-8"></div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Dubai Experience Highlight */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+      {/* <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -289,7 +352,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CPWD & Government Projects */}
       <section className="py-20 bg-gray-50">
@@ -406,7 +469,7 @@ export default function AboutUs() {
       </section>
 
       {/* NRI Partnership Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-2xl overflow-hidden">
             <div className="grid lg:grid-cols-2">
@@ -449,7 +512,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Credentials Bar */}
       <section className="py-12 bg-white">

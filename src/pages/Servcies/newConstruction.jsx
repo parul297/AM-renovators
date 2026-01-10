@@ -36,59 +36,59 @@ export default function ConstructionService() {
     }
   ];
 
-  const processSteps = [
-    {
-      phase: 'Planning & Design',
-      duration: '2-4 weeks',
-      icon: FileText,
-      activities: [
-        'Initial consultation & requirement gathering',
-        'Site survey & soil testing',
-        'Architectural design & floor plans',
-        'Structural engineering drawings',
-        'Cost estimation & budget finalization',
-        'Approval drawings for authorities'
-      ]
-    },
-    {
-      phase: 'Approvals & Documentation',
-      duration: '3-6 weeks',
-      icon: Shield,
-      activities: [
-        'GHMC/Panchayat building permissions',
-        'Structural stability certificate',
-        'Fire NOC (if applicable)',
-        'Electricity & water connections',
-        'Legal documentation verification'
-      ]
-    },
-    {
-      phase: 'Foundation & Structure',
-      duration: '3-4 months',
-      icon: Layers,
-      activities: [
-        'Site clearing & excavation',
-        'Foundation laying (PCC, RCC)',
-        'Column & beam construction',
-        'Slab work (floor-by-floor)',
-        'Brick/block masonry work',
-        'Regular quality inspections'
-      ]
-    },
-    {
-      phase: 'Finishing & Handover',
-      duration: '2-3 months',
-      icon: Home,
-      activities: [
-        'Plastering & painting',
-        'Flooring & tile work',
-        'Electrical & plumbing installations',
-        'Door, window & fixture fitting',
-        'Final inspection & snag list',
-        'Handover with documentation'
-      ]
-    }
-  ];
+  // const processSteps = [
+  //   {
+  //     phase: 'Planning & Design',
+  //     duration: '2-4 weeks',
+  //     icon: FileText,
+  //     activities: [
+  //       'Initial consultation & requirement gathering',
+  //       'Site survey & soil testing',
+  //       'Architectural design & floor plans',
+  //       'Structural engineering drawings',
+  //       'Cost estimation & budget finalization',
+  //       'Approval drawings for authorities'
+  //     ]
+  //   },
+  //   {
+  //     phase: 'Approvals & Documentation',
+  //     duration: '3-6 weeks',
+  //     icon: Shield,
+  //     activities: [
+  //       'GHMC/Panchayat building permissions',
+  //       'Structural stability certificate',
+  //       'Fire NOC (if applicable)',
+  //       'Electricity & water connections',
+  //       'Legal documentation verification'
+  //     ]
+  //   },
+  //   {
+  //     phase: 'Foundation & Structure',
+  //     duration: '3-4 months',
+  //     icon: Layers,
+  //     activities: [
+  //       'Site clearing & excavation',
+  //       'Foundation laying (PCC, RCC)',
+  //       'Column & beam construction',
+  //       'Slab work (floor-by-floor)',
+  //       'Brick/block masonry work',
+  //       'Regular quality inspections'
+  //     ]
+  //   },
+  //   {
+  //     phase: 'Finishing & Handover',
+  //     duration: '2-3 months',
+  //     icon: Home,
+  //     activities: [
+  //       'Plastering & painting',
+  //       'Flooring & tile work',
+  //       'Electrical & plumbing installations',
+  //       'Door, window & fixture fitting',
+  //       'Final inspection & snag list',
+  //       'Handover with documentation'
+  //     ]
+  //   }
+  // ];
 
   const qualityStandards = [
     {
@@ -283,7 +283,7 @@ export default function ConstructionService() {
       </section>
 
       {/* Construction Process */}
-      <section id="process" className="py-20 bg-white">
+      {/* <section id="process" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Construction Process</h2>
@@ -336,7 +336,7 @@ export default function ConstructionService() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Quality Standards */}
       <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">

@@ -1,0 +1,226 @@
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDelayed {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes badgeSlide {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes arrowMove {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+}
+
+@keyframes starPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes overlayFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.featured-projects-animate-fade-in {
+    animation: fadeInDelayed 0.8s ease forwards;
+    opacity: 0;
+}
+
+.featured-projects-animate-slide-down {
+    animation: slideDown 0.8s ease forwards;
+    opacity: 0;
+}
+
+.featured-projects-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    height: 24rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.featured-projects-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.featured-projects-image-zoom {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.group:hover .featured-projects-image-zoom {
+    transform: scale(1.08);
+}
+
+.featured-projects-overlay-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.45) 40%,
+            rgba(0, 0, 0, 0.1) 70%,
+            transparent 100%);
+    z-index: 1;
+    animation: overlayFade 0.5s ease forwards;
+    pointer-events: none;
+}
+
+.featured-projects-card img {
+    position: relative;
+    z-index: 0;
+}
+
+.featured-projects-card .absolute.inset-0.flex {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.75rem;
+    color: #ffffff;
+}
+
+.featured-projects-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    color: #fbbf24;
+}
+
+.featured-projects-meta span {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.featured-projects-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.75rem;
+}
+
+.featured-projects-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.featured-projects-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #f97316;
+    transition: gap 0.3s ease;
+}
+
+.featured-projects-card:hover .featured-projects-cta {
+    gap: 12px;
+}
+
+.featured-projects-arrow-move {
+    animation: arrowMove 1.2s ease-in-out infinite;
+}
+
+.featured-projects-star-pop {
+    animation: starPop 0.5s ease forwards;
+}
+
+.featured-projects-badge-slide {
+    animation: badgeSlide 0.4s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-projects-card {
+        height: 20rem;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Award, Globe, Shield, Users, Building2, CheckCircle, MapPin, Briefcase, GraduationCap, Star } from 'lucide-react';
+import { Award, Globe, Shield, Users, Building2, CheckCircle, MapPin, Briefcase, GraduationCap, Star, Eye, Compass, Target, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
 import airport from "../../assets/airportAuthority.png";
 import amana from "../../assets/AMANA.jpeg";
@@ -15,45 +16,42 @@ import ordenance from "../../assets/ordenance.jpeg";
 import oil from "../../assets/oil.jpeg";
 
 export default function AboutUs() {
-  // const timeline = [
-  //   {
-  //     year: '1998-2010',
-  //     location: 'India',
-  //     role: 'Early Career & Foundation',
-  //     company: 'IVR Constructions Limited',
-  //     project: 'Begumpet Airport, Hyderabad - Model Airport Project',
-  //     description: 'Contributed to construction of Domestic and International Terminal Buildings on behalf of Airports Authority of India',
-  //     icon: Building2
-  //   },
-  //   {
-  //     year: '2010-2015',
-  //     location: 'Middle East',
-  //     role: 'International Exposure',
-  //     company: 'Amana Steel Buildings LLC & Core Construction Company',
-  //     project: 'Saudi Arabia & Qatar Projects',
-  //     description: 'Gained comprehensive exposure to diverse construction environments and international quality standards',
-  //     icon: Globe
-  //   },
-  //   {
-  //     year: '2015-2020',
-  //     location: 'Dubai, UAE',
-  //     role: 'Facilities Management Excellence',
-  //     company: 'Nakheel Properties',
-  //     project: 'The Gardens & Garden View Villas',
-  //     description: 'Managed 129 G+2 residential buildings and 208+ duplex villas. Received Letter of Appreciation from Director for outstanding service',
-  //     icon: Award,
-  //     highlight: true
-  //   },
-  //   {
-  //     year: '2020-Present',
-  //     location: 'Hyderabad, India',
-  //     role: 'CPWD Contractor & Founder',
-  //     company: 'AM Renovators & Services',
-  //     project: 'Hyderabad Airport AMC & Multiple Projects',
-  //     description: 'CPWD Class III contractor serving government institutions, NRI clients, and corporate facilities management',
-  //     icon: Star
-  //   }
-  // ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(true);
+
+  const slides = [
+    {
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setImageLoaded(false);
+      setTimeout(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setImageLoaded(true);
+      }, 300);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const goToSlide = (index) => {
+    setImageLoaded(false);
+    setTimeout(() => {
+      setCurrentSlide(index);
+      setImageLoaded(true);
+    }, 300);
+  };
+
+  const currentData = slides[currentSlide];
 
   const expertise = [
     {
@@ -148,58 +146,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-{/* Trusted By Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-900 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <Star size={16} />
-              Trusted Partners
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Organizations We've Worked With
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Proud to have served leading institutions, government organizations, and corporate clients
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {[
-              { img: airport, name: 'Airport Authority of India' },
-              { img: amana, name: 'Amana Steel Buildings' },
-              { img: core, name: 'Core Construction Company' },
-              { img: cpwd, name: 'CPWD' },
-              { img: iit, name: 'IIT' },
-              { img: ivr, name: 'IVR Constructions' },
-              { img: manage, name: 'Manage' },
-              { img: naarm, name: 'NAARM' },
-              { img: nakheel, name: 'Nakheel Properties' },
-              { img: niphm, name: 'NIPHM' },
-              { img: ordenance, name: 'Ordnance Factory' },
-              { img: oil, name: 'Directorate of Oil & Seeds' }
-            ].map((company, index) => (
-              <div 
-                key={index} 
-                className="group bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-blue-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center"
-              >
-                <img 
-                  src={company.img} 
-                  alt={company.name}
-                  className="w-full h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
-                />
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 italic">
-              ...and many more valued clients across residential, commercial, and institutional sectors
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Founder's Message */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,7 +162,7 @@ export default function AboutUs() {
                   <div>
                     <div className="text-xl font-bold text-gray-900">Ahmed Mohiuddin</div>
                     <div className="text-gray-600">Graduate Civil Engineer</div>
-                    <div className="text-sm text-orange-600 font-semibold"> Proprietor</div>
+                    <div className="text-sm text-orange-600 font-semibold">Proprietor</div>
                   </div>
                 </div>
               </div>
@@ -231,9 +177,6 @@ export default function AboutUs() {
                 <p>
                   AM Renovators & Services is a professionally managed construction, renovation, upgradation, and facilities management company founded on decades of technical expertise, international exposure, and an uncompromising commitment to quality.
                 </p>
-                {/* <p>
-                  I am Ahmed Mohiuddin, a Graduate Civil Engineer with over <strong className="text-blue-900">27 years of hands-on professional experience</strong> across India and the Middle East, including Saudi Arabia, Qatar, and the United Arab Emirates.
-                </p> */}
                 <p>
                   The company brings together extensive project delivery and asset management capabilities, enabling us to deliver solutions that align with <strong className="text-blue-900">international standards</strong> while remaining firmly rooted in local execution excellence.
                 </p>
@@ -249,158 +192,63 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Professional Journey Timeline */}
-      {/* <section className="py-20 bg-white">
+      {/* Vision/Mission Carousel - MODIFIED SECTION */}
+  <section className="py-16 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Journey</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A career spanning two decades across three continents, delivering excellence at every milestone
-            </p>
-          </div>
-          
-          <div className="relative">
-         
-            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-900 via-orange-500 to-blue-900"></div>
-       
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <div key={index} className={`relative grid lg:grid-cols-2 gap-8 ${index % 2 === 0 ? '' : 'lg:text-right'}`}>
-             
-                  <div className={`${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12 lg:col-start-2'}`}>
-                    <div className={`bg-white rounded-xl shadow-lg p-6 border-2 ${item.highlight ? 'border-orange-500' : 'border-gray-200'} hover:shadow-xl transition-shadow`}>
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${item.highlight ? 'bg-gradient-to-br from-orange-500 to-orange-600' : 'bg-gradient-to-br from-blue-900 to-blue-800'}`}>
-                          <item.icon size={24} className="text-white" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-orange-600">{item.year}</div>
-                          <div className="text-xs text-gray-600 flex items-center gap-1">
-                            <MapPin size={12} />
-                            {item.location}
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{item.role}</h3>
-                      <div className="text-blue-900 font-semibold mb-2">{item.company}</div>
-                      <div className="text-sm text-gray-600 font-medium mb-2">{item.project}</div>
-                      <p className="text-gray-700 text-sm leading-relaxed">{item.description}</p>
-                      
-                      {item.highlight && (
-                        <div className="mt-4 inline-flex items-center gap-2 bg-orange-50 text-orange-800 px-3 py-1 rounded-full text-xs font-semibold">
-                          <Award size={14} />
-                          Letter of Appreciation Received
-                        </div>
-                      )}
-                    </div>
+          <div className="relative min-h-[500px]">
+            {/* Background Card with Image - Positioned to the LEFT */}
+            <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden w-[60%]">
+              <div className="min-h-[500px]">
+                <div className="relative h-full">
+                  <img 
+                    src={currentData.image} 
+                    alt="Background"
+                    className="w-full h-full object-cover transition-opacity duration-500"
+                    style={{ opacity: imageLoaded ? 1 : 0.3 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Foreground Card with Content - Static content, positioned on top RIGHT */}
+            <div className="absolute top-1/2 right-5 transform -translate-y-1/2 w-[55%] max-w-2xl">
+              <div className="bg-gradient-to-br from-blue-900/90 to-blue-800/90 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-orange-500/30">
+                <div className="p-8 lg:p-10 flex flex-col justify-center text-white">
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2 bg-orange-500/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-semibold mb-5 self-start">
+                    <Eye size={14} />
+                    Problem Solvers
                   </div>
-                  
-                  
-                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-blue-900 rounded-full top-8"></div>
+
+                  {/* Main Quote - Static */}
+                  <div className="text-xl lg:text-2xl italic leading-relaxed mb-8 font-light">
+                    "Building trust through international expertise and local excellence—from India to Dubai and back, delivering world-class construction and facilities management."
+                  </div>
+
+                  {/* Author/Person Info - Static */}
+                  <div className="mt-3">
+                    <div className="font-bold text-lg">Ahmed Mohiuddin</div>
+                    <div className="text-blue-100 text-sm mt-0.5">President</div>
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Pagination Dots - Smaller and thinner */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-1.5 mt-8">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`transition-all rounded-full ${
+                    index === currentSlide 
+                      ? 'w-8 h-1 bg-orange-500' 
+                      : 'w-1 h-1 bg-gray-400 hover:bg-gray-500'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
               ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Dubai Experience Highlight */}
-      {/* <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                <Globe size={16} />
-                International Experience
-              </div>
-              <h2 className="text-4xl font-bold mb-6">
-                Facilities Management Excellence in Dubai
-              </h2>
-              <p className="text-xl text-orange-50 mb-8 leading-relaxed">
-                A defining milestone in my career was my tenure with <strong>Nakheel Properties</strong>, one of Dubai's most respected master developers.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-3xl font-bold mb-1">129</div>
-                  <div className="text-orange-50">G+2 Residential Buildings - "The Gardens"</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-3xl font-bold mb-1">208+</div>
-                  <div className="text-orange-50">Duplex Villas - "Garden View Villas"</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-3xl font-bold mb-1">100%</div>
-                  <div className="text-orange-50">Asset Management & Resident Service Delivery</div>
-                </div>
-              </div>
-              
-              <div className="mt-8 bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
-                <p className="text-sm italic">
-                  "This experience has been particularly valuable in addressing the needs of NRIs seeking reliable, professional on-ground management of their properties in India."
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" 
-                alt="Dubai skyline" 
-                className="rounded-2xl shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* CPWD & Government Projects */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-900 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <Shield size={16} />
-              Government Credentials
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Public Sector & Institutional Experience
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              CPWD-registered contractor with proven track record in government and institutional projects
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-800 rounded-full flex items-center justify-center">
-                  <Award size={32} className="text-white" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900">CPWD Registered</div>
-                  <div className="text-blue-900 font-semibold">Class III Contractor</div>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed">
-                Registered with the Central Public Works Department (CPWD), Government of India. Initially under Class IV Category, promoted to <strong>Class III Category</strong> upon successful execution of qualifying projects.
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold mb-6">Key Government Projects</h3>
-              <ul className="space-y-4">
-                {[
-                  'Annual Maintenance Contract (AMC) - Hyderabad International Airport Terminal Buildings & Operational Areas',
-                  'Annual Maintenance Contract (AMC) - Hyderabad International Airport Residential Colonies',
-                  'Renovation and upgradation works for Government Institutions under CPWD',
-                  'Indoor Badminton Court construction - Agricultural University, Hyderabad'
-                ].map((project, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="flex-shrink-0 mt-1 text-orange-400" />
-                    <span className="text-blue-50">{project}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
@@ -468,52 +316,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* NRI Partnership Section */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-2xl overflow-hidden">
-            <div className="grid lg:grid-cols-2">
-              <div className="p-12">
-                <h2 className="text-3xl font-bold text-white mb-6">
-                  A Trusted Partner for NRI Clients
-                </h2>
-                <p className="text-orange-50 mb-6 leading-relaxed">
-                  Having worked internationally for a significant part of my career, I fully understand the challenges faced by NRIs managing properties and projects from overseas—distance, timelines, quality assurance, regulatory compliance, and the need for absolute transparency.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  {[
-                    'Single-point accountability and coordination',
-                    'Clear scope definition and cost transparency',
-                    'Regular progress updates through photographs and detailed reports',
-                    'Ethical procurement and disciplined execution',
-                    'Reliable on-ground representation and supervision'
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle size={20} className="flex-shrink-0 mt-1 text-white" />
-                      <span className="text-white font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <a href="#nri-clients" className="inline-flex items-center gap-2 bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors shadow-lg">
-                  Learn More About NRI Services
-                  <Briefcase size={20} />
-                </a>
-              </div>
-              
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" 
-                  alt="Modern home interior" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Credentials Bar */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -524,6 +326,56 @@ export default function AboutUs() {
                 <div className="text-lg font-bold text-blue-900">{cred.value}</div>
               </div>
             ))}
+          </div>
+
+          {/* Trusted By Section */}
+          <div className="mt-20">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 bg-blue-900 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <Star size={16} />
+                Trusted Partners
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Organizations We've Worked With
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Proud to have served leading institutions, government organizations, and corporate clients
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {[
+                { img: airport, name: 'Airport Authority of India' },
+                { img: amana, name: 'Amana Steel Buildings' },
+                { img: core, name: 'Core Construction Company' },
+                { img: cpwd, name: 'CPWD' },
+                { img: iit, name: 'IIT' },
+                { img: ivr, name: 'IVR Constructions' },
+                { img: manage, name: 'Manage' },
+                { img: naarm, name: 'NAARM' },
+                { img: nakheel, name: 'Nakheel Properties' },
+                { img: niphm, name: 'NIPHM' },
+                { img: ordenance, name: 'Ordnance Factory' },
+                { img: oil, name: 'Directorate of Oil & Seeds' }
+              ].map((company, index) => (
+                <div 
+                  key={index} 
+                  className="group bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-blue-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                >
+                  <img 
+                    src={company.img} 
+                    alt={company.name}
+                    className="w-full h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  />
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 italic">
+                ...and many more valued clients across residential, commercial, and institutional sectors
+              </p>
+            </div>
           </div>
         </div>
       </section>

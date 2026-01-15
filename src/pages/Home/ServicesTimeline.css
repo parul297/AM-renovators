@@ -1,0 +1,373 @@
+/* ServicesTimeline.css */
+
+/* ==================== ENTRANCE ANIMATIONS ==================== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== DOT ANIMATIONS ==================== */
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+@keyframes glow-pulse {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.8));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+    }
+}
+
+@keyframes dot-float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ==================== CARD ANIMATIONS ==================== */
+@keyframes card-expand {
+    from {
+        opacity: 0.8;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes card-glow {
+    0% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+}
+
+@keyframes border-glow {
+    0% {
+        border-color: rgba(229, 231, 235, 1);
+    }
+
+    50% {
+        border-color: rgba(229, 231, 235, 0.5);
+    }
+
+    100% {
+        border-color: rgba(229, 231, 235, 1);
+    }
+}
+
+/* ==================== LINE ANIMATIONS ==================== */
+@keyframes line-fill {
+    from {
+        height: 0%;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes line-glow {
+    0% {
+        filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3));
+    }
+}
+
+/* ==================== DETAIL ANIMATIONS ==================== */
+@keyframes detail-stagger {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes icon-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes icon-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* ==================== BUTTON ANIMATIONS ==================== */
+@keyframes button-slide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes arrow-bounce {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+}
+
+/* ==================== CHECKMARK ANIMATIONS ==================== */
+@keyframes bounce-slow {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+@keyframes checkmark-pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==================== PROGRESS LINE ANIMATION ==================== */
+@keyframes progress-glow {
+    0% {
+        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.8));
+    }
+}
+
+/* ==================== HOVER ANIMATIONS ==================== */
+@keyframes hover-lift {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes shadow-expand {
+    from {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    to {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ==================== APPLY ANIMATIONS ==================== */
+.animate-slide-down {
+    animation: slideDown 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s infinite;
+}
+
+.animate-checkmark-pop {
+    animation: checkmark-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.services-timeline-group:hover .services-timeline-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Timeline items stagger animation */
+.services-timeline-animation-delayed {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Active dot animations */
+.services-timeline-active-dot {
+    animation: pulse-ring 2s cubic-bezier(0, 0, 0.2, 1) infinite, glow-pulse 2s ease-in-out infinite;
+}
+
+/* Progress line animation */
+.services-timeline-progress-line {
+    animation: progress-glow 1.5s ease-in-out infinite;
+}
+
+/* Card hover state animations */
+.services-timeline-group:hover {
+    animation: hover-lift 0.3s ease forwards;
+}
+
+.services-timeline-card-hover:hover {
+    animation: shadow-expand 0.4s ease forwards;
+}
+
+/* Detail item cascade */
+.services-timeline-detail-animate {
+    animation: detail-stagger 0.4s ease-out forwards !important;
+}
+
+/* Button entrance */
+.services-timeline-button-entrance {
+    animation: button-slide 0.5s ease-out forwards;
+}
+
+/* Arrow animation on hover */
+.services-timeline-arrow-bounce:hover {
+    animation: arrow-bounce 0.6s ease-in-out infinite;
+}
+
+/* Icon pulse on active card */
+.services-timeline-active-icon {
+    animation: icon-bounce 0.6s ease-in-out;
+}
+
+/* Smooth transitions for all state changes */
+.services-timeline-container * {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent over-animation */
+@media (prefers-reduced-motion: reduce) {
+    .services-timeline-container * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Custom utility classes */
+.services-timeline-scroll-progress {
+    animation: line-fill 2s ease-out forwards;
+}
+
+.services-timeline-line-glow {
+    animation: line-glow 2s ease-in-out infinite;
+}
+
+.services-timeline-card-expand {
+    animation: card-expand 0.3s ease-out forwards;
+}
+
+.services-timeline-card-glow {
+    animation: card-glow 2s ease-in-out infinite;
+}
+
+.services-timeline-border-glow {
+    animation: border-glow 2s ease-in-out infinite;
+}
+
+.services-timeline-icon-spin {
+    animation: icon-spin 1s ease-in-out;
+}
+
+.services-timeline-dot-float {
+    animation: dot-float 2s ease-in-out infinite;
+}

@@ -7,6 +7,7 @@ import ContactSidebar from '../contactSideBar/ContactSideBar';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,16 +21,19 @@ export default function Header() {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Constructions', href: '/services/new-construction' },
+    { name: 'Construction', href: '/services/new-construction' },
     { name: 'Renovation', href: '/services/renovation' },
-    { name: 'Facilities Management', href: '/services/facilities' },
+    { name: 'Facility Management', href: '/services/facilities' },
     { name: 'NRI Property Management', href: '/services/nri-property', highlight: true },
   ];
 
-  const [isHeaderHover, setIsHeaderHover] = useState(false);
+  const handleEnquiryClick = () => {
+    setIsSidebarOpen(prev => !prev);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
-    <div onMouseEnter={() => setIsHeaderHover(true)} onMouseLeave={() => setIsHeaderHover(false)}>
+    <div>
       {/* Top Bar */}
       <div className="bg-blue-900 text-white py-2 px-4 text-sm hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -44,7 +48,7 @@ export default function Header() {
             </div>
           </div>
           <div className="text-xs">
-            <span className="font-semibold">27+ Years Experience</span> | <span>CPWD Registered</span> | <span>International Exposure</span>
+            <span className="font-semibold">27+ Years Experience</span> | <span>CPWD Registered</span> | <span>International Experience</span>
           </div>
         </div>
       </div>
@@ -54,7 +58,7 @@ export default function Header() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
 
-            {/* Logo (IMAGE instead of text) */}
+            {/* Logo */}
             <div className="flex justify-between items-center h-20 overflow-visible">
               <Link to="/" className="flex items-center">
                 <img src={logo} alt="AM Renovators" className="h-20 md:h-16 w-auto object-contain" />
@@ -71,18 +75,26 @@ export default function Header() {
                     key={index}
                     to={item.href}
                     className={`
-                      font-medium transition-all
+                      font-medium transition-all duration-300 relative
                       ${item.highlight
-                        ? 'text-orange-600 bg-orange-50 px-4 py-2 rounded-lg border border-orange-200 hover:bg-orange-100'
-                        : 'text-gray-700 hover:text-blue-900'
+                        ? 'text-orange-700 bg-orange-50 px-5 py-2.5 rounded-lg border-l-4 border-orange-600 hover:bg-blue-100 hover:shadow-md font-semibold'
+                        : 'text-gray-700 hover:text-orange-900'
                       }
-                      ${isActive ? 'font-semibold' : ''}
+                      ${isActive && !item.highlight ? 'font-semibold' : ''}
                     `}
                   >
                     {item.name}
                   </Link>
                 );
               })}
+              
+              {/* Enquiry Button */}
+              <button
+                onClick={handleEnquiryClick}
+                className="font-medium text-white bg-blue-900 px-4 py-2 rounded-lg hover:bg-blue-800 transition-all"
+              >
+                Enquiry
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -101,14 +113,25 @@ export default function Header() {
                   key={index}
                   to={item.href}
                   className={`
-                    block py-2 font-medium rounded-md
-                    ${item.highlight ? 'text-orange-600 bg-orange-50 px-3' : 'text-gray-700'}
+                    block py-3 font-medium rounded-lg transition-all
+                    ${item.highlight 
+                      ? 'text-blue-700 bg-blue-50 px-4 border-l-4 border-blue-600 font-semibold' 
+                      : 'text-gray-700 px-3'
+                    }
                   `}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+
+              {/* Mobile Enquiry Button */}
+              <button
+                onClick={handleEnquiryClick}
+                className="w-full text-left py-2 font-medium text-white bg-blue-900 px-3 rounded-md"
+              >
+                Enquiry
+              </button>
 
               {/* Contact Info */}
               <div className="pt-4 mt-4 border-t border-gray-200 space-y-2">
@@ -126,8 +149,10 @@ export default function Header() {
         )}
       </header>
 
-      <ContactSidebar openFromHeader={isHeaderHover} />
+      <ContactSidebar 
+        openFromHeader={isSidebarOpen} 
+        onClose={() => setIsSidebarOpen(false)}
+      />
     </div>
   );
 }
-

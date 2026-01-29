@@ -118,6 +118,29 @@ export default function ContactSidebar({ openFromHeader = false }) {
 
                     {/* Social Links */}
                     <div className="flex gap-3">
+                        
+                        {/* Instagram */}
+                        <a
+                            href="https://www.instagram.com/amrenovators"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:from-[#6B2C91] hover:via-[#D11919] hover:to-[#D6622E] rounded-lg p-2.5 transition-all duration-200 transform hover:scale-110 shadow-lg"
+                            aria-label="Instagram"
+                        >
+                            <Instagram size={24} className="text-white" />
+                        </a>
+
+                         {/* Facebook */}
+                        <a
+                            href="https://www.facebook.com/amrenovators"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-[#1877F2] hover:bg-[#0C63D4] rounded-lg p-2.5 transition-all duration-200 transform hover:scale-110 shadow-lg"
+                            aria-label="Facebook"
+                        >
+                            <Facebook size={24} className="text-white" fill="white" />
+                        </a>
+
                         {/* LinkedIn */}
                         <a
                             href="https://www.linkedin.com/company/am-renovators"
@@ -129,27 +152,6 @@ export default function ContactSidebar({ openFromHeader = false }) {
                             <Linkedin size={24} className="text-white" fill="white" />
                         </a>
 
-                        {/* Facebook */}
-                        <a
-                            href="https://www.facebook.com/amrenovators"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-[#1877F2] hover:bg-[#0C63D4] rounded-lg p-2.5 transition-all duration-200 transform hover:scale-110 shadow-lg"
-                            aria-label="Facebook"
-                        >
-                            <Facebook size={24} className="text-white" fill="white" />
-                        </a>
-
-                        {/* Instagram */}
-                        <a
-                            href="https://www.instagram.com/amrenovators"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:from-[#6B2C91] hover:via-[#D11919] hover:to-[#D6622E] rounded-lg p-2.5 transition-all duration-200 transform hover:scale-110 shadow-lg"
-                            aria-label="Instagram"
-                        >
-                            <Instagram size={24} className="text-white" />
-                        </a>
 
                         {/* WhatsApp */}
                         <a

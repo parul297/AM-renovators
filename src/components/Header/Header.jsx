@@ -48,57 +48,78 @@ export default function Header() {
             </div>
           </div>
           <div className="text-xs">
-            <span className="font-semibold">27+ Years Experience</span> | <span>CPWD Registered</span> | <span>International Experience</span>
+            <span className="font-semibold">27+ Years Experience</span> |{" "}
+            <span>CPWD Registered</span> |{" "}
+            <span>International Experience</span>
           </div>
         </div>
       </div>
 
-      {/* Main Header */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 bg-white ${isScrolled ? 'shadow-lg' : ''}`}>
+      {/* Header */}
+      <header className={`sticky top-0 z-50 bg-white transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex items-center h-20">
 
             {/* Logo */}
-            <div className="flex justify-between items-center h-20 overflow-visible">
-              <Link to="/" className="flex items-center">
-                <img src={logo} alt="AM Renovators" className="h-20 md:h-16 w-auto object-contain" />
-              </Link>
-            </div>
+            <Link to="/" className="flex items-center shrink-0">
+              <img
+                src={logo}
+                alt="AM Renovators"
+                className="h-16 w-auto object-contain"
+              />
+            </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
-              {navItems.map((item, index) => {
-                const isActive = location.pathname === item.href;
+            <div className="hidden lg:flex items-center justify-end flex-1">
+              <div className="flex items-center gap-8">
 
-                return (
-                  <Link
-                    key={index}
-                    to={item.href}
-                    className={`
-                      font-medium transition-all duration-300 relative
-                      ${item.highlight
-                        ? 'text-orange-700 bg-orange-50 px-5 py-2.5 rounded-lg border-l-4 border-orange-600 hover:bg-blue-100 hover:shadow-md font-semibold'
-                        : 'text-gray-700 hover:text-orange-900'
-                      }
-                      ${isActive && !item.highlight ? 'font-semibold' : ''}
-                    `}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
-              
-              {/* Enquiry Button */}
-              <button
-                onClick={handleEnquiryClick}
-                className="font-medium text-white bg-blue-900 px-4 py-2 rounded-lg hover:bg-blue-800 transition-all"
-              >
-                Enquiry
-              </button>
+                {navItems.map((item, index) => {
+                  const isActive = location.pathname === item.href;
+
+                  return (
+                    <Link
+                      key={index}
+                      to={item.href}
+                      className={`
+                        relative font-medium transition-all duration-300
+                        ${item.highlight
+                          ? 'text-orange-700 bg-orange-50 px-4 py-2 border-l-4 border-orange-600 font-semibold'
+                          : 'text-gray-700 hover:text-blue-900'
+                        }
+                        ${!item.highlight
+                          ? 'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full'
+                          : ''
+                        }
+                        ${isActive && !item.highlight ? 'font-semibold text-blue-900' : ''}
+                      `}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
+
+                {/* Enquiry */}
+                <button
+                  onClick={handleEnquiryClick}
+                  className="
+                    relative font-medium text-gray-700
+                    hover:text-blue-900 transition-all duration-300
+                    after:absolute after:left-0 after:-bottom-1
+                    after:h-[2px] after:w-0 after:bg-blue-900
+                    after:transition-all after:duration-300 hover:after:w-full
+                  "
+                >
+                  Enquiry
+                </button>
+
+              </div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-2 text-gray-700 hover:text-blue-900">
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden ml-auto p-2 text-gray-700 hover:text-blue-900"
+            >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -112,45 +133,32 @@ export default function Header() {
                 <Link
                   key={index}
                   to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className={`
-                    block py-3 font-medium rounded-lg transition-all
-                    ${item.highlight 
-                      ? 'text-blue-700 bg-blue-50 px-4 border-l-4 border-blue-600 font-semibold' 
-                      : 'text-gray-700 px-3'
+                    block py-3 font-medium transition-all
+                    ${item.highlight
+                      ? 'text-orange-700 bg-orange-50 px-4 border-l-4 border-orange-600 font-semibold'
+                      : 'text-gray-700 px-3 hover:text-blue-900'
                     }
                   `}
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
 
-              {/* Mobile Enquiry Button */}
               <button
                 onClick={handleEnquiryClick}
-                className="w-full text-left py-2 font-medium text-white bg-blue-900 px-3 rounded-md"
+                className="block w-full text-left py-3 px-3 font-medium text-gray-700 hover:text-blue-900"
               >
                 Enquiry
               </button>
-
-              {/* Contact Info */}
-              <div className="pt-4 mt-4 border-t border-gray-200 space-y-2">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Phone size={16} />
-                  <span>+91 98765 43210</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Mail size={16} />
-                  <span>info@amrenovators.com</span>
-                </div>
-              </div>
             </div>
           </div>
         )}
       </header>
 
-      <ContactSidebar 
-        openFromHeader={isSidebarOpen} 
+      <ContactSidebar
+        openFromHeader={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
       />
     </div>

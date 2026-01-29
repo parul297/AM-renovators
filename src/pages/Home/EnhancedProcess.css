@@ -6,11 +6,12 @@
 
 .enhanced-process-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+    background: linear-gradient(195deg, #fafafa 0%, #f0f0f0 100%);
     position: relative;
     overflow: hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    padding: 3rem 1rem;
+   padding: 0 1rem 3rem 1rem;
+   margin-top: -13rem;
 }
 
 .enhanced-process-container * {
@@ -29,6 +30,7 @@
     pointer-events: none;
     overflow: hidden;
     z-index: 0;
+    display: none;
 }
 
 .bg-circle-1 {
@@ -271,7 +273,13 @@
 
 .process-timeline-section {
     margin: 3rem auto;
-    max-width: 950px;
+    max-width: 1300px;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    padding: 0 5rem;
 }
 
 /* Update the timeline container width */
@@ -279,7 +287,8 @@
     position: relative;
     margin: 2rem auto;
     height: 140px;
-    max-width: 950px;
+    max-width: 1200px;
+    padding: 0 5rem;
 }
 
 /* Make markers and labels more compact but not too small */
@@ -386,8 +395,8 @@
 .timeline-progress-container {
     position: absolute;
     top: 27.5px;
-    left: 70px;
-    right: 70px;
+    left: 120px;
+    right: 120px;
     height: 2.5px;
     background: #e5e7eb;
     border-radius: 1.5px;
@@ -409,13 +418,14 @@
    ======================================== */
 
 .step-details-panel {
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    border: 1px solid #e5e7eb;
-    margin: 3rem auto 0;
-    max-width: 950px;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    max-width: 100%;
+    padding: 0 1.75rem 1.75rem;
 }
 
 .details-panel {
@@ -447,6 +457,7 @@
     font-weight: 900;
     color: #0c4a6e;
     line-height: 1;
+    padding: 0 1rem;
 }
 
 .details-panel.blue .step-number-large {

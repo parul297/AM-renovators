@@ -21,13 +21,22 @@ export default function AboutUs() {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+      badge: 'Vision',
+      title: 'Our Vision',
+      description: 'To be a trusted regional partner delivering construction and property solutions aligned with international standards and executed with local excellence.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80',
+      badge: 'Mission',
+      title: 'Our Mission',
+      description: 'To execute construction and property management projects with consistency, transparency, and accountability, translating international standards into reliable local delivery and long-term asset performance.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+      badge: 'Vision',
+      title: 'Our Vision',
+      description: 'To be a trusted regional partner delivering construction and property solutions aligned with international standards and executed with local excellence.'
     }
   ];
 
@@ -175,15 +184,15 @@ export default function AboutUs() {
                   <strong className="text-gray-900">Welcome to AM Renovators & Services.</strong>
                 </p>
                 <p>
-                  AM Renovators & Services is a professionally managed construction, renovation, upgradation, and facilities management company founded on decades of technical expertise, international exposure, and an uncompromising commitment to quality.
+                  AM Construction & Services is a professionally managed civil construction, renovation, facilities management, and NRI property management company, headquartered in Hyderabad, India. The organization is built on decades of technical expertise, international exposure, and an uncompromising commitment to assured standards and meticulous quality.
                 </p>
                 <p>
-                  The company brings together extensive project delivery and asset management capabilities, enabling us to deliver solutions that align with <strong className="text-blue-900">international standards</strong> while remaining firmly rooted in local execution excellence.
+                  We integrate our framework of robust engineering, project execution, and asset management capabilities to deliver solutions aligned with  <strong className="text-blue-900">international Benchmark</strong>, while maintaining strong local execution excellence. Our structured processes, disciplined planning, and on‑ground management ensure execution with precision, transparency, and reliability across all stages of project delivery.
                 </p>
                 
                 <div className="bg-blue-50 border-l-4 border-blue-900 p-6 rounded-r-lg mt-6">
                   <p className="italic text-gray-800">
-                    "Every project—irrespective of size—is approached with disciplined planning, attention to detail, and a long-term asset perspective. We do not merely construct or renovate—we build trust and manage assets with care and responsibility."
+                With extensive experience in NRI property management, we act as a trusted local representative for overseas clients, managing construction, renovations, maintenance, statutory coordination, and asset upkeep with complete accountability. Our approach is driven by integrity, client focus, and meticulous quality, enabling long‑term value creation and dependable outcomes.
                   </p>
                 </div>
               </div>
@@ -193,7 +202,7 @@ export default function AboutUs() {
       </section>
 
       {/* Vision/Mission Carousel - MODIFIED SECTION */}
-  <section className="py-16 bg-gray-50 overflow-hidden">
+      <section className="py-16 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[500px]">
             {/* Background Card with Image - Positioned to the LEFT */}
@@ -218,18 +227,15 @@ export default function AboutUs() {
                   {/* Badge */}
                   <div className="inline-flex items-center gap-2 bg-orange-500/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-semibold mb-5 self-start">
                     <Eye size={14} />
-                    Problem Solvers
+                    {currentData.badge}
                   </div>
 
-                  {/* Main Quote - Static */}
-                  <div className="text-xl lg:text-2xl italic leading-relaxed mb-8 font-light">
-                    "Building trust through international expertise and local excellence—from India to Dubai and back, delivering world-class construction and facilities management."
-                  </div>
+                  {/* Title */}
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-6">{currentData.title}</h3>
 
-                  {/* Author/Person Info - Static */}
-                  <div className="mt-3">
-                    <div className="font-bold text-lg">Ahmed Mohiuddin</div>
-                    <div className="text-blue-100 text-sm mt-0.5">President</div>
+                  {/* Description */}
+                  <div className="text-lg leading-relaxed font-light">
+                    {currentData.description}
                   </div>
                 </div>
               </div>

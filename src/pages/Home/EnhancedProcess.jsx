@@ -111,27 +111,27 @@ export default function EnhancedProcess() {
     const features = [
         {
             icon: Shield,
-            title: 'Transparent Pricing',
+            title: 'Integrity',
             description: 'No hidden costs. Clear, itemized quotations.',
-            stat: '100% Transparency'
+            // stat: '100% Transparency'
         },
         {
             icon: Clock,
-            title: 'Timely Delivery',
+            title: 'Transparency',
             description: 'Projects delivered on schedule.',
-            stat: '98% On Time'
+            // stat: '98% On Time'
         },
         {
             icon: Users,
-            title: 'Dedicated Manager',
+            title: 'Technical Excellence',
             description: 'Single point of contact for communication.',
-            stat: '24/7 Support'
+            // stat: '24/7 Support'
         },
         {
             icon: Video,
-            title: 'Live Updates',
+            title: 'Client Focus',
             description: 'Daily photo/video updates.',
-            stat: 'Real-time Tracking'
+            // stat: 'Real-time Tracking'
         }
     ];
 

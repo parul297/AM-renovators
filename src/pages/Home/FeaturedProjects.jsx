@@ -12,7 +12,7 @@ export default function FeaturedProjects() {
         {
             id: 1,
             title: 'Villa Construction - Premium Residences',
-            category: 'Residential',
+            category: 'Civil Construction',
             img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=500&fit=crop',
             location: 'Hyderabad, Telangana',
             rating: 4.9,
@@ -23,7 +23,7 @@ export default function FeaturedProjects() {
         {
             id: 2,
             title: 'Commercial Building Renovation',
-            category: 'Commercial',
+            category: 'Renovation',
             img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=500&fit=crop',
             location: 'Pune, Maharashtra',
             rating: 4.8,
@@ -34,7 +34,7 @@ export default function FeaturedProjects() {
         {
             id: 3,
             title: 'Luxury Apartment Upgradation',
-            category: 'Residential',
+            category: 'facility Management',
             img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=500&fit=crop',
             location: 'Mumbai, Maharashtra',
             rating: 5.0,
@@ -77,7 +77,7 @@ export default function FeaturedProjects() {
         }
     ];
 
-    const categories = ['All', 'Residential', 'Commercial', 'Institutional'];
+    const categories = ['All', 'Civil Construction', 'Renovation', 'Fcaility Management', 'NRI Property Management', ];
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
@@ -92,9 +92,7 @@ export default function FeaturedProjects() {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12 md:mb-20">
-                    <div className="inline-block mb-4 px-4 py-2 rounded-full bg-orange-100 text-orange-600 font-semibold text-sm featured-projects-animate-fade-in">
-                        Portfolio
-                    </div>
+                
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 featured-projects-animate-slide-down">
                         Featured <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-purple-600 bg-clip-text text-transparent featured-projects-gradient-shift">Projects</span>
                     </h2>

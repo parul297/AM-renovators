@@ -37,14 +37,14 @@ export default function NRIPropertyManagement() {
   ];
 
   const services = [
-    {
-      icon: Home,
-      title: 'Complete Renovation Management',
-      description: 'End-to-end project management from design to handover',
-      features: ['Design finalization', 'Vendor coordination', 'Quality supervision', 'Timeline management'],
-      image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80'
+      {
+      icon: FileText,
+      title: 'Documentation & Legal',
+      description: 'Handle paperwork, approvals, and legal requirements',
+      features: ['Building approvals', 'Tax documentation', 'Property papers', 'Compliance'],
+      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80'
     },
-    {
+      {
       icon: Wrench,
       title: 'Property Maintenance',
       description: 'Regular upkeep and emergency repairs while you\'re away',
@@ -58,13 +58,15 @@ export default function NRIPropertyManagement() {
       features: ['Tenant screening', 'Rent collection', 'Issue resolution', 'Legal compliance'],
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80'
     },
-    {
-      icon: FileText,
-      title: 'Documentation & Legal',
-      description: 'Handle paperwork, approvals, and legal requirements',
-      features: ['Building approvals', 'Tax documentation', 'Property papers', 'Compliance'],
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80'
-    }
+      {
+      icon: Home,
+      title: 'Complete Renovation Management',
+      description: 'End-to-end project management from design to handover',
+      features: ['Design finalization', 'Vendor coordination', 'Quality supervision', 'Timeline management'],
+      image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80'
+    },
+  
+  
   ];
 
   const communicationProcess = [
@@ -159,7 +161,7 @@ export default function NRIPropertyManagement() {
     {
       icon: Shield,
       title: 'Complete Accountability',
-      description: 'Single point of contact - Ahmed personally oversees every NRI project',
+      description: 'Single point of contact for the entire project duration',
       proof: 'Direct mobile access to founder'
     },
     {
@@ -488,7 +490,7 @@ export default function NRIPropertyManagement() {
       </section>
 
       {/* Payment Options */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-gray-900 mb-4">Flexible Payment Options</h2>
@@ -518,7 +520,7 @@ export default function NRIPropertyManagement() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 text-white relative overflow-hidden">
@@ -574,7 +576,7 @@ export default function NRIPropertyManagement() {
             </a>
           </div>
           
-          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/30 max-w-3xl mx-auto">
+          {/* <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/30 max-w-3xl mx-auto">
             <div className="grid grid-cols-3 gap-8 mb-8">
               <div>
                 <div className="text-5xl font-bold text-cyan-300 mb-2">27+</div>
@@ -594,7 +596,7 @@ export default function NRIPropertyManagement() {
               <Shield size={20} />
               <span>CPWD Registered • Government Trusted Contractor</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 

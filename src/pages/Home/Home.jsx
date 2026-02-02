@@ -241,34 +241,29 @@ export default function Home() {
                   <span className="hero-title-highlight">Local Excellence.</span>
                 </h1>
 
-                {/* <p className="hero-description">
-                  Professional construction, renovation, and facilities management services backed by 27+ years of experience across India and the Middle East.
-                </p> */}
-
-              <p className="hero-description mt-4 text-gray-100">
-  <span className="font-semibold text-orange-300">NRIs,</span>{" "}
-  here is your trustworthy party to manage your properties back home in our beloved country –{" "}
-  <a
-    href="https://big-b-nri-services.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
-      inline-flex items-center
-      px-3 py-0.5 ml-1
-      font-semibold text-orange-300
-      bg-orange-500/10
-      rounded-full
-      border border-orange-400/40
-      hover:bg-orange-500/20
-      hover:text-orange-200
-      transition-all duration-300
-      focus:outline-none focus:ring-2 focus:ring-orange-400/40
-    "
-  >
-    INDIA
-  </a>
-</p>
-
+                <p className="hero-description mt-4 text-gray-100">
+                  <span className="font-semibold text-orange-300">NRIs,</span>{" "}
+                  here is your trustworthy party to manage your properties back home in our beloved country –{" "}
+                  <span className="inline-flex items-center ml-1">
+                    <span className="font-semibold text-orange-300">India</span>
+                    <span className="mx-2 text-orange-400">—</span>
+                    <a
+                      href="https://big-b-nri-services.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        font-semibold text-orange-300
+                        hover:text-orange-200
+                        underline decoration-orange-400/50 hover:decoration-orange-300
+                        transition-all duration-300
+                        focus:outline-none focus:ring-2 focus:ring-orange-400/40 focus:ring-offset-2 focus:ring-offset-gray-900
+                        rounded
+                      "
+                    >
+                      Click here
+                    </a>
+                  </span>
+                </p>
 
                 <div className="hero-buttons">
                   {/* <a href="#quote" className="btn-primary">
@@ -302,113 +297,70 @@ export default function Home() {
       </section>
 
       {/* Why Choose Section */}
-     <section 
-  ref={buildingRef}
-  className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50" 
-  style={{
-    opacity: buildingProgress > 50 ? 1 : 0.3,
-    transition: 'opacity 0.5s ease'
-  }}
->
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12 md:mb-20" style={{
+      <section 
+        ref={buildingRef}
+        className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50" 
+        style={{
+          opacity: buildingProgress > 50 ? 1 : 0.3,
+          transition: 'opacity 0.5s ease'
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-20" style={{
+            transform: buildingProgress === 100 ? 'translateY(0)' : 'translateY(20px)',
+            opacity: buildingProgress === 100 ? 1 : 0,
+            transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+              Why Choose <span className="bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">AM Renovators</span>?
+            </h2>
+            <div className="relative max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">
+                Bringing international best practices to every project we undertake
+              </p>
+              <div className="mt-6 h-1 w-24 mx-auto bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
+            </div>
+          </div>
+
+         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+  {whyChoose.map((item, index) => (
+    <div key={index} className="group" style={{
       transform: buildingProgress === 100 ? 'translateY(0)' : 'translateY(20px)',
       opacity: buildingProgress === 100 ? 1 : 0,
-      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+      transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 100}ms`
     }}>
-     
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-        Why Choose <span className="bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">AM Renovators</span>?
-      </h2>
-      <div className="relative max-w-3xl mx-auto">
-        <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">
-          Bringing international best practices to every project we undertake
-        </p>
-        <div className="mt-6 h-1 w-24 mx-auto bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
+      <div className="relative h-full bg-white rounded-lg p-8 shadow-2xl hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-blue-500 hover:-translate-y-1">
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <div className="relative">
+            <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+              <item.icon size={26} className="text-white" />
+            </div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300 -z-10"></div>
+          </div>
+        </div>
+        
+        <div className="pt-10 text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-blue-800 transition-colors duration-300">
+            {item.title}
+          </h3>
+          <div className="h-px w-16 bg-gradient-to-r from-blue-400 to-transparent mx-auto mb-6 opacity-70"></div>
+          <p className="text-gray-600 leading-relaxed text-[15px] font-medium">
+            {item.description}
+          </p>
+        </div>
       </div>
     </div>
-
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-      {whyChoose.map((item, index) => (
-        <div key={index} className="group" style={{
-          transform: buildingProgress === 100 ? 'translateY(0)' : 'translateY(20px)',
-          opacity: buildingProgress === 100 ? 1 : 0,
-          transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 100}ms`
-        }}>
-          <div className="relative h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100 hover:-translate-y-1">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                  <item.icon size={26} className="text-white" />
-                </div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300 -z-10"></div>
-              </div>
-            </div>
-            
-            <div className="pt-10 text-center">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-blue-800 transition-colors duration-300">
-                {item.title}
-              </h3>
-              <div className="h-px w-16 bg-gradient-to-r from-blue-400 to-transparent mx-auto mb-6 opacity-70"></div>
-              <p className="text-gray-600 leading-relaxed text-[15px] font-medium">
-                {item.description}
-              </p>
-           
-            </div>
+  ))}
+</div>
+          
+          {/* Optional: Add subtle background pattern */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-10"></div>
           </div>
         </div>
-      ))}
-    </div>
-    
-    {/* Optional: Add subtle background pattern */}
-    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-10"></div>
-    </div>
-  </div>
-  <FeaturedProjects />
-</section>
-
-      {/* NRI Services Section */}
-      {/* <section className="py-12 md:py-20 bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Managing Your India Property from Abroad?</h2>
-              <p className="text-lg md:text-xl text-orange-50 mb-8 leading-relaxed">We're your eyes, hands, and voice on the ground. Complete peace of mind through transparent communication and on-ground accountability.</p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                {nriFeatures.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3 text-base md:text-lg font-semibold">
-                    <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                      <CheckCircle size={20} className="text-orange-600" />
-                    </div>
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button className="bg-white text-orange-600 px-10 py-4 rounded-lg font-bold text-lg hover:bg-orange-50 transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2 group">
-                Learn About NRI Services
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-
-            <div className="relative hidden lg:block">
-              <div className="absolute -inset-4 bg-white/10 blur-3xl rounded-3xl"></div>
-              <img
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=500&fit=crop"
-                alt="Modern home"
-                className="relative rounded-2xl shadow-2xl w-full h-96 object-cover border-4 border-white/20"
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
+        <FeaturedProjects />
+      </section>
 
       {/* EnhancedProcess Component */}
       <EnhancedProcess />

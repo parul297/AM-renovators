@@ -206,7 +206,7 @@ export default function ConstructionService() {
               <p className="text-xl text-blue-100 mb-8 leading-relaxed">
                 From foundation to finishing, we build homes and structures that stand the test of time. Quality construction backed by international experience.
               </p>
-              <div className="flex flex-wrap gap-4">
+              {/* <div className="flex flex-wrap gap-4">
                 <a href="#quote" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg inline-flex items-center gap-2">
                   Get Construction Quote
                   <ArrowRight size={20} />
@@ -214,7 +214,7 @@ export default function ConstructionService() {
                 <a href="#process" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold transition-all border border-white/20">
                   See Our Process
                 </a>
-              </div>
+              </div> */}
             </div>
             <div className="relative">
               <img 

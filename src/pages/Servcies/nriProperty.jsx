@@ -178,12 +178,12 @@ export default function NRIPropertyManagement() {
     }
   ];
 
-  const paymentOptions = [
-    { method: 'International Wire Transfer', details: 'SWIFT/IBAN to Indian account', fee: 'Bank charges apply' },
-    { method: 'NRE/NRO Account Transfer', details: 'Direct bank transfer in India', fee: 'No additional fees' },
-    { method: 'Third-Party Services', details: 'Wise, Remitly, Western Union', fee: 'Service charges vary' },
-    { method: 'Milestone-Based Payments', details: 'Pay as work progresses', fee: 'Recommended approach' }
-  ];
+  // const paymentOptions = [
+  //   { method: 'International Wire Transfer', details: 'SWIFT/IBAN to Indian account', fee: 'Bank charges apply' },
+  //   { method: 'NRE/NRO Account Transfer', details: 'Direct bank transfer in India', fee: 'No additional fees' },
+  //   { method: 'Third-Party Services', details: 'Wise, Remitly, Western Union', fee: 'Service charges vary' },
+  //   { method: 'Milestone-Based Payments', details: 'Pay as work progresses', fee: 'Recommended approach' }
+  // ];
 
   return (
     <div className="bg-white">
@@ -240,7 +240,7 @@ export default function NRIPropertyManagement() {
             </div>
 
             {/* Timezone Slider */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-4xl mx-auto">
+            {/* <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-4xl mx-auto">
               <h3 className="text-xl font-bold mb-6">We Work in Your Timezone</h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 {timezones.map((tz, index) => (
@@ -262,7 +262,7 @@ export default function NRIPropertyManagement() {
               <p className="text-sm text-blue-200 mt-4">
                 Video calls scheduled at your convenience • Updates sent in your morning
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -389,13 +389,13 @@ export default function NRIPropertyManagement() {
             ))}
           </div>
 
-          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto text-center">
+          {/* <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto text-center">
             <Video size={48} className="mx-auto mb-4 text-cyan-300" />
             <h3 className="text-2xl font-bold mb-4">Every Project Documented</h3>
             <p className="text-blue-100 text-lg">
               Average 1,000+ photos and 10+ video updates per project. You'll know exactly what's happening, when it's happening.
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -524,7 +524,7 @@ export default function NRIPropertyManagement() {
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+        {/* <div className="absolute inset-0 opacity-20">
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
@@ -536,7 +536,7 @@ export default function NRIPropertyManagement() {
               }}
             ></div>
           ))}
-        </div>
+        </div> */}
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Globe size={64} className="mx-auto mb-6 text-cyan-300" />

@@ -97,7 +97,7 @@ export default function FeaturedProjects() {
                         Featured <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-purple-600 bg-clip-text text-transparent featured-projects-gradient-shift">Projects</span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto featured-projects-animate-fade-in-delayed">
-                        Showcasing excellence across residential, commercial, and institutional sectors with precision and innovation
+                        Showcasing project excellence across some of the residential, commercial, farm, NRI properties projects.
                     </p>
                 </div>
 

@@ -32,6 +32,10 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleEnquiryHover = () => {
+    setIsSidebarOpen(true);
+  };
+
   return (
     <div>
       {/* Top Bar */}
@@ -101,6 +105,7 @@ export default function Header() {
                 {/* Enquiry */}
                 <button
                   onClick={handleEnquiryClick}
+                  onMouseEnter={handleEnquiryHover}
                   className="
                     relative font-medium text-gray-700
                     hover:text-blue-900 transition-all duration-300

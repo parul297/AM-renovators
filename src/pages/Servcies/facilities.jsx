@@ -112,7 +112,6 @@ export default function FacilitiesAssetManagement() {
       description: 'Smart building technologies and digital transformation services',
       features: [
         'Building Management Systems (BMS) implementation',
-        'IoT sensors for predictive maintenance',
         'Energy management & monitoring systems',
         'Digital twin technology implementation',
         'Mobile-first reporting & analytics platform'
@@ -178,7 +177,7 @@ export default function FacilitiesAssetManagement() {
         'Luxury villa developments',
         'Senior living communities'
       ],
-      metrics: '5000+ residential units managed',
+      // metrics: '5000+ residential units managed',
       color: 'bg-blue-100 text-blue-800'
     },
     {
@@ -190,7 +189,7 @@ export default function FacilitiesAssetManagement() {
         'Mixed-use developments',
         'Co-working spaces'
       ],
-      metrics: '98% tenant satisfaction rate',
+      // metrics: '98% tenant satisfaction rate',
       color: 'bg-purple-100 text-purple-800'
     },
     {
@@ -202,7 +201,7 @@ export default function FacilitiesAssetManagement() {
         'Government buildings',
         'Cultural & sports complexes'
       ],
-      metrics: 'CPWD standards compliance',
+      // metrics: 'CPWD standards compliance',
       color: 'bg-emerald-100 text-emerald-800'
     },
     {
@@ -214,7 +213,7 @@ export default function FacilitiesAssetManagement() {
         'Research facilities',
         'Industrial parks'
       ],
-      metrics: '99.5% operational uptime',
+      // metrics: '99.5% operational uptime',
       color: 'bg-amber-100 text-amber-800'
     }
   ];
@@ -310,7 +309,7 @@ export default function FacilitiesAssetManagement() {
             {/* Premium Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-500/30 mb-8">
               <Globe className="w-5 h-5 text-amber-300" />
-              <span className="font-semibold text-amber-100">Dubai-Proven Excellence</span>
+              <span className="font-semibold text-amber-100">Internationally Proven Excellence</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -346,7 +345,7 @@ export default function FacilitiesAssetManagement() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="#contact" 
                 className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-2xl hover:shadow-3xl inline-flex items-center justify-center gap-3"
@@ -361,7 +360,7 @@ export default function FacilitiesAssetManagement() {
                 <Phone className="w-5 h-5" />
                 Call Now: +91 98765 43210
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -481,12 +480,12 @@ export default function FacilitiesAssetManagement() {
                         ))}
                       </ul>
                       
-                      <div className="mt-8">
+                      {/* <div className="mt-8">
                         <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
                           <Clock className="w-4 h-4" />
                           Typical Implementation: 8-12 weeks
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                     
                     <div className="relative">
@@ -494,16 +493,16 @@ export default function FacilitiesAssetManagement() {
                         <h4 className="text-lg font-bold text-gray-900 mb-4">Key Benefits</h4>
                         <div className="space-y-4">
                           <div className="bg-white rounded-xl p-4 shadow-sm">
-                            <div className="text-2xl font-bold text-blue-600">25-40%</div>
-                            <div className="text-sm text-gray-600">Operational Cost Reduction</div>
+                            <div className="text-2xl font-bold text-blue-600">Operational Cost Reduction</div>
+                            {/* <div className="text-sm text-gray-600">Operational Cost Reduction</div> */}
                           </div>
                           <div className="bg-white rounded-xl p-4 shadow-sm">
-                            <div className="text-2xl font-bold text-emerald-600">99.7%</div>
-                            <div className="text-sm text-gray-600">Facility Uptime</div>
+                            <div className="text-2xl font-bold text-emerald-600">Facility Uptime</div>
+                            {/* <div className="text-sm text-gray-600">Facility Uptime</div> */}
                           </div>
                           <div className="bg-white rounded-xl p-4 shadow-sm">
-                            <div className="text-2xl font-bold text-amber-600">50%</div>
-                            <div className="text-sm text-gray-600">Reduction in Downtime</div>
+                            <div className="text-2xl font-bold text-amber-600">Reduction in Downtime</div>
+                            {/* <div className="text-sm text-gray-600">Reduction in Downtime</div> */}
                           </div>
                         </div>
                       </div>
@@ -604,7 +603,13 @@ export default function FacilitiesAssetManagement() {
                   </div>
                   
                   <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">Implementation Timeline</h4>
+                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
+  Implementation Timeline
+</h4>
+<p className="text-sm text-gray-500 mb-4">
+  (Basic plan, varies with requirements)
+</p>
+
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between text-sm text-gray-600 mb-1">
@@ -652,7 +657,7 @@ export default function FacilitiesAssetManagement() {
       </section>
 
       {/* Process Steps */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+      {/* <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our 4-Step Management Process</h2>
@@ -697,7 +702,7 @@ export default function FacilitiesAssetManagement() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       {/* <section className="py-20 bg-white">
@@ -780,7 +785,7 @@ export default function FacilitiesAssetManagement() {
             </h2>
             
             <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
-              Get a free facility assessment and discover how our Dubai-proven expertise can optimize your operations and reduce costs.
+              Get a free facility assessment and discover how our Internationally proven expertise can optimize your operations and reduce costs.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -804,8 +809,8 @@ export default function FacilitiesAssetManagement() {
                   <span>Response within 24 hours</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4" />
-                  <span>No obligation consultation</span>
+                  {/* <CheckCircle className="w-4 h-4" /> */}
+                  {/* <span>No obligation consultation</span> */}
                 </div>
               </div>
             </div>

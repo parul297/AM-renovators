@@ -359,10 +359,10 @@ export default function RenovationService() {
                 <p className="text-white/90 text-lg mb-8">
                   Complete transformation services tailored to make your {roomTypes[selectedRoom].name.toLowerCase()} functional, beautiful, and uniquely yours.
                 </p>
-                <a href="#quote" className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg">
+                {/* <a href="#quote" className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg">
                   Get Quote
                   <ArrowRight size={20} />
-                </a>
+                </a> */}
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20">
                 <h4 className="text-white font-bold text-xl mb-6">Services Included:</h4>

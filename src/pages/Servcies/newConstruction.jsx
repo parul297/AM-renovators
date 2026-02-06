@@ -36,60 +36,6 @@ export default function ConstructionService() {
     }
   ];
 
-  // const processSteps = [
-  //   {
-  //     phase: 'Planning & Design',
-  //     duration: '2-4 weeks',
-  //     icon: FileText,
-  //     activities: [
-  //       'Initial consultation & requirement gathering',
-  //       'Site survey & soil testing',
-  //       'Architectural design & floor plans',
-  //       'Structural engineering drawings',
-  //       'Cost estimation & budget finalization',
-  //       'Approval drawings for authorities'
-  //     ]
-  //   },
-  //   {
-  //     phase: 'Approvals & Documentation',
-  //     duration: '3-6 weeks',
-  //     icon: Shield,
-  //     activities: [
-  //       'GHMC/Panchayat building permissions',
-  //       'Structural stability certificate',
-  //       'Fire NOC (if applicable)',
-  //       'Electricity & water connections',
-  //       'Legal documentation verification'
-  //     ]
-  //   },
-  //   {
-  //     phase: 'Foundation & Structure',
-  //     duration: '3-4 months',
-  //     icon: Layers,
-  //     activities: [
-  //       'Site clearing & excavation',
-  //       'Foundation laying (PCC, RCC)',
-  //       'Column & beam construction',
-  //       'Slab work (floor-by-floor)',
-  //       'Brick/block masonry work',
-  //       'Regular quality inspections'
-  //     ]
-  //   },
-  //   {
-  //     phase: 'Finishing & Handover',
-  //     duration: '2-3 months',
-  //     icon: Home,
-  //     activities: [
-  //       'Plastering & painting',
-  //       'Flooring & tile work',
-  //       'Electrical & plumbing installations',
-  //       'Door, window & fixture fitting',
-  //       'Final inspection & snag list',
-  //       'Handover with documentation'
-  //     ]
-  //   }
-  // ];
-
   const qualityStandards = [
     {
       icon: Award,
@@ -120,7 +66,7 @@ export default function ConstructionService() {
       area: '2,400 sq ft',
       duration: '7 months',
       budget: '₹45-50 Lakhs',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80'
+      image: 'https://assets.architecturaldigest.in/photos/647f4419dfce01034953080e/16:9/w_1280,c_limit/Untitled%20design%20(2).png?mbid=social_retweet'
     },
     {
       title: 'G+2 Residential Building',
@@ -128,7 +74,7 @@ export default function ConstructionService() {
       area: '6,000 sq ft',
       duration: '10 months',
       budget: '₹85-95 Lakhs',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80'
+      image: 'https://images.adsttc.com/media/images/637c/cc4e/db20/0f35/7400/b765/medium_jpg/housing-apartment-at-badade-nagar-studio-frozen-music_1.jpg?1669123187'
     },
     {
       title: 'Luxury Farmhouse',
@@ -136,7 +82,7 @@ export default function ConstructionService() {
       area: '4,500 sq ft',
       duration: '9 months',
       budget: '₹75-85 Lakhs',
-      image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80'
+      image: 'https://i.pinimg.com/originals/00/64/1e/00641e2b6ea1525753768e4af4ef8d48.jpg'
     }
   ];
 
@@ -183,48 +129,46 @@ export default function ConstructionService() {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-b from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-32 overflow-hidden">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
           }}></div>
         </div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-orange-500 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                <Building2 size={16} />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-orange-500/30 animate-pulse">
+                <Building2 size={18} />
                 Construction Services
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
                 Construction &<br />
-                <span className="text-orange-400">New Developments</span>
+                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-300 bg-clip-text text-transparent">
+                  New Developments
+                </span>
               </h1>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              <p className="text-xl text-blue-100 leading-relaxed max-w-xl">
                 From foundation to finishing, we build homes and structures that stand the test of time. Quality construction backed by international experience.
               </p>
-              {/* <div className="flex flex-wrap gap-4">
-                <a href="#quote" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg inline-flex items-center gap-2">
-                  Get Construction Quote
-                  <ArrowRight size={20} />
-                </a>
-                <a href="#process" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold transition-all border border-white/20">
-                  See Our Process
-                </a>
-              </div> */}
             </div>
-            <div className="relative">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-orange-500 to-blue-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <img 
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" 
                 alt="Construction site" 
-                className="rounded-2xl shadow-2xl"
+                className="relative rounded-3xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-6 rounded-xl shadow-xl">
-                <div className="text-3xl font-bold text-blue-900">150+</div>
-                <div className="text-sm text-gray-600">Successful Projects</div>
+              <div className="absolute -bottom-8 -left-8 bg-white text-gray-900 p-8 rounded-2xl shadow-2xl border-4 border-orange-500 transform hover:scale-105 transition-transform">
+                <div className="text-4xl font-black bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">150+</div>
+                <div className="text-sm font-semibold text-gray-600 mt-1">Successful Projects</div>
               </div>
             </div>
           </div>
@@ -232,14 +176,16 @@ export default function ConstructionService() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-8 bg-white -mt-12 relative z-10">
+      <section className="py-8 -mt-16 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-2xl p-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-3xl shadow-2xl p-10 border-4 border-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-orange-100 font-medium">{stat.label}</div>
+                <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300">
+                  <div className="text-5xl font-black text-white mb-3 drop-shadow-lg">{stat.number}</div>
+                  <div className="text-orange-50 font-semibold text-sm tracking-wide">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -248,30 +194,36 @@ export default function ConstructionService() {
       </section>
 
       {/* What We Build */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Build</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-20">
+            <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              OUR EXPERTISE
+            </div>
+            <h2 className="text-5xl font-black text-gray-900 mb-6">What We Build</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               From individual homes to multi-storied buildings, we handle diverse construction projects with expertise
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {buildingTypes.map((type, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-100">
-                <div className={`h-3 bg-gradient-to-r ${type.color}`}></div>
-                <div className="p-8">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${type.color} rounded-xl flex items-center justify-center mb-6`}>
-                    <type.icon size={32} className="text-white" />
+              <div 
+                key={index} 
+                className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-transparent overflow-hidden transform hover:-translate-y-2"
+              >
+                <div className={`h-2 bg-gradient-to-r ${type.color}`}></div>
+                <div className="p-10">
+                  <div className={`w-20 h-20 bg-gradient-to-br ${type.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                    <type.icon size={36} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{type.title}</h3>
-                  <p className="text-gray-600 mb-6">{type.description}</p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <h3 className="text-2xl font-black text-gray-900 mb-4">{type.title}</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed">{type.description}</p>
+                  <div className="grid grid-cols-2 gap-4">
                     {type.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{feature}</span>
+                      <div key={idx} className="flex items-center gap-3 bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors">
+                        <CheckCircle size={18} className="text-green-500 flex-shrink-0" />
+                        <span className="text-sm font-medium text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -282,85 +234,39 @@ export default function ConstructionService() {
         </div>
       </section>
 
-      {/* Construction Process */}
-      {/* <section id="process" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Construction Process</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Systematic, transparent approach from design to handover
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 border-l-4 border-blue-900 shadow-md hover:shadow-lg transition-shadow">
-                <div className="flex flex-col md:flex-row md:items-center gap-6">
-                  <div className="flex items-center gap-6 md:w-1/3">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-800 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <step.icon size={32} className="text-white" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-orange-600 font-semibold mb-1">Phase {index + 1}</div>
-                      <h3 className="text-xl font-bold text-gray-900">{step.phase}</h3>
-                      <div className="flex items-center gap-2 text-sm text-gray-600 mt-1">
-                        <Clock size={14} />
-                        <span>{step.duration}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="md:w-2/3">
-                    <div className="grid md:grid-cols-2 gap-3">
-                      {step.activities.map((activity, idx) => (
-                        <div key={idx} className="flex items-start gap-2">
-                          <CheckCircle size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700">{activity}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 bg-blue-50 border-2 border-blue-200 rounded-xl p-8">
-            <div className="flex items-start gap-4">
-              <TrendingUp size={32} className="text-blue-900 flex-shrink-0" />
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Total Timeline: 8-10 Months</h3>
-                <p className="text-gray-700">
-                  For a typical 2,000-2,500 sq ft independent house. Actual timeline depends on design complexity, approval processing, weather conditions, and chosen specifications. We provide detailed project schedules during planning phase.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Quality Standards */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Quality Standards We Follow</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent skew-y-12"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-block bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+              QUALITY ASSURANCE
+            </div>
+            <h2 className="text-5xl font-black mb-6">Quality Standards We Follow</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               International construction practices ensure durability and longevity
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {qualityStandards.map((standard, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/15 transition-colors">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <standard.icon size={32} className="text-white" />
+              <div 
+                key={index} 
+                className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border-2 border-white/20 text-center hover:bg-white/20 hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                  <standard.icon size={36} className="text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{standard.title}</h3>
-                <p className="text-blue-100 text-sm">{standard.description}</p>
+                <h3 className="text-xl font-black mb-4">{standard.title}</h3>
+                <p className="text-blue-100 leading-relaxed">{standard.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               'IS Code compliant designs',
               'Branded materials only',
@@ -369,9 +275,12 @@ export default function ConstructionService() {
               'Structural warranty',
               'Photo documentation'
             ].map((item, index) => (
-              <div key={index} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <CheckCircle size={20} className="text-green-400 flex-shrink-0" />
-                <span className="text-white font-medium">{item}</span>
+              <div 
+                key={index} 
+                className="flex items-center gap-4 bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:bg-white/20 hover:border-green-400 transition-all duration-300 transform hover:scale-105"
+              >
+                <CheckCircle size={24} className="text-green-400 flex-shrink-0" />
+                <span className="text-white font-semibold">{item}</span>
               </div>
             ))}
           </div>
@@ -379,76 +288,96 @@ export default function ConstructionService() {
       </section>
 
       {/* Project Examples */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Recent Construction Projects</h2>
+          <div className="text-center mb-20">
+            <div className="inline-block bg-purple-100 text-purple-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              PORTFOLIO
+            </div>
+            <h2 className="text-5xl font-black text-gray-900 mb-6">Recent Construction Projects</h2>
             <p className="text-xl text-gray-600">Real projects with actual timelines and budgets</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {projectExamples.map((project, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
-                    <Ruler size={14} />
+              <div 
+                key={index} 
+                className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-gray-100 hover:border-orange-500 transform hover:-translate-y-3"
+              >
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-black text-gray-900 mb-3">{project.title}</h3>
+                  <p className="text-sm text-gray-600 mb-6 flex items-center gap-2 font-medium">
+                    <Ruler size={16} className="text-orange-500" />
                     {project.location}
                   </p>
-                  <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <div className="text-xs text-gray-500">Built-up Area</div>
-                      <div className="font-semibold text-gray-900">{project.area}</div>
+                  <div className="grid grid-cols-2 gap-6 mb-6">
+                    <div className="bg-blue-50 rounded-xl p-4">
+                      <div className="text-xs text-blue-700 font-semibold mb-1">Built-up Area</div>
+                      <div className="font-black text-gray-900 text-lg">{project.area}</div>
                     </div>
-                    <div>
-                      <div className="text-xs text-gray-500">Duration</div>
-                      <div className="font-semibold text-gray-900">{project.duration}</div>
+                    <div className="bg-green-50 rounded-xl p-4">
+                      <div className="text-xs text-green-700 font-semibold mb-1">Duration</div>
+                      <div className="font-black text-gray-900 text-lg">{project.duration}</div>
                     </div>
                   </div>
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-3">
-                    <div className="text-xs text-orange-700 mb-1">Project Budget</div>
-                    <div className="text-lg font-bold text-orange-600">{project.budget}</div>
+                  <div className="bg-gradient-to-r from-orange-50 to-orange-100 border-2 border-orange-300 rounded-xl p-5 shadow-sm">
+                    <div className="text-xs text-orange-700 font-bold mb-2 tracking-wide">PROJECT BUDGET</div>
+                    <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{project.budget}</div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="mt-12 text-center">
-            <a href="#projects" className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold transition-colors shadow-lg">
-              View Complete Portfolio
-              <ArrowRight size={20} />
-            </a>
-          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <div className="text-center mb-20">
+            <div className="inline-block bg-green-100 text-green-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              FAQ
+            </div>
+            <h2 className="text-5xl font-black text-gray-900 mb-6">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600">Everything you need to know about our construction services</p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-5">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+              <div 
+                key={index} 
+                className={`bg-gradient-to-r from-gray-50 to-white rounded-2xl border-2 overflow-hidden transition-all duration-300 ${
+                  openFaq === index ? 'border-orange-500 shadow-xl' : 'border-gray-200 hover:border-gray-300 shadow-md'
+                }`}
+              >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-100 transition-colors"
+                  className="w-full flex items-center justify-between p-7 text-left hover:bg-gradient-to-r hover:from-orange-50 hover:to-white transition-colors"
                 >
-                  <span className="font-bold text-gray-900 pr-4">{faq.question}</span>
-                  {openFaq === index ? (
-                    <ChevronUp size={24} className="text-orange-500 flex-shrink-0" />
-                  ) : (
-                    <ChevronDown size={24} className="text-gray-400 flex-shrink-0" />
-                  )}
+                  <span className="font-black text-gray-900 pr-6 text-lg">{faq.question}</span>
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    openFaq === index ? 'bg-orange-500 rotate-180' : 'bg-gray-200'
+                  }`}>
+                    {openFaq === index ? (
+                      <ChevronUp size={24} className="text-white" />
+                    ) : (
+                      <ChevronDown size={24} className="text-gray-600" />
+                    )}
+                  </div>
                 </button>
                 {openFaq === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  <div className="px-7 pb-7 animate-fadeIn">
+                    <div className="pt-4 border-t-2 border-orange-100">
+                      <p className="text-gray-700 leading-relaxed text-base">{faq.answer}</p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -458,24 +387,41 @@ export default function ConstructionService() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Build Your Dream Home?</h2>
-          <p className="text-xl text-orange-50 mb-10">
+      <section className="py-24 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-black/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Choose your design, <br className="hidden sm:block" />
+            customise the details, <br className="hidden sm:block" />
+            <span className="text-white/95">receive expert consultation</span> <br className="hidden sm:block" />
+            <span className="bg-white text-orange-600 px-6 py-2 rounded-2xl inline-block mt-2 font-extrabold">and transparent quote</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed font-normal max-w-3xl mx-auto">
             Get a detailed construction quote with transparent pricing and realistic timelines
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="#quote" className="bg-white text-orange-600 px-10 py-5 rounded-lg font-semibold text-lg hover:bg-orange-50 transition-colors shadow-lg inline-flex items-center gap-2">
-              <Hammer size={24} />
+          <div className="flex flex-wrap justify-center gap-6">
+            <a 
+              href="#quote" 
+              className="group bg-white text-orange-600 px-12 py-6 rounded-2xl font-bold text-lg hover:bg-orange-50 transition-all shadow-2xl inline-flex items-center gap-3 transform hover:scale-105"
+            >
+              <Hammer size={28} className="group-hover:rotate-12 transition-transform" />
               Get Construction Quote
             </a>
-            <a href="tel:+919876543210" className="bg-blue-900 hover:bg-blue-800 text-white px-10 py-5 rounded-lg font-semibold text-lg transition-colors shadow-lg inline-flex items-center gap-2">
-              <Users size={24} />
+            <a 
+              href="tel:+919876543210" 
+              className="group bg-slate-900 hover:bg-slate-800 text-white px-12 py-6 rounded-2xl font-bold text-lg transition-all shadow-2xl inline-flex items-center gap-3 border-2 border-white/20 transform hover:scale-105"
+            >
+              <Users size={28} className="group-hover:scale-110 transition-transform" />
               Schedule Consultation
             </a>
           </div>
         </div>
       </section>
+      
       <Footer/>
     </div>
   );

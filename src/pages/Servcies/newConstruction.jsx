@@ -197,9 +197,9 @@ export default function ConstructionService() {
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+            {/* <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
               OUR EXPERTISE
-            </div>
+            </div> */}
             <h2 className="text-5xl font-black text-gray-900 mb-6">What We Build</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               From individual homes to multi-storied buildings, we handle diverse construction projects with expertise
@@ -291,9 +291,9 @@ export default function ConstructionService() {
       <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block bg-purple-100 text-purple-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+            {/* <div className="inline-block bg-purple-100 text-purple-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
               PORTFOLIO
-            </div>
+            </div> */}
             <h2 className="text-5xl font-black text-gray-900 mb-6">Recent Construction Projects</h2>
             <p className="text-xl text-gray-600">Real projects with actual timelines and budgets</p>
           </div>
@@ -343,9 +343,9 @@ export default function ConstructionService() {
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block bg-green-100 text-green-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+            {/* <div className="inline-block bg-green-100 text-green-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
               FAQ
-            </div>
+            </div> */}
             <h2 className="text-5xl font-black text-gray-900 mb-6">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600">Everything you need to know about our construction services</p>
           </div>

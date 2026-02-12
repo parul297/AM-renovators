@@ -510,7 +510,7 @@ export default function UpgradationService() {
               <Zap size={28} />
               <div className="text-left">
                 <div className="text-sm opacity-80">Call Now</div>
-                <div>+91 98765 43210</div>
+                <div>+91 9515 88 1444</div>
               </div>
             </a>
             

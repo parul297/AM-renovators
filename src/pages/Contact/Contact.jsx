@@ -56,7 +56,7 @@ export default function ContactUs() {
     { 
       icon: Phone, 
       label: 'Call Directly', 
-      value: '+91 98765 43210',
+      value: '+91 9515 88 1444',
       subtext: 'Available Mon-Sat, 9 AM - 7 PM',
       action: 'tel:+919876543210'
     },
@@ -316,7 +316,7 @@ export default function ContactUs() {
               <Phone size={24} />
               <div className="text-left">
                 <div className="text-sm opacity-90">Call Now</div>
-                <div className="font-bold">+91 98765 43210</div>
+                <div className="font-bold">+91 9515 88 1444</div>
               </div>
             </a>
 

@@ -82,10 +82,10 @@ export default function ContactSidebar({ openFromHeader = false }) {
                         </div>
                         <h3 className="text-white text-lg font-bold mb-2">Phone number</h3>
                         <a href="tel:+919849334969" className="text-white text-base block hover:text-orange-300 transition-colors">
-                            98493 34969
+                          9515 88 1444
                         </a>
                         <a href="tel:+919391000657" className="text-white text-base block hover:text-orange-300 transition-colors">
-                            93910 00657
+                         9515 88 1444
                         </a>
                     </div>
 
@@ -110,9 +110,7 @@ export default function ContactSidebar({ openFromHeader = false }) {
                         </div>
                         <h3 className="text-white text-lg font-bold mb-2">Address info</h3>
                         <p className="text-white text-sm leading-relaxed">
-                            Plot No. A/34, First Floor,<br />
-                            Road No. 5, HUDA Colony, Kothapet,<br />
-                            Saroornagar, Hyderabad, Telangana.
+                           Flat No. 107, Multi Naik Plaza, Abids, Hyderabad – 500001
                         </p>
                     </div>
 

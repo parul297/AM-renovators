@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from "../../assets/AMrenovators.jpeg";
+import logo from "../../assets/workedWith/AMrenovators.jpeg";
 import ContactSidebar from '../contactSideBar/ContactSideBar';
 
 export default function Header() {
@@ -38,13 +38,13 @@ export default function Header() {
 
   return (
     <div>
-      {/* Top Bar */}
-      <div className="bg-blue-900 text-white py-2 px-4 text-sm hidden md:block">
+      {/* Top Bar - Also fixed */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-900 text-white py-2 px-4 text-sm hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone size={14} />
-              <span>+91 98765 43210</span>
+              <span>+91 9515 88 1444</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={14} />
@@ -59,8 +59,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Header */}
-      <header className={`sticky top-0 z-50 bg-white transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+      {/* Header - Fixed below top bar */}
+      <header className={`fixed top-[36px] md:top-[36px] left-0 right-0 z-50 bg-white transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-20">
 
@@ -102,7 +102,7 @@ export default function Header() {
                   );
                 })}
 
-                {/* Enquiry */}
+                {/* Enquiry Button - Fixed color issue */}
                 <button
                   onClick={handleEnquiryClick}
                   onMouseEnter={handleEnquiryHover}
@@ -112,6 +112,7 @@ export default function Header() {
                     after:absolute after:left-0 after:-bottom-1
                     after:h-[2px] after:w-0 after:bg-blue-900
                     after:transition-all after:duration-300 hover:after:w-full
+                    bg-transparent border-0 cursor-pointer p-0
                   "
                 >
                   Enquiry
@@ -153,7 +154,7 @@ export default function Header() {
 
               <button
                 onClick={handleEnquiryClick}
-                className="block w-full text-left py-3 px-3 font-medium text-gray-700 hover:text-blue-900"
+                className="block w-full text-left py-3 px-3 font-medium text-gray-700 hover:text-blue-900 bg-transparent border-0 cursor-pointer"
               >
                 Enquiry
               </button>
@@ -161,6 +162,9 @@ export default function Header() {
           </div>
         )}
       </header>
+
+      {/* Spacer to prevent content from going under fixed header */}
+      <div className="h-[116px] md:h-[116px]"></div>
 
       <ContactSidebar
         openFromHeader={isSidebarOpen}

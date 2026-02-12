@@ -26,8 +26,8 @@ export default function Home() {
 
   useEffect(() => {
     const startBuildingAnimation = () => {
-      const totalDuration = 2000;
-      const interval = 50;
+      const totalDuration = 800; // Reduced from 2000ms to 800ms for faster loading
+      const interval = 40; // Reduced interval for smoother animation
       const steps = totalDuration / interval;
       let currentStep = 0;
 
@@ -53,7 +53,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 } // Reduced from 0.3 to trigger earlier
     );
 
     if (buildingRef.current) {
@@ -301,15 +301,15 @@ export default function Home() {
         ref={buildingRef}
         className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50" 
         style={{
-          opacity: buildingProgress > 50 ? 1 : 0.3,
-          transition: 'opacity 0.5s ease'
+          opacity: buildingProgress > 30 ? 1 : 0.5, // Reduced from 50 to 30 for faster visibility
+          transition: 'opacity 0.4s ease' // Reduced from 0.5s to 0.4s
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-20" style={{
-            transform: buildingProgress === 100 ? 'translateY(0)' : 'translateY(20px)',
-            opacity: buildingProgress === 100 ? 1 : 0,
-            transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+            transform: buildingProgress > 50 ? 'translateY(0)' : 'translateY(20px)', // Reduced threshold from 100
+            opacity: buildingProgress > 50 ? 1 : 0,
+            transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)' // Faster transition
           }}>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
               Why Choose <span className="bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">AM Renovators</span>?
@@ -325,9 +325,9 @@ export default function Home() {
          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
   {whyChoose.map((item, index) => (
     <div key={index} className="group" style={{
-      transform: buildingProgress === 100 ? 'translateY(0)' : 'translateY(20px)',
-      opacity: buildingProgress === 100 ? 1 : 0,
-      transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 100}ms`
+      transform: buildingProgress > 50 ? 'translateY(0)' : 'translateY(20px)', // Reduced threshold
+      opacity: buildingProgress > 50 ? 1 : 0,
+      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${index * 80}ms` // Reduced delay from 100ms to 80ms
     }}>
       <div className="relative h-full bg-white rounded-lg p-8 shadow-2xl hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-blue-500 hover:-translate-y-1">
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">

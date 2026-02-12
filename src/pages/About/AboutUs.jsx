@@ -2,18 +2,19 @@ import React from 'react';
 import { Award, Globe, Shield, Users, Building2, CheckCircle, MapPin, Briefcase, GraduationCap, Star, Eye, Compass, Target, ChevronLeft, ChevronRight, TrendingUp, Zap } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
-import airport from "../../assets/airportAuthority.png";
-import amana from "../../assets/AMANA.jpeg";
-import core from "../../assets/coreSolution.png";
-import cpwd from "../../assets/CPWD.jpeg";
-import iit from "../../assets/IIT.png";
-import ivr from "../../assets/IVR.jpeg";
-import manage from "../../assets/manage.jpeg";
-import naarm from "../../assets/naarm.png";
-import nakheel from "../../assets/NAkheel.png";
-import niphm from "../../assets/NIPHM.jpeg";
-import ordenance from "../../assets/ordenance.jpeg";
-import oil from "../../assets/oil.jpeg";
+import airport from "../../assets/workedWith/airportAuthority.png";
+import amana from "../../assets/workedWith/AMANA.jpeg";
+import core from "../../assets/workedWith/coreSolution.png";
+import cpwd from "../../assets/workedWith/CPWD.jpeg";
+import iit from "../../assets/workedWith/IIT.png";
+import ivr from "../../assets/workedWith/IVR.jpeg";
+import manage from "../../assets/workedWith/manage.jpeg";
+import naarm from "../../assets/workedWith/naarm.png";
+import nakheel from "../../assets/workedWith/NAkheel.png";
+import niphm from "../../assets/workedWith/NIPHM.jpeg";
+import ordenance from "../../assets/workedWith/ordenance.jpeg";
+import oil from "../../assets/workedWith/oil.jpeg";
+import ahmedSir from "../../assets/workedWith/ahmedSir.jpeg"
 
 export default function AboutUs() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -211,7 +212,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Founder's Message - Enhanced with better layout */}
+      {/* Managing Director's Message - Enhanced with better layout */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-orange-500 to-blue-900"></div>
@@ -219,15 +220,15 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div 
-              id="animate-founder-image"
+              id="animate-Managing Director-image"
               className={`relative ${
-                isVisible['animate-founder-image'] ? 'animate-fadeInLeft' : 'opacity-0'
+                isVisible['animate-Managing Director-image'] ? 'animate-fadeInLeft' : 'opacity-0'
               }`}
             >
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-orange-600 rounded-3xl opacity-20 blur-2xl"></div>
               <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80" 
-                alt="Ahmed Mohiuddin - Founder" 
+                src= {ahmedSir }
+                alt="Ahmed Mohiuddin - Managing Director" 
                 className="relative rounded-3xl shadow-2xl w-full h-[600px] object-cover ring-8 ring-white hover:scale-[1.02] transition-transform duration-500"
               />
               {/* Decorative corner accent */}
@@ -236,9 +237,9 @@ export default function AboutUs() {
             </div>
             
             <div 
-              id="animate-founder-content"
+              id="animate-Managing Director-content"
               className={`${
-                isVisible['animate-founder-content'] ? 'animate-fadeInRight' : 'opacity-0'
+                isVisible['animate-Managing Director-content'] ? 'animate-fadeInRight' : 'opacity-0'
               }`}
             >
               <div className="inline-flex items-center gap-2 bg-blue-900 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -246,7 +247,7 @@ export default function AboutUs() {
                 Leadership
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                From the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-orange-600">Founder's Desk</span>
+                From the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-orange-600">Managing Director</span>
               </h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p className="text-xl font-semibold text-gray-900 flex items-start gap-3">

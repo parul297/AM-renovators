@@ -12,6 +12,7 @@ import {
   X, Menu
 } from 'lucide-react';
 import Footer from '../../components/Footer/Footer';
+import nakheel from "../../assets/workedWith/nakeheelFlats.JPG"
 
 export default function FacilitiesAssetManagement() {
   const [activeTab, setActiveTab] = useState('facility');
@@ -58,7 +59,7 @@ export default function FacilitiesAssetManagement() {
       'Managed coordination of 200+ vendors and service providers',
       'Implemented sustainable practices reducing environmental impact'
     ],
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80'
+    image: nakheel
   };
 
   const services = [
@@ -358,7 +359,7 @@ export default function FacilitiesAssetManagement() {
                 className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition-all border border-white/30 inline-flex items-center justify-center gap-3"
               >
                 <Phone className="w-5 h-5" />
-                Call Now: +91 98765 43210
+                Call Now: +91 9515 88 1444
               </a>
             </div> */}
           </div>
@@ -794,11 +795,11 @@ export default function FacilitiesAssetManagement() {
                 className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-xl inline-flex items-center justify-center gap-3"
               >
                 <Phone className="w-5 h-5" />
-                Call Now: +91 98765 43210
+                Call Now: +91 9515 88 1444
               </a>
               <div className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition-all border border-white/30 inline-flex items-center justify-center gap-3 cursor-pointer">
                 <MessageCircle className="w-5 h-5" />
-                WhatsApp: +91 98765 43210
+                WhatsApp: +91 9515 88 1444
               </div>
             </div>
             

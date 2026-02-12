@@ -166,10 +166,10 @@ export default function ConstructionService() {
                 alt="Construction site" 
                 className="relative rounded-3xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
               />
-              <div className="absolute -bottom-8 -left-8 bg-white text-gray-900 p-8 rounded-2xl shadow-2xl border-4 border-orange-500 transform hover:scale-105 transition-transform">
+              {/* <div className="absolute -bottom-8 -left-8 bg-white text-gray-900 p-8 rounded-2xl shadow-2xl border-4 border-orange-500 transform hover:scale-105 transition-transform">
                 <div className="text-4xl font-black bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">150+</div>
                 <div className="text-sm font-semibold text-gray-600 mt-1">Successful Projects</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -318,7 +318,7 @@ export default function ConstructionService() {
                     <Ruler size={16} className="text-orange-500" />
                     {project.location}
                   </p>
-                  <div className="grid grid-cols-2 gap-6 mb-6">
+                  {/* <div className="grid grid-cols-2 gap-6 mb-6">
                     <div className="bg-blue-50 rounded-xl p-4">
                       <div className="text-xs text-blue-700 font-semibold mb-1">Built-up Area</div>
                       <div className="font-black text-gray-900 text-lg">{project.area}</div>
@@ -327,7 +327,7 @@ export default function ConstructionService() {
                       <div className="text-xs text-green-700 font-semibold mb-1">Duration</div>
                       <div className="font-black text-gray-900 text-lg">{project.duration}</div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="bg-gradient-to-r from-orange-50 to-orange-100 border-2 border-orange-300 rounded-xl p-5 shadow-sm">
                     <div className="text-xs text-orange-700 font-bold mb-2 tracking-wide">PROJECT BUDGET</div>
                     <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{project.budget}</div>

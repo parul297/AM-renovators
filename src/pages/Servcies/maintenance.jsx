@@ -503,7 +503,7 @@ export default function MaintenanceService() {
           <div className="mt-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-8 text-white text-center">
             <h3 className="text-3xl font-bold mb-4">Emergency Hotline</h3>
             <a href="tel:+919876543210" className="text-5xl font-bold hover:text-yellow-300 transition-colors">
-              +91 98765 43210
+              +91 9515 88 1444
             </a>
             <p className="mt-4 text-red-100">Available 24/7 for AMC clients</p>
           </div>
@@ -581,7 +581,7 @@ export default function MaintenanceService() {
                     <input 
                       type="tel" 
                       className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 9515 88 1444"
                     />
                   </div>
                   
@@ -674,7 +674,7 @@ export default function MaintenanceService() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <Phone size={20} className="text-emerald-200" />
-                      <a href="tel:+919876543210" className="hover:text-emerald-200">+91 98765 43210</a>
+                      <a href="tel:+919876543210" className="hover:text-emerald-200">+91 9515 88 1444</a>
                     </div>
                     <div className="flex items-center gap-3">
                       <MessageCircle size={20} className="text-emerald-200" />

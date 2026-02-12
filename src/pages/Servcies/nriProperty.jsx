@@ -162,7 +162,7 @@ export default function NRIPropertyManagement() {
       icon: Shield,
       title: 'Complete Accountability',
       description: 'Single point of contact for the entire project duration',
-      proof: 'Direct mobile access to founder'
+      proof: 'Direct mobile access to Managing Director'
     },
     {
       icon: Camera,
@@ -370,7 +370,7 @@ export default function NRIPropertyManagement() {
                     <step.icon size={28} className="text-white" />
                   </div>
                   
-                  <div className="text-cyan-300 font-bold text-sm mb-2">{step.day}</div>
+                  {/* <div className="text-cyan-300 font-bold text-sm mb-2">{step.day}</div> */}
                   <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                   <p className="text-blue-100 text-sm mb-4">{step.description}</p>
                   
@@ -555,7 +555,7 @@ export default function NRIPropertyManagement() {
               <Phone size={28} />
               <div className="text-left">
                 <div className="text-sm opacity-80">Call Now</div>
-                <div>+91 98765 43210</div>
+                <div>+91 9515 88 1444</div>
               </div>
             </a>
             
@@ -742,7 +742,7 @@ export default function NRIPropertyManagement() {
                 <div className="space-y-2 text-gray-400 text-sm">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4" />
-                    <span>+91 98765 43210</span>
+                    <span>+91 9515 88 1444</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4" />

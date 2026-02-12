@@ -1,6 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Heart, MapPin, Star } from 'lucide-react';
 import './FeaturedProjects.css';
+import badminton from "../../assets/workedWith/badmintonCourt.JPG";
+import badminton1 from "../../assets/workedWith/badmintonCourtInside.JPG"
+import badminton3 from "../../assets/workedWith/badmintonCourtSide.JPG"
+import civil1 from "../../assets/workedWith/civilConstructionmultipleBlocks.jpg";
+import civil2 from "../../assets/workedWith/civilConstructionQuarter.jpg";
+import civil3 from "../../assets/workedWith/civilCorridor.jpg";
+import facilityManagement1 from "../../assets/workedWith/facilityManagement1.jpeg";
+import facilityManagement2 from "../../assets/workedWith/facilityManagement2.jpeg";
+import facilityManagement3 from "../../assets/workedWith/facilityManagement3.jpeg";
+import facilityManagement4 from "../../assets/workedWith/facilityManagement4.jpeg";
 
 export default function FeaturedProjects() {
     const [hoveredProject, setHoveredProject] = useState(null);
@@ -11,73 +21,117 @@ export default function FeaturedProjects() {
     const projects = [
         {
             id: 1,
-            title: 'Villa Construction - Premium Residences',
+            title: 'Multi-Block Civil Construction',
             category: 'Civil Construction',
-            img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=500&fit=crop',
+            img: civil1,
             location: 'Hyderabad, Telangana',
             rating: 4.9,
             reviews: 48,
             year: '2023',
-            description: 'Luxury villa with modern architecture and premium finishes'
+            description: 'Large-scale residential complex with modern architecture'
         },
         {
             id: 2,
-            title: 'Commercial Building Renovation',
-            category: 'Renovation',
-            img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=500&fit=crop',
+            title: 'Residential Quarter Development',
+            category: 'Civil Construction',
+            img: civil2,
             location: 'Pune, Maharashtra',
             rating: 4.8,
             reviews: 35,
             year: '2023',
-            description: 'Complete office space modernization with smart systems'
+            description: 'Premium living quarters with quality finishes'
         },
         {
             id: 3,
-            title: 'Luxury Apartment Upgradation',
-            category: 'facility Management',
-            img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=500&fit=crop',
+            title: 'Civil Corridor Infrastructure',
+            category: 'Civil Construction',
+            img: civil3,
             location: 'Mumbai, Maharashtra',
             rating: 5.0,
             reviews: 62,
             year: '2024',
-            description: 'High-end apartment with smart home integration'
-        },
-        {
-            id: 4,
-            title: 'Office Building Facilities',
-            category: 'Commercial',
-            img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=500&fit=crop',
-            location: 'Bangalore, Karnataka',
-            rating: 4.7,
-            reviews: 28,
-            year: '2023',
-            description: 'Enterprise-grade facilities management and maintenance'
+            description: 'Modern corridor design with structural excellence'
         },
         {
             id: 5,
-            title: 'Farmhouse Complex Development',
-            category: 'Residential',
-            img: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&h=500&fit=crop',
-            location: 'Outskirts, Hyderabad',
+            title: 'Badminton Court Renovation',
+            category: 'Renovation',
+            img: badminton,
+            location: 'Hyderabad, Telangana',
             rating: 4.9,
             reviews: 41,
             year: '2023',
-            description: 'Sprawling farmhouse with landscaping and amenities'
+            description: 'Professional sports facility renovation with premium amenities'
         },
         {
             id: 6,
-            title: 'Hyderabad Airport Maintenance Contract',
-            category: 'Institutional',
-            img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=500&fit=crop',
-            location: 'Hyderabad International Airport',
+            title: 'Indoor Sports Arena Renovation',
+            category: 'Renovation',
+            img: badminton1,
+            location: 'Hyderabad, Telangana',
             rating: 5.0,
             reviews: 89,
             year: '2022',
-            description: 'Large-scale institutional facilities management'
+            description: 'Complete renovation of indoor sports complex'
+        },
+        {
+            id: 7,
+            title: 'Sports Complex Modernization',
+            category: 'Renovation',
+            img: badminton3,
+            location: 'Hyderabad, Telangana',
+            rating: 4.8,
+            reviews: 52,
+            year: '2023',
+            description: 'Comprehensive sports facility renovation and upgrade'
+        },
+        {
+            id: 8,
+            title: 'Premium Facility Management',
+            category: 'Facility Management',
+            img: facilityManagement1,
+            location: 'Mumbai, Maharashtra',
+            rating: 4.9,
+            reviews: 67,
+            year: '2024',
+            description: 'High-end facility maintenance and management services'
+        },
+        {
+            id: 9,
+            title: 'Commercial Facility Services',
+            category: 'Facility Management',
+            img: facilityManagement2,
+            location: 'Bangalore, Karnataka',
+            rating: 4.7,
+            reviews: 43,
+            year: '2023',
+            description: 'Enterprise-grade facilities management and care'
+        },
+        {
+            id: 10,
+            title: 'Residential Facility Care',
+            category: 'Facility Management',
+            img: facilityManagement3,
+            location: 'Pune, Maharashtra',
+            rating: 5.0,
+            reviews: 56,
+            year: '2024',
+            description: 'Comprehensive residential property management'
+        },
+        {
+            id: 11,
+            title: 'Property Management Services',
+            category: 'Facility Management',
+            img: facilityManagement4,
+            location: 'Chennai, Tamil Nadu',
+            rating: 4.8,
+            reviews: 38,
+            year: '2023',
+            description: 'Complete property care and facility management'
         }
     ];
 
-    const categories = ['All', 'Civil Construction', 'Renovation', 'Fcaility Management', 'NRI Property Management', ];
+    const categories = ['All', 'Civil Construction', 'Renovation', 'Facility Management', 'NRI Property Management'];
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
@@ -178,7 +232,7 @@ export default function FeaturedProjects() {
                                     {/* Bottom Info */}
                                     <div className="space-y-4">
                                         {/* Rating */}
-                                        <div className={`flex items-center justify-between transition-all duration-500 transform ${hoveredProject === project.id ? 'translate-y-0 opacity-100 featured-projects-content-reveal' : 'translate-y-4 opacity-0'
+                                        {/* <div className={`flex items-center justify-between transition-all duration-500 transform ${hoveredProject === project.id ? 'translate-y-0 opacity-100 featured-projects-content-reveal' : 'translate-y-4 opacity-0'
                                             }`}
                                             style={{ transitionDelay: '100ms' }}>
                                             <div className="flex items-center gap-1">
@@ -193,17 +247,17 @@ export default function FeaturedProjects() {
                                                 <span className="ml-2 text-sm font-semibold featured-projects-rating-count">{project.rating}</span>
                                             </div>
                                             <span className="text-xs text-gray-300">({project.reviews} reviews)</span>
-                                        </div>
+                                        </div> */}
 
                                         {/* Title and CTA */}
-                                        <div className={`transition-all duration-500 transform ${hoveredProject === project.id ? 'translate-y-0 opacity-100 featured-projects-content-reveal' : 'translate-y-4 opacity-0'
+                                        {/* <div className={`transition-all duration-500 transform ${hoveredProject === project.id ? 'translate-y-0 opacity-100 featured-projects-content-reveal' : 'translate-y-4 opacity-0'
                                             }`}
                                             style={{ transitionDelay: '200ms' }}>
                                             <h3 className="text-xl font-bold mb-3 line-clamp-2">{project.title}</h3>
                                             <button className="flex items-center gap-2 text-orange-400 font-semibold hover:gap-3 transition-all group/btn featured-projects-arrow-move">
                                                 View Details <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                                             </button>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 

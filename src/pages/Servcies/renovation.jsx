@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Sparkles, Home, Palette, Layers, Zap, Droplets, Wind, Sun, Shield, Camera, Clock, TrendingUp, ArrowRight, ChevronLeft, ChevronRight, CheckCircle, Star, Users, Award, Phone, MessageCircle } from 'lucide-react';
 import Footer from '../../components/Footer/Footer';
+import beforefull from "../../assets/workedWith/beforeBadminton.jpg";
+import afterfull from "../../assets/workedWith/afterBadminton.jpg";
+import before from "../../assets/workedWith/beforeHalf.jpg";
+import after from "../../assets/workedWith/afterFull.jpg";
+import flatsbefore from "../../assets/workedWith/beforeFlats.jpeg"
 
 export default function RenovationService() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -8,31 +13,31 @@ export default function RenovationService() {
 
   const beforeAfterProjects = [
     {
-      title: '3BHK Modern Transformation',
-      location: 'Jubilee Hills, Hyderabad',
-      before: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80',
-      duration: '75 days',
-      budget: '₹18 Lakhs',
-      highlights: ['Complete flooring replacement', 'Modern kitchen', 'Smart lighting', 'Designer bathrooms']
+      title: 'Badminton Court Complete Transformation',
+      location: 'Hyderabad, Telangana',
+      before: beforefull,
+      after: afterfull,
+      // duration: '75 days',
+      // budget: '₹18 Lakhs',
+      highlights: ['Complete flooring replacement', 'Professional court marking', 'LED lighting upgrade', 'Surface refinishing']
     },
     {
-      title: 'Villa Heritage Restoration',
-      location: 'Banjara Hills, Hyderabad',
-      before: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
-      duration: '90 days',
-      budget: '₹32 Lakhs',
-      highlights: ['Structural repairs', 'Façade restoration', 'Interior redesign', 'Landscape refresh']
+      title: 'Residential Space Modernization',
+      location: 'Hyderabad, Telangana',
+      before: before,
+      after: after,
+      // duration: '90 days',
+      // budget: '₹32 Lakhs',
+      highlights: ['Structural repairs', 'Interior redesign', 'Modern finishes', 'Complete makeover']
     },
     {
-      title: 'Compact Apartment Makeover',
-      location: 'Gachibowli, Hyderabad',
-      before: 'https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
-      duration: '45 days',
-      budget: '₹12 Lakhs',
-      highlights: ['Space optimization', 'Storage solutions', 'Contemporary design', 'Energy efficient']
+      title: 'Apartment Complex Project',
+      location: 'Hyderabad, Telangana',
+      before: flatsbefore,
+      after: flatsbefore, // Using same image since no after image available
+      // duration: '45 days',
+      // budget: '₹12 Lakhs',
+      highlights: ['Space optimization', 'Structural work', 'Quality upgrades', 'Modern amenities']
     }
   ];
 
@@ -196,32 +201,14 @@ export default function RenovationService() {
                   Our Process
                 </a>
               </div>
-              <div className="flex items-center gap-8">
-                <div>
-                  <div className="text-4xl font-bold text-yellow-300">200+</div>
-                  <div className="text-blue-200 text-sm">Renovations</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-yellow-300">45-90</div>
-                  <div className="text-blue-200 text-sm">Days Timeline</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-yellow-300">100%</div>
-                  <div className="text-blue-200 text-sm">Satisfaction</div>
-                </div>
-              </div>
             </div>
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" 
+                src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80"
                 alt="Beautiful renovated interior" 
                 className="rounded-3xl shadow-2xl"
               />
-              <div className="absolute -bottom-8 -left-8 bg-gradient-to-r from-orange-500 to-pink-500 text-white p-8 rounded-2xl shadow-2xl">
-                <div className="text-5xl font-bold mb-2">₹12L+</div>
-                <div className="text-lg">Starting Budget</div>
-              </div>
             </div>
           </div>
         </div>
@@ -278,18 +265,6 @@ export default function RenovationService() {
                           {highlight}
                         </span>
                       ))}
-                    </div>
-                  </div>
-                  <div className="flex gap-6">
-                    <div className="bg-white/10 rounded-xl p-4 text-center border border-white/20">
-                      <Clock size={24} className="text-yellow-300 mx-auto mb-2" />
-                      <div className="text-white font-bold">{beforeAfterProjects[activeSlide].duration}</div>
-                      <div className="text-gray-400 text-xs">Duration</div>
-                    </div>
-                    <div className="bg-white/10 rounded-xl p-4 text-center border border-white/20">
-                      <TrendingUp size={24} className="text-green-400 mx-auto mb-2" />
-                      <div className="text-white font-bold">{beforeAfterProjects[activeSlide].budget}</div>
-                      <div className="text-gray-400 text-xs">Investment</div>
                     </div>
                   </div>
                 </div>
@@ -359,10 +334,6 @@ export default function RenovationService() {
                 <p className="text-white/90 text-lg mb-8">
                   Complete transformation services tailored to make your {roomTypes[selectedRoom].name.toLowerCase()} functional, beautiful, and uniquely yours.
                 </p>
-                {/* <a href="#quote" className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg">
-                  Get Quote
-                  <ArrowRight size={20} />
-                </a> */}
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20">
                 <h4 className="text-white font-bold text-xl mb-6">Services Included:</h4>
@@ -394,7 +365,6 @@ export default function RenovationService() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
                   <step.icon size={32} className="text-white" />
                 </div>
-                <div className="text-sm text-purple-600 font-bold mb-2">{step.duration}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{step.phase}</h3>
                 <p className="text-gray-600 text-sm mb-4">{step.description}</p>
                 <ul className="space-y-2">
@@ -432,41 +402,6 @@ export default function RenovationService() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      {/* <section className="py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-4">Client Love Stories</h2>
-            <p className="text-xl text-gray-600">Real transformations, real emotions</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-3xl p-10 shadow-xl border-2 border-gray-100">
-                <div className="flex gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <blockquote className="text-gray-700 text-lg mb-8 leading-relaxed italic">
-                  "{testimonial.text}"
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-900">{testimonial.author}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
-                    <div className="text-xs text-purple-600 font-semibold">{testimonial.project}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500">

@@ -13,17 +13,15 @@ export default function Footer() {
   ];
 
   const services = [
-    { name: 'Construction & New Developments', href: '#construction' },
-    { name: 'Renovation & Refurbishment', href: '#renovation' },
-    { name: 'Upgradation & Modernization', href: '#upgradation' },
-    { name: 'Maintenance & AMC', href: '#maintenance' },
-    { name: 'Facilities & Asset Management', href: '#facilities' },
+    { name: 'Construction', href: '#construction' },
+    { name: 'Renovation', href: '#maintenance' },
+    { name: 'Facility Management', href: '#facilities' },
     { name: 'NRI Property Management', href: '#nri-services' }
   ];
 
   const credentials = [
-    'CPWD Registered Class III',
-    '27+ Years Experience',
+    'CPWD Registered(earlier) Class III',
+    'Decades of Experience',
     'Dubai Nakheel Properties',
     'Hyderabad Airport AMC',
     'Government Projects',
@@ -128,7 +126,7 @@ export default function Footer() {
             </ul>
             
             <div className="bg-gray-800 rounded-lg p-4">
-              <h4 className="text-white font-semibold text-sm mb-2">Our Credentials</h4>
+              {/* <h4 className="text-white font-semibold text-sm mb-2">Our Credentials</h4> */}
               <div className="flex flex-wrap gap-2">
                 {credentials.slice(0, 3).map((credential, index) => (
                   <span key={index} className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">
@@ -149,7 +147,7 @@ export default function Footer() {
               &copy; 2025 AM Renovators & Services. All rights reserved.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+            {/* <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
               <a href="#privacy" className="hover:text-orange-500 transition-colors">
                 Privacy Policy
               </a>
@@ -161,7 +159,7 @@ export default function Footer() {
               <a href="#sitemap" className="hover:text-orange-500 transition-colors">
                 Sitemap
               </a>
-            </div>
+            </div> */}
             
             <div className="text-sm text-gray-500">
               Designed with <span className="text-red-500">❤</span> in India

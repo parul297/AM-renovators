@@ -266,7 +266,7 @@ export default function ConstructionService() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {/* <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               'IS Code compliant designs',
               'Branded materials only',
@@ -283,17 +283,15 @@ export default function ConstructionService() {
                 <span className="text-white font-semibold">{item}</span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Project Examples */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      {/* <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            {/* <div className="inline-block bg-purple-100 text-purple-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
-              PORTFOLIO
-            </div> */}
+        
             <h2 className="text-5xl font-black text-gray-900 mb-6">Recent Construction Projects</h2>
             <p className="text-xl text-gray-600">Real projects with actual timelines and budgets</p>
           </div>
@@ -318,16 +316,7 @@ export default function ConstructionService() {
                     <Ruler size={16} className="text-orange-500" />
                     {project.location}
                   </p>
-                  {/* <div className="grid grid-cols-2 gap-6 mb-6">
-                    <div className="bg-blue-50 rounded-xl p-4">
-                      <div className="text-xs text-blue-700 font-semibold mb-1">Built-up Area</div>
-                      <div className="font-black text-gray-900 text-lg">{project.area}</div>
-                    </div>
-                    <div className="bg-green-50 rounded-xl p-4">
-                      <div className="text-xs text-green-700 font-semibold mb-1">Duration</div>
-                      <div className="font-black text-gray-900 text-lg">{project.duration}</div>
-                    </div>
-                  </div> */}
+               
                   <div className="bg-gradient-to-r from-orange-50 to-orange-100 border-2 border-orange-300 rounded-xl p-5 shadow-sm">
                     <div className="text-xs text-orange-700 font-bold mb-2 tracking-wide">PROJECT BUDGET</div>
                     <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{project.budget}</div>
@@ -337,7 +326,7 @@ export default function ConstructionService() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-24 bg-white">

@@ -733,7 +733,7 @@ export default function NRIPropertyManagement() {
             
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
               Your trusted partner for property management in India. 
-              27+ years experience, CPWD registered, serving NRIs worldwide.
+              Decades of Experience, CPWD registered, serving NRIs worldwide.
             </p>
             
             <div className="grid md:grid-cols-4 gap-8 mb-8">
@@ -764,7 +764,7 @@ export default function NRIPropertyManagement() {
               <div>
                 <div className="font-bold mb-4">Experience</div>
                 <div className="space-y-2 text-gray-400 text-sm">
-                  <div>27+ Years Experience</div>
+                  <div>Decades of Experience</div>
                   <div>Nakheel Properties, Dubai</div>
                   <div>CPWD Registered</div>
                   <div>Hyderabad Airport AMC</div>

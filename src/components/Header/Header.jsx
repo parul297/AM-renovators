@@ -52,8 +52,8 @@ export default function Header() {
             </div>
           </div>
           <div className="text-xs">
-            <span className="font-semibold">27+ Years Experience</span> |{" "}
-            <span>CPWD Registered</span> |{" "}
+            <span className="font-semibold">Decades of Experience</span> |{" "}
+            <span>CPWD Registered(earlier)</span> |{" "}
             <span>International Experience</span>
           </div>
         </div>

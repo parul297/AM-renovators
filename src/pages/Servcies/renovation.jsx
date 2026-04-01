@@ -197,9 +197,9 @@ export default function RenovationService() {
                   See Transformations
                   <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="#process" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-10 py-5 rounded-full font-bold text-lg transition-all border-2 border-white/30">
+                {/* <a href="#process" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-10 py-5 rounded-full font-bold text-lg transition-all border-2 border-white/30">
                   Our Process
-                </a>
+                </a> */}
               </div>
             </div>
             

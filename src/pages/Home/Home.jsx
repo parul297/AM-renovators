@@ -144,7 +144,7 @@ export default function Home() {
     },
     {
       icon: Award,
-      title: 'CPWD Registered',
+      title: 'CPWD Registered(earlier)',
       description: 'Government contractor credentials with proven track record at Hyderabad International Airport'
     },
     {
@@ -197,7 +197,7 @@ export default function Home() {
       desc: 'Latest electrical, plumbing, and HVAC systems',
       color: 'from-emerald-600 to-green-500',
       bgColor: 'bg-green-50',
-      details: ['Smart Systems', 'Energy Efficient', 'Latest Tech'],
+      details: ['Smart Systems', 'Latest Tech'],
       fullDesc: 'State-of-the-art systems for comfort and efficiency.'
     },
     {

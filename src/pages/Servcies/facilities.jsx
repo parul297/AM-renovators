@@ -113,7 +113,7 @@ export default function FacilitiesAssetManagement() {
       description: 'Smart building technologies and digital transformation services',
       features: [
         'Building Management Systems (BMS) implementation',
-        'Energy management & monitoring systems',
+        // 'Energy management & monitoring systems',
         'Digital twin technology implementation',
         'Mobile-first reporting & analytics platform'
       ]

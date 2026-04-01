@@ -15,6 +15,8 @@ import niphm from "../../assets/workedWith/NIPHM.jpeg";
 import ordenance from "../../assets/workedWith/ordenance.jpeg";
 import oil from "../../assets/workedWith/oil.jpeg";
 import ahmedSir from "../../assets/workedWith/ahmedSir.jpeg"
+import coreConstruction from "../../assets/workedWith/coreConstructionCompany.jpeg"
+import NBPGR from "../../assets/workedWith/NBPGR.png"
 
 export default function AboutUs() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -98,7 +100,7 @@ export default function AboutUs() {
         'Structural modifications',
         'Interior and exterior refurbishment',
         'Electrical, plumbing, HVAC upgrades',
-        'Energy-efficient improvements'
+        // 'Energy-efficient improvements'
       ],
       gradient: 'from-orange-500 to-red-500'
     },
@@ -129,7 +131,7 @@ export default function AboutUs() {
   ];
 
   const credentials = [
-    { label: 'CPWD Registration', value: 'Class III Contractor', icon: Shield },
+    { label: 'CPWD Registration', value: 'Class III Contractor (Former)', icon: Shield },
     { label: 'Professional Experience', value: '27+ Years', icon: Award },
     { label: 'International Exposure', value: 'UAE, Saudi Arabia, Qatar', icon: Globe },
     { label: 'Major Projects', value: 'Airport AMC, Nakheel Dubai', icon: Building2 }
@@ -548,16 +550,17 @@ export default function AboutUs() {
               {[
                 { img: airport, name: 'Airport Authority of India' },
                 { img: amana, name: 'Amana Steel Buildings' },
-                { img: core, name: 'Core Construction Company' },
+                { img: coreConstruction, name: 'Core Construction Company' },
                 { img: cpwd, name: 'CPWD' },
-                { img: iit, name: 'IIT' },
+                // { img: iit, name: 'IIT' },
                 { img: ivr, name: 'IVR Constructions' },
                 { img: manage, name: 'Manage' },
                 { img: naarm, name: 'NAARM' },
                 { img: nakheel, name: 'Nakheel Properties' },
                 { img: niphm, name: 'NIPHM' },
                 { img: ordenance, name: 'Ordnance Factory' },
-                { img: oil, name: 'Directorate of Oil & Seeds' }
+                { img: NBPGR, name: 'NBPGR' },
+                // { img: oil, name: 'Directorate of Oil & Seeds' }
               ].map((company, index) => (
                 <div 
                   key={index} 

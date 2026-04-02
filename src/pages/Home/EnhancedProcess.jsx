@@ -10,19 +10,8 @@ import {
   Clock,
   Users,
   Shield,
-  Download,
   Video,
-  Phone,
-  Calendar,
   ChevronRight,
-  Star,
-  Target,
-  Award,
-  Globe,
-  CheckCircle2,
-  FileText,
-  Building,
-  Plane,
 } from "lucide-react";
 import "./EnhancedProcess.css";
 
@@ -49,19 +38,10 @@ export default function EnhancedProcess() {
         "Requirement analysis",
         "Budget planning",
         "Design assessment",
-        "Preliminary visualization",
       ],
       duration: "2-3 Days",
-      deliverables: [
-        "Site Analysis Report",
-        "Design Concepts",
-        "Budget Estimate",
-      ],
+      deliverables: ["Site Analysis Report", "Design Concepts", "Budget Estimate"],
       colorScheme: "blue",
-      testimonials: [
-        "AM Renovators understood our vision perfectly!",
-        "The visualization helped us make confident decisions.",
-      ],
     },
     {
       id: 1,
@@ -76,19 +56,10 @@ export default function EnhancedProcess() {
         "Material selections",
         "Cost breakdown",
         "Timeline schedule",
-        "3D renderings",
       ],
       duration: "4-6 Days",
-      deliverables: [
-        "Architectural Plans",
-        "3D Renderings",
-        "Detailed Quotation",
-      ],
+      deliverables: ["Architectural Plans", "3D Renderings", "Detailed Quotation"],
       colorScheme: "orange",
-      testimonials: [
-        "Most transparent quotation we've received!",
-        "The 3D walkthrough was very helpful.",
-      ],
     },
     {
       id: 2,
@@ -103,15 +74,10 @@ export default function EnhancedProcess() {
         "Progress reports",
         "Quality assurance",
         "Material verification",
-        "Client tracking dashboard",
       ],
       duration: "Project Duration",
       deliverables: ["Progress Reports", "Quality Documents"],
       colorScheme: "green",
-      testimonials: [
-        "Daily updates gave us peace of mind!",
-        "Exceptional quality control.",
-      ],
     },
     {
       id: 3,
@@ -124,21 +90,11 @@ export default function EnhancedProcess() {
       details: [
         "Final walkthrough",
         "Project documentation",
-        "Warranty certificates",
-        "Maintenance manuals",
         "Aftercare support",
       ],
       duration: "2-3 Days",
-      deliverables: [
-        "Completion Certificate",
-        "Warranty Package",
-        "Support Agreement",
-      ],
+      deliverables: ["Completion Certificate", "Warranty Package", "Support Agreement"],
       colorScheme: "purple",
-      testimonials: [
-        "Documentation was incredibly thorough!",
-        "Support gives us complete confidence.",
-      ],
     },
   ];
 
@@ -147,33 +103,26 @@ export default function EnhancedProcess() {
       icon: Shield,
       title: "Integrity",
       description: "No hidden costs. Clear, itemized quotations.",
-      // stat: '100% Transparency'
     },
     {
       icon: Clock,
       title: "Transparency",
       description: "Projects delivered on schedule.",
-      // stat: '98% On Time'
     },
     {
       icon: Users,
       title: "Technical Excellence",
       description: "Single point of contact for communication.",
-      // stat: '24/7 Support'
     },
     {
       icon: Video,
       title: "Client Focus",
       description: "Daily photo/video updates.",
-      // stat: 'Real-time Tracking'
     },
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-
+    const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
@@ -181,10 +130,7 @@ export default function EnhancedProcess() {
     const handleScroll = () => {
       if (timelineRef.current) {
         const rect = timelineRef.current.getBoundingClientRect();
-        const progress = Math.max(
-          0,
-          Math.min(1, 1 - rect.top / window.innerHeight),
-        );
+        const progress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
         setScrollProgress(progress);
       }
     };
@@ -202,17 +148,13 @@ export default function EnhancedProcess() {
 
     window.addEventListener("scroll", onScroll, { passive: true });
     handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, [isScrolling]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveFeature((prev) => (prev + 1) % features.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -222,9 +164,20 @@ export default function EnhancedProcess() {
     setTimeout(() => setIsScrolling(false), 1000);
   };
 
+  const handleNext = () => {
+    if (expandedStep < processSteps.length - 1) {
+      handleStepClick(expandedStep + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (expandedStep > 0) {
+      handleStepClick(expandedStep - 1);
+    }
+  };
+
   return (
     <div ref={containerRef} className="enhanced-process-container">
-      {/* Animated Background Elements */}
       <div className="background-elements">
         <div className="bg-circle-1"></div>
         <div className="bg-circle-2"></div>
@@ -238,7 +191,6 @@ export default function EnhancedProcess() {
           <h1 className="process-title">
             Our <span className="gradient-text">Process</span>
           </h1>
-
           <div className="header-subtitle">
             <p className="process-description">
               A simple 4-step methodology ensuring quality and timely delivery
@@ -260,7 +212,6 @@ export default function EnhancedProcess() {
                 </div>
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>
-                <div className="feature-stat">{feature.stat}</div>
               </div>
             ))}
           </div>
@@ -268,9 +219,15 @@ export default function EnhancedProcess() {
 
         {/* Main Process Timeline */}
         <div ref={timelineRef} className="process-timeline-section">
+
+          {/* Click hint banner */}
+          <div className="timeline-hint">
+            <span className="hint-dot"></span>
+            Click any step below to explore details
+          </div>
+
           {/* Timeline Steps */}
           <div className="process-timeline">
-            {/* Progress Bar */}
             <div className="timeline-progress-container">
               <div className="timeline-progress-background"></div>
               <div
@@ -279,13 +236,11 @@ export default function EnhancedProcess() {
               ></div>
             </div>
 
-            {/* Timeline Steps */}
             <div className="timeline-steps-container">
               {processSteps.map((step, index) => {
                 const StepIcon = step.icon;
                 const isActive = expandedStep === index;
-                const isCompleted =
-                  scrollProgress > (index + 1) / processSteps.length;
+                const isCompleted = scrollProgress > (index + 1) / processSteps.length;
                 const isLastStep = index === processSteps.length - 1;
 
                 return (
@@ -297,24 +252,30 @@ export default function EnhancedProcess() {
                         index === 0
                           ? "0"
                           : isLastStep
-                            ? "100%"
-                            : `${index * (100 / (processSteps.length - 1))}%`,
+                          ? "100%"
+                          : `${index * (100 / (processSteps.length - 1))}%`,
                       transform:
                         index === 0
                           ? "translateX(0)"
                           : isLastStep
-                            ? "translateX(-100%)"
-                            : "translateX(-50%)",
+                          ? "translateX(-100%)"
+                          : "translateX(-50%)",
                     }}
                     onClick={() => handleStepClick(index)}
                   >
                     <div className="marker-dot">
                       <StepIcon className="marker-icon" />
                       {isCompleted && <div className="completion-ring"></div>}
+                      {/* Pulse ring on active */}
+                      {isActive && <div className="active-pulse-ring"></div>}
                     </div>
-                    <div className="marker-label">
+                    <div className={`marker-label ${isActive ? "marker-label-active" : ""}`}>
                       <span className="marker-number">{step.number}</span>
                       <span className="marker-title">{step.title}</span>
+                      {/* Tap cue on inactive */}
+                      {/* {!isActive && (
+                        <span className="tap-cue">Tap to view →</span>
+                      )} */}
                     </div>
                   </div>
                 );
@@ -337,16 +298,10 @@ export default function EnhancedProcess() {
                       <div className="panel-header">
                         <div className="panel-title-section">
                           <div className="step-badge">
-                            <span className="step-number-large">
-                              {step.number}
-                            </span>
+                            <span className="step-number-large">{step.number}</span>
                             <div>
-                              <span className="step-title-large">
-                                {step.title}
-                              </span>
-                              <div className="step-subtitle">
-                                {step.shortDesc}
-                              </div>
+                              <span className="step-title-large">{step.title}</span>
+                              <div className="step-subtitle">{step.shortDesc}</div>
                             </div>
                           </div>
                         </div>
@@ -357,7 +312,6 @@ export default function EnhancedProcess() {
                           <div className="description-section">
                             <p>{step.fullDesc}</p>
                           </div>
-
                           <div className="details-section">
                             <h3>Key Activities</h3>
                             <div className="activities-grid">
@@ -372,20 +326,36 @@ export default function EnhancedProcess() {
                             </div>
                           </div>
                         </div>
+                        <div className="content-sidebar"></div>
+                      </div>
 
-                        <div className="content-sidebar">
-                          <div className="deliverables-section">
-                            <h3>Deliverables</h3>
-                            <div className="deliverables-list">
-                              {step.deliverables.map((deliverable, i) => (
-                                <div key={i} className="deliverable-item">
-                                  <FileCheck size={16} />
-                                  <span>{deliverable}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
+                      {/* Step Navigation */}
+                      <div className="panel-navigation">
+                        <button
+                          className="nav-btn nav-btn-prev"
+                          onClick={handlePrev}
+                          disabled={expandedStep === 0}
+                        >
+                          ← Previous
+                        </button>
+
+                        <div className="step-dots">
+                          {processSteps.map((_, i) => (
+                            <button
+                              key={i}
+                              className={`step-dot ${i === expandedStep ? "step-dot-active" : ""}`}
+                              onClick={() => handleStepClick(i)}
+                            />
+                          ))}
                         </div>
+
+                        <button
+                          className="nav-btn nav-btn-next"
+                          onClick={handleNext}
+                          disabled={expandedStep === processSteps.length - 1}
+                        >
+                          Next Step <ArrowRight size={16} />
+                        </button>
                       </div>
                     </>
                   )}

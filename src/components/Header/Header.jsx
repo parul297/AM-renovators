@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from "../../assets/workedWith/AMrenovators.jpeg";
 import ContactSidebar from '../contactSideBar/ContactSideBar';
@@ -38,29 +38,29 @@ export default function Header() {
 
   return (
     <div>
-      {/* Top Bar - Also fixed */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-900 text-white py-2 px-4 text-sm hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Phone size={14} />
-              <span>+91 9515 88 1444</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail size={14} />
-              <span>info@amrenovators.com</span>
-            </div>
-          </div>
-          <div className="text-xs">
-            <span className="font-semibold">Decades of Experience</span> |{" "}
-            <span>CPWD Registered(earlier)</span> |{" "}
-            <span>International Experience</span>
-          </div>
-        </div>
-      </div>
+      {/* Creative Accent Strip - replaces the info top bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 h-[6px]"
+        style={{
+          background: 'linear-gradient(90deg, #1e3a5f 0%, #1d4ed8 25%, #f97316 50%, #1d4ed8 75%, #1e3a5f 100%)',
+          backgroundSize: '200% 100%',
+          animation: 'accentShimmer 6s ease-in-out infinite',
+        }}
+      />
 
-      {/* Header - Fixed below top bar */}
-      <header className={`fixed top-[36px] md:top-[36px] left-0 right-0 z-50 bg-white transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+      <style>{`
+        @keyframes accentShimmer {
+          0%   { background-position: 0% 0%; }
+          50%  { background-position: 100% 0%; }
+          100% { background-position: 0% 0%; }
+        }
+      `}</style>
+
+      {/* Header - Fixed below accent strip */}
+      <header
+        className={`fixed top-[6px] left-0 right-0 z-50 bg-white transition-all duration-300 ${
+          isScrolled ? 'shadow-md' : 'shadow-sm'
+        }`}
+      >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-20">
 
@@ -68,7 +68,7 @@ export default function Header() {
             <Link to="/" className="flex items-center shrink-0">
               <img
                 src={logo}
-                alt="AM Renovators"
+                alt="AM Construction & Services"
                 className="h-16 w-auto object-contain"
               />
             </Link>
@@ -102,7 +102,7 @@ export default function Header() {
                   );
                 })}
 
-                {/* Enquiry Button - Fixed color issue */}
+                {/* Enquiry Button */}
                 <button
                   onClick={handleEnquiryClick}
                   onMouseEnter={handleEnquiryHover}
@@ -163,8 +163,8 @@ export default function Header() {
         )}
       </header>
 
-      {/* Spacer to prevent content from going under fixed header */}
-      <div className="h-[116px] md:h-[116px]"></div>
+      {/* Spacer: 6px accent strip + 80px header */}
+      <div className="h-[86px]"></div>
 
       <ContactSidebar
         openFromHeader={isSidebarOpen}

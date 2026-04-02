@@ -88,7 +88,8 @@ export default function AboutUs() {
         'Independent residential houses and villas',
         'Premium farmhouse developments',
         'Institutional structures',
-        'Masjid constructions'
+        'Masjid constructions',
+        'Sports Infrastructure Development'
       ],
       gradient: 'from-blue-500 to-blue-600'
     },
@@ -100,7 +101,8 @@ export default function AboutUs() {
         'Structural modifications',
         'Interior and exterior refurbishment',
         'Electrical, plumbing, HVAC upgrades',
-        // 'Energy-efficient improvements'
+       'Waterproofing and leakage rectifications',
+       'Facade and Elevation enhancements'
       ],
       gradient: 'from-orange-500 to-red-500'
     },
@@ -112,7 +114,6 @@ export default function AboutUs() {
         'Preventive & corrective maintenance',
         'Annual Maintenance Contracts (AMC)',
         'Vendor coordination & supervision',
-        'Asset lifecycle management'
       ],
       gradient: 'from-purple-500 to-pink-500'
     },
@@ -131,9 +132,9 @@ export default function AboutUs() {
   ];
 
   const credentials = [
-    { label: 'CPWD Registration', value: 'Class III Contractor (Former)', icon: Shield },
+    { label: 'Former CPWD Registered', value: 'Class III Contractor', icon: Shield },
     { label: 'Professional Experience', value: '27+ Years', icon: Award },
-    { label: 'International Exposure', value: 'UAE, Saudi Arabia, Qatar', icon: Globe },
+    { label: 'International Exposure', value: 'UAE, Qatar, Saudi Arabia', icon: Globe },
     { label: 'Major Projects', value: 'Airport AMC, Nakheel Dubai', icon: Building2 }
   ];
 
@@ -189,7 +190,7 @@ export default function AboutUs() {
               }`}
             >
               <Award size={18} />
-              27+ Years of Excellence
+              Decades of Excellence
             </div>
             <h1 
               id="animate-hero-title"
@@ -197,7 +198,7 @@ export default function AboutUs() {
                 isVisible['animate-hero-title'] ? 'animate-fadeInUp animation-delay-200' : 'opacity-0'
               }`}
             >
-              About AM Renovators<br />
+              About AM Construction <br />
               <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
                 & Services
               </span>
@@ -254,7 +255,7 @@ export default function AboutUs() {
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p className="text-xl font-semibold text-gray-900 flex items-start gap-3">
                   <span className="text-orange-500 text-3xl">"</span>
-                  <span>Welcome to AM Renovators & Services.</span>
+                  <span>Welcome to AM Construction & Services.</span>
                 </p>
                 <p className="text-lg border-l-4 border-blue-900 pl-6 bg-blue-50 py-4 rounded-r-lg">
                   AM Construction & Services is a professionally managed civil construction, renovation, facilities management, and NRI property management company, headquartered in Hyderabad, India. The organization is built on decades of technical expertise, international exposure, and an uncompromising commitment to assured standards and meticulous quality.
@@ -494,7 +495,7 @@ export default function AboutUs() {
             </div>
             <h3 className="text-3xl font-bold mb-6 text-center">Our Commitment</h3>
             <p className="text-blue-100 leading-relaxed text-center text-xl">
-              At AM Renovators & Services, we do not merely build or renovate structures—we protect, enhance, and manage assets. Our commitment is to deliver projects that uphold the trust placed in us, provide genuine value for money, and consistently exceed client expectations.
+              At AM Construction & Services, we do not merely build or renovate structures—we protect, enhance, and manage assets. Our commitment is to deliver projects that uphold the trust placed in us, provide genuine value for money, and consistently exceed client expectations.
             </p>
           </div>
         </div>

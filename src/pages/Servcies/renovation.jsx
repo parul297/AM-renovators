@@ -386,7 +386,7 @@ export default function RenovationService() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-4">Why Renovate With Us?</h2>
-            <p className="text-xl text-blue-200">Experience the AM Renovators difference</p>
+            <p className="text-xl text-blue-200">Experience the AM Construction & Services difference</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -5,10 +5,10 @@ export default function Footer() {
   const quickLinks = [
     { name: 'About Us', href: '#about' },
     { name: 'Our Services', href: '#services' },
-    { name: 'Projects Portfolio', href: '#projects' },
-    { name: 'For NRI Clients', href: '#nri-clients' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Blog & Resources', href: '#resources' },
+    // { name: 'Projects Portfolio', href: '#projects' },
+    // { name: 'For NRI Clients', href: '#nri-clients' },
+    // { name: 'Testimonials', href: '#testimonials' },
+    // { name: 'Blog & Resources', href: '#resources' },
     { name: 'Contact Us', href: '#contact' }
   ];
 
@@ -40,12 +40,12 @@ export default function Footer() {
                 <span className="text-white font-bold text-xl">AM</span>
               </div>
               <div>
-                <div className="text-white font-bold text-lg">AM Renovators</div>
-                <div className="text-gray-400 text-xs">& Services</div>
+                <div className="text-white font-bold text-lg">AM Construction & Services</div>
+                {/* <div className="text-gray-400 text-xs">& Services</div> */}
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
-              Professional construction, renovation, and facilities management company with 27+ years of international experience across India and the Middle East.
+             Professional construction, renovation, property and facilities management company that adheres to international best practices and local execution excellence together, serving clients across India and beyond.
             </p>
             
             {/* Social Media Links */}
@@ -127,13 +127,13 @@ export default function Footer() {
             
             <div className="bg-gray-800 rounded-lg p-4">
               {/* <h4 className="text-white font-semibold text-sm mb-2">Our Credentials</h4> */}
-              <div className="flex flex-wrap gap-2">
+              {/* <div className="flex flex-wrap gap-2">
                 {credentials.slice(0, 3).map((credential, index) => (
                   <span key={index} className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">
                     {credential}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              &copy; 2025 AM Renovators & Services. All rights reserved.
+              &copy; 2025 AM Construction & Services & Services. All rights reserved.
             </p>
             
             {/* <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">

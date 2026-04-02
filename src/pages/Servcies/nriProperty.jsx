@@ -122,7 +122,7 @@ export default function NRIPropertyManagement() {
       property: 'Banjara Hills, Hyderabad',
       project: 'Complete 4BHK Renovation',
       rating: 5,
-      text: 'Managing our property renovation from Dubai seemed impossible until we found AM Renovators. Ahmed personally oversaw everything, sent us weekly photo updates, and the transparency was exceptional. Our parents are thrilled with their upgraded home!',
+      text: 'Managing our property renovation from Dubai seemed impossible until we found AM Construction & Services. Ahmed personally oversaw everything, sent us weekly photo updates, and the transparency was exceptional. Our parents are thrilled with their upgraded home!',
       duration: '90 days',
       investment: '₹28 Lakhs',
       image: '🇦🇪'
@@ -133,7 +133,7 @@ export default function NRIPropertyManagement() {
       property: 'Jubilee Hills, Hyderabad',
       project: 'Villa Maintenance & Tenant Management',
       rating: 5,
-      text: 'For 3 years, AM Renovators has managed my villa perfectly. From finding good tenants to handling repairs, everything is documented and transparent. I receive monthly reports and never worry about my property.',
+      text: 'For 3 years, AM Construction & Services has managed my villa perfectly. From finding good tenants to handling repairs, everything is documented and transparent. I receive monthly reports and never worry about my property.',
       duration: 'Ongoing 3 years',
       investment: 'AMC Contract',
       image: '🇸🇬'
@@ -728,7 +728,7 @@ export default function NRIPropertyManagement() {
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Globe className="w-8 h-8 text-cyan-400" />
-              <span className="text-2xl font-bold">AM Renovators & Services</span>
+              <span className="text-2xl font-bold">AM Construction & Services & Services</span>
             </div>
             
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
@@ -784,7 +784,7 @@ export default function NRIPropertyManagement() {
             
             <div className="border-t border-gray-800 pt-8">
               <div className="text-gray-500 text-sm">
-                <p>© 2024 AM Renovators & Services. All rights reserved.</p>
+                <p>© 2024 AM Construction & Services & Services. All rights reserved.</p>
                 <p className="mt-2">CPWD Registration Number: XYZ-12345 • GST Registered</p>
               </div>
             </div>

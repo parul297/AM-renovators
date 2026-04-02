@@ -24,114 +24,114 @@ export default function FeaturedProjects() {
             title: 'Multi-Block Civil Construction',
             category: 'Civil Construction',
             img: civil1,
-            location: 'Hyderabad, Telangana',
-            rating: 4.9,
-            reviews: 48,
-            year: '2023',
-            description: 'Large-scale residential complex with modern architecture'
+            // location: 'Hyderabad, Telangana',
+            // rating: 4.9,
+            // reviews: 48,
+            // year: '2023',
+            // description: 'Large-scale residential complex with modern architecture'
         },
         {
             id: 2,
             title: 'Residential Quarter Development',
             category: 'Civil Construction',
             img: civil2,
-            location: 'Pune, Maharashtra',
-            rating: 4.8,
-            reviews: 35,
-            year: '2023',
-            description: 'Premium living quarters with quality finishes'
+            // location: 'Pune, Maharashtra',
+            // rating: 4.8,
+            // reviews: 35,
+            // year: '2023',
+            // description: 'Premium living quarters with quality finishes'
         },
         {
             id: 3,
             title: 'Civil Corridor Infrastructure',
             category: 'Civil Construction',
             img: civil3,
-            location: 'Mumbai, Maharashtra',
-            rating: 5.0,
-            reviews: 62,
-            year: '2024',
-            description: 'Modern corridor design with structural excellence'
+            // location: 'Mumbai, Maharashtra',
+            // rating: 5.0,
+            // reviews: 62,
+            // year: '2024',
+            // description: 'Modern corridor design with structural excellence'
         },
         {
             id: 5,
             title: 'Badminton Court Renovation',
             category: 'Renovation',
             img: badminton,
-            location: 'Hyderabad, Telangana',
-            rating: 4.9,
-            reviews: 41,
-            year: '2023',
-            description: 'Professional sports facility renovation with premium amenities'
+            // location: 'Hyderabad, Telangana',
+            // rating: 4.9,
+            // reviews: 41,
+            // year: '2023',
+            // description: 'Professional sports facility renovation with premium amenities'
         },
         {
             id: 6,
             title: 'Indoor Sports Arena Renovation',
             category: 'Renovation',
             img: badminton1,
-            location: 'Hyderabad, Telangana',
-            rating: 5.0,
-            reviews: 89,
-            year: '2022',
-            description: 'Complete renovation of indoor sports complex'
+            // location: 'Hyderabad, Telangana',
+            // rating: 5.0,
+            // reviews: 89,
+            // year: '2022',
+            // description: 'Complete renovation of indoor sports complex'
         },
         {
             id: 7,
             title: 'Sports Complex Modernization',
             category: 'Renovation',
             img: badminton3,
-            location: 'Hyderabad, Telangana',
-            rating: 4.8,
-            reviews: 52,
-            year: '2023',
-            description: 'Comprehensive sports facility renovation and upgrade'
+            // location: 'Hyderabad, Telangana',
+            // rating: 4.8,
+            // reviews: 52,
+            // year: '2023',
+            // description: 'Comprehensive sports facility renovation and upgrade'
         },
         {
             id: 8,
             title: 'Premium Facility Management',
             category: 'Facility Management',
             img: facilityManagement1,
-            location: 'Mumbai, Maharashtra',
-            rating: 4.9,
-            reviews: 67,
-            year: '2024',
-            description: 'High-end facility maintenance and management services'
+            // location: 'Mumbai, Maharashtra',
+            // rating: 4.9,
+            // reviews: 67,
+            // year: '2024',
+            // description: 'High-end facility maintenance and management services'
         },
         {
             id: 9,
             title: 'Commercial Facility Services',
             category: 'Facility Management',
             img: facilityManagement2,
-            location: 'Bangalore, Karnataka',
-            rating: 4.7,
-            reviews: 43,
-            year: '2023',
-            description: 'Enterprise-grade facilities management and care'
+            // location: 'Bangalore, Karnataka',
+            // rating: 4.7,
+            // reviews: 43,
+            // year: '2023',
+            // description: 'Enterprise-grade facilities management and care'
         },
         {
             id: 10,
             title: 'Residential Facility Care',
             category: 'Facility Management',
             img: facilityManagement3,
-            location: 'Pune, Maharashtra',
-            rating: 5.0,
-            reviews: 56,
-            year: '2024',
-            description: 'Comprehensive residential property management'
+            // location: 'Pune, Maharashtra',
+            // rating: 5.0,
+            // reviews: 56,
+            // year: '2024',
+            // description: 'Comprehensive residential property management'
         },
         {
             id: 11,
             title: 'Property Management Services',
             category: 'Facility Management',
             img: facilityManagement4,
-            location: 'Chennai, Tamil Nadu',
-            rating: 4.8,
-            reviews: 38,
-            year: '2023',
-            description: 'Complete property care and facility management'
+            // location: 'Chennai, Tamil Nadu',
+            // rating: 4.8,
+            // reviews: 38,
+            // year: '2023',
+            // description: 'Complete property care and facility management'
         }
     ];
 
-    const categories = ['All', 'Civil Construction', 'Renovation', 'Facility Management', 'NRI Property Management'];
+    const categories = ['All', 'Renovation','Civil Construction', 'Facility Management', 'NRI Property Management'];
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
@@ -223,7 +223,7 @@ export default function FeaturedProjects() {
                                     <div className={`transition-all duration-500 transform ${hoveredProject === project.id ? 'translate-y-0 opacity-100 featured-projects-content-reveal' : 'translate-y-4 opacity-0'
                                         }`}>
                                         <div className="flex items-center gap-2 text-sm text-orange-300 mb-2">
-                                            <MapPin size={16} className="featured-projects-star-twinkle" />
+                                            {/* <MapPin size={16} className="featured-projects-star-twinkle" /> */}
                                             <span>{project.location}</span>
                                         </div>
                                         <p className="text-sm text-gray-200 leading-relaxed">{project.description}</p>

@@ -107,7 +107,7 @@ export default function Home() {
       name: 'Rajesh Kumar',
       location: 'Dubai, UAE',
       type: 'NRI Client',
-      text: 'Managing my property renovation from Dubai seemed impossible until I found AM Renovators. Ahmed personally oversaw everything, sent weekly updates with photos, and the transparency was exceptional. My parents are thrilled with their upgraded home!',
+      text: 'Managing my property renovation from Dubai seemed impossible until I found AM Construction & Services. Ahmed personally oversaw everything, sent weekly updates with photos, and the transparency was exceptional. My parents are thrilled with their upgraded home!',
       rating: 5,
       project: 'Complete Home Renovation'
     },
@@ -144,7 +144,7 @@ export default function Home() {
     },
     {
       icon: Award,
-      title: 'CPWD Registered(earlier)',
+      title: 'Former CPWD Registered',
       description: 'Government contractor credentials with proven track record at Hyderabad International Airport'
     },
     {
@@ -240,30 +240,9 @@ export default function Home() {
                   International Standards.<br />
                   <span className="hero-title-highlight">Local Excellence.</span>
                 </h1>
-
-                <p className="hero-description mt-4 text-gray-100">
-                  <span className="font-semibold text-orange-300">NRIs,</span>{" "}
-                  here is your trustworthy party to manage your properties back home in our beloved country –{" "}
-                  <span className="inline-flex items-center ml-1">
-                    <span className="font-semibold text-orange-300">India</span>
-                    <span className="mx-2 text-orange-400">—</span>
-                    <a
-                      href="https://big-b-nri-services.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        font-semibold text-orange-300
-                        hover:text-orange-200
-                        underline decoration-orange-400/50 hover:decoration-orange-300
-                        transition-all duration-300
-                        focus:outline-none focus:ring-2 focus:ring-orange-400/40 focus:ring-offset-2 focus:ring-offset-gray-900
-                        rounded
-                      "
-                    >
-                      Click here
-                    </a>
-                  </span>
-                </p>
+<p className="hero-description mt-4 text-gray-100 text-lg leading-relaxed tracking-wide max-w-xl border-l-4 border-orange-500 pl-4">
+  AM Construction & Services, adheres to international best practices and local execution excellence together, serving clients across India and beyond.
+</p>
 
                 <div className="hero-buttons">
                   {/* <a href="#quote" className="btn-primary">
@@ -276,20 +255,20 @@ export default function Home() {
                   </a> */}
                 </div>
 
-                <div className="hero-features">
-                  <div className="hero-feature-item ">
-                    <CheckCircle size={20} className="text-green-400" />
-                    <span>Indian government projects</span>
-                  </div>
-                  <div className="hero-feature-item">
-                    <CheckCircle size={20} className="text-green-400" />
-                    <span>International Standards</span>
-                  </div>
-                  {/* <div className="hero-feature-item">
-                    <CheckCircle size={20} className="text-green-400" />
-                    <span>27+ Years</span>
-                  </div> */}
-                </div>
+<div className="hero-features">
+  <div className="hero-feature-item">
+    <CheckCircle size={20} className="text-green-400" />
+    <span>Former CPWD Registered</span>
+  </div>
+  <div className="hero-feature-item">
+    <CheckCircle size={20} className="text-green-400" />
+    <span>Indian Government Projects</span>
+  </div>
+  <div className="hero-feature-item">
+    <CheckCircle size={20} className="text-green-400" />
+    <span>International Standards</span>
+  </div>
+</div>
               </div>
             </div>
           </div>
@@ -312,7 +291,7 @@ export default function Home() {
             transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)' // Faster transition
           }}>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-              Why Choose <span className="bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">AM Renovators</span>?
+              Why Choose <span className="bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">AM Construction & Services</span>?
             </h2>
             <div className="relative max-w-3xl mx-auto">
               <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">

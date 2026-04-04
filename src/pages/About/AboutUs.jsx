@@ -17,6 +17,7 @@ import oil from "../../assets/workedWith/oil.jpeg";
 import ahmedSir from "../../assets/workedWith/ahmedSir.jpeg"
 import coreConstruction from "../../assets/workedWith/coreConstructionCompany.jpeg"
 import NBPGR from "../../assets/workedWith/NBPGR.png"
+import ICAR from "../../assets/workedWith/ICAR.jpeg"
 
 export default function AboutUs() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -561,7 +562,7 @@ export default function AboutUs() {
                 { img: niphm, name: 'NIPHM' },
                 { img: ordenance, name: 'Ordnance Factory' },
                 { img: NBPGR, name: 'NBPGR' },
-                // { img: oil, name: 'Directorate of Oil & Seeds' }
+                { img: ICAR, name: 'ICAR' }
               ].map((company, index) => (
                 <div 
                   key={index} 

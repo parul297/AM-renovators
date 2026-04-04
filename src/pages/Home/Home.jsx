@@ -140,22 +140,22 @@ export default function Home() {
     {
       icon: Globe,
       title: 'International Experience',
-      description: 'Dubai facilities management experience with Nakheel Properties - 129 buildings and 208+ villas managed'
+      description: 'International exposure to global construction practices, project execution methodologies, and built asset management with a focus on quality and performance.'
     },
     {
       icon: Award,
       title: 'Former CPWD Registered',
-      description: 'Government contractor credentials with proven track record at Hyderabad International Airport'
+      description: 'Experience in executing and maintaining government and institutional projects across universities and airport infrastructure with strong quality standards.'
     },
     {
       icon: Shield,
       title: 'Complete Transparency',
-      description: 'Detailed documentation, itemized billing, and regular progress updates with photographic evidence'
+      description: 'Detailed documentation, itemized billing, and regular progress updates supported by photographic records for complete project visibility.'
     },
     {
       icon: Users,
       title: 'NRI Specialized',
-      description: 'Dedicated services for NRIs with remote project management and accountability you can trust'
+      description: 'Tailored services for NRIs with seamless remote project management, ensuring accountability, transparency, and complete peace of mind.'
     }
   ];
 

@@ -131,7 +131,7 @@ export default function FeaturedProjects() {
         }
     ];
 
-    const categories = ['All', 'Renovation','Civil Construction', 'Facility Management', 'NRI Property Management'];
+    const categories = ['All', 'Civil Construction','Renovation', 'Facility Management', 'NRI Property Management'];
 
     const filteredProjects = selectedCategory === 'All'
         ? projects

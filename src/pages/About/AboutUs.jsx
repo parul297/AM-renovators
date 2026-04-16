@@ -496,8 +496,8 @@ export default function AboutUs() {
             </div>
             <h3 className="text-3xl font-bold mb-6 text-center">Our Commitment</h3>
             <p className="text-blue-100 leading-relaxed text-center text-xl">
-              At AM Construction & Services, we do not merely build or renovate structures—we protect, enhance, and manage assets. Our commitment is to deliver projects that uphold the trust placed in us, provide genuine value for money, and consistently exceed client expectations.
-            </p>
+              At AM Construction & Services, we not only build and maintain structures—we protect, enhance, and manage assets. Our commitment is to deliver projects that uphold the trust placed in us, provide genuine value for money, and consistently meet client expectations.
+              </p>
           </div>
         </div>
       </section>

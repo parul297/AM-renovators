@@ -8,8 +8,10 @@ import {
   MapPin, Home, Factory, Briefcase, Network, PieChart,
   LineChart, Layers, Package,  Database, Cloud,
   Activity, Battery, RefreshCw, Award as AwardIcon,
-  Users as TeamIcon, Shield as ShieldIcon, ChevronDown,
-  X, Menu
+  Users as TeamIcon, Shield as ShieldIcon, ChevronDown,    
+  Trophy, 
+  FileCheck 
+  , Menu
 } from 'lucide-react';
 import Footer from '../../components/Footer/Footer';
 import nakheel from "../../assets/workedWith/nakeheelFlats.JPG"
@@ -427,9 +429,9 @@ export default function FacilitiesAssetManagement() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive Management Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Facilities and Asset Management Services</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              End-to-end solutions that transform facility operations and maximize asset value
+             Facilities & Asset Management is about more than just maintenance—it’s about ensuring your property operates efficiently, remains well-maintained, and retains its value over time. At AM Construction & Services, we provide structured, reliable, and transparent solutions to manage your assets with care and professionalism.
             </p>
           </div>
 
@@ -517,145 +519,160 @@ export default function FacilitiesAssetManagement() {
       </section>
 
       {/* Client Portfolio */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Portfolio of Managed Properties</h2>
-            <p className="text-lg text-gray-600">Extensive experience across diverse property types and scales</p>
-          </div>
+<section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Portfolio of Managed Properties</h2>
+      <p className="text-lg text-gray-600">Extensive experience across diverse property types and scales</p>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {clientTypes.map((client, index) => (
-              <div 
-                key={index}
-                onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
-                className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="w-14 h-14 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-6">
-                  <client.icon className="w-7 h-7 text-blue-600" />
-                </div>
-                
-                <h3 className="text-lg font-bold text-gray-900 mb-4">{client.type}</h3>
-                
-                <ul className="space-y-2 mb-6">
-                  {client.examples.map((example, idx) => (
-                    <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                      {example}
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className={`inline-block ${client.color} px-3 py-1 rounded-full text-sm font-semibold`}>
-                  {client.metrics}
-                </div>
-              </div>
-            ))}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        { name: "Multistoried Residential Buildings", icon: Building2, color: "from-blue-500 to-cyan-500" },
+        { name: "Luxury Duplex Villas", icon: Home, color: "from-emerald-500 to-teal-500" },
+        { name: "Swimming Pools", icon: Droplets, color: "from-sky-500 to-blue-500" },
+        { name: "Recreational Clubs", icon: Users, color: "from-purple-500 to-pink-500" },
+        { name: "Sports Facilities", icon: Trophy, color: "from-orange-500 to-red-500" },
+        { name: "End of Lease", icon: FileCheck, color: "from-indigo-500 to-purple-500" }
+      ].map((property, index) => (
+        <div 
+          key={index}
+          className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        >
+          <div className={`w-16 h-16 bg-gradient-to-br ${property.color} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+            <property.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
           </div>
+          
+          <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
+            {property.name}
+          </h3>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Management Systems */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technology & Systems</h2>
-            <p className="text-lg text-gray-600">Advanced systems for modern facility management</p>
+   <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+      <p className="text-lg text-gray-600">Comprehensive property management solutions tailored to your needs</p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        {
+          title: "Facility Management",
+          icon: "🏢",
+          bgColor: "bg-blue-50",
+          iconBg: "bg-blue-100",
+          textColor: "text-blue-600",
+          features: [
+            "Daily property maintenance",
+            "Electrical, plumbing & civil repairs",
+            "Preventive maintenance programs",
+            "Housekeeping & cleaning services",
+            "Landscaping & external upkeep"
+          ]
+        },
+        {
+          title: "Technical Services",
+          icon: "⚙️",
+          bgColor: "bg-emerald-50",
+          iconBg: "bg-emerald-100",
+          textColor: "text-emerald-600",
+          features: [
+            "Electrical systems & DG backup",
+            "Plumbing & water management",
+            "AC / HVAC maintenance",
+            "Lift & equipment coordination"
+          ]
+        },
+        {
+          title: "Asset Management",
+          icon: "📊",
+          bgColor: "bg-purple-50",
+          iconBg: "bg-purple-100",
+          textColor: "text-purple-600",
+          features: [
+            "Asset register & documentation",
+            "Maintenance tracking & history",
+            "Inventory management",
+            "Asset lifecycle monitoring"
+          ]
+        },
+        {
+          title: "Vendor Management",
+          icon: "🤝",
+          bgColor: "bg-orange-50",
+          iconBg: "bg-orange-100",
+          textColor: "text-orange-600",
+          features: [
+            "Vendor selection & supervision",
+            "Contract management & cost control",
+            "Quality and performance monitoring"
+          ]
+        },
+        {
+          title: "Reporting & Support",
+          icon: "📸",
+          bgColor: "bg-cyan-50",
+          iconBg: "bg-cyan-100",
+          textColor: "text-cyan-600",
+          features: [
+            "Monthly reports & updates",
+            "Photo & video documentation",
+            "Transparent expense tracking",
+            "Dedicated support for NRI clients"
+          ]
+        },
+        {
+          title: "Emergency Support",
+          icon: "🚨",
+          bgColor: "bg-rose-50",
+          iconBg: "bg-rose-100",
+          textColor: "text-rose-600",
+          features: [
+            "Quick response for breakdowns",
+            "24/7 coordination & assistance",
+            "Repair and service support"
+          ]
+        }
+      ].map((service, index) => (
+        <div 
+          key={index}
+          className={`group ${service.bgColor} rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:${service.bgColor.replace('50', '100')}`}
+        >
+          {/* Icon with soft background */}
+          <div className={`w-16 h-16 ${service.iconBg} rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform duration-300`}>
+            {service.icon}
           </div>
-
-          <div className="space-y-6">
-            {managementSystems.map((system, index) => (
-              <div 
-                key={index}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="grid lg:grid-cols-3 gap-8">
-                  <div className="lg:col-span-2">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center">
-                        <system.icon className="w-7 h-7 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900">{system.system}</h3>
-                        <p className="text-gray-600">{system.description}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">Features:</h4>
-                        <ul className="space-y-2">
-                          {system.features.map((feature, idx) => (
-                            <li key={idx} className="text-sm text-gray-700 flex items-start gap-2">
-                              <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="bg-blue-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Key Benefit</h4>
-                        <div className="text-lg font-bold text-blue-700 mb-2">{system.benefits}</div>
-                        <div className="text-sm text-gray-600">{system.timeframe}</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
-                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-  Implementation Timeline
-</h4>
-<p className="text-sm text-gray-500 mb-4">
-  (Basic plan, varies with requirements)
-</p>
-
-                    <div className="space-y-4">
-                      <div>
-                        <div className="flex justify-between text-sm text-gray-600 mb-1">
-                          <span>Planning</span>
-                          <span>2 weeks</span>
-                        </div>
-                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full bg-blue-500 rounded-full w-1/6"></div>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="flex justify-between text-sm text-gray-600 mb-1">
-                          <span>Installation</span>
-                          <span>6 weeks</span>
-                        </div>
-                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full bg-indigo-500 rounded-full w-2/6"></div>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="flex justify-between text-sm text-gray-600 mb-1">
-                          <span>Testing</span>
-                          <span>2 weeks</span>
-                        </div>
-                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full bg-purple-500 rounded-full w-1/6"></div>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="flex justify-between text-sm text-gray-600 mb-1">
-                          <span>Training</span>
-                          <span>2 weeks</span>
-                        </div>
-                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full bg-blue-400 rounded-full w-1/6"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          
+          {/* Title */}
+          <h3 className={`text-xl font-bold text-gray-800 mb-4 group-hover:${service.textColor} transition-colors duration-300`}>
+            {service.title}
+          </h3>
+          
+          {/* Colored divider */}
+          <div className={`w-12 h-1 ${service.iconBg.replace('100', '200')} rounded-full mb-4 group-hover:w-20 transition-all duration-300`}></div>
+          
+          {/* Features list */}
+          <ul className="space-y-2">
+            {service.features.map((feature, idx) => (
+              <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                <svg className={`w-4 h-4 ${service.textColor} flex-shrink-0 mt-0.5`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Process Steps */}
       {/* <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
@@ -738,7 +755,7 @@ export default function FacilitiesAssetManagement() {
       </section> */}
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      {/* <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
@@ -770,23 +787,23 @@ export default function FacilitiesAssetManagement() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact CTA */}
       <section id="contact" className="py-20 bg-gradient-to-br from-blue-900 to-indigo-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="bg-gradient-to-r from-blue-800/50 to-indigo-800/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-blue-700/30">
-            <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            {/* <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Shield className="w-4 h-4" />
               CPWD Registered Contractor
-            </div>
+            </div> */}
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Facility Management?
             </h2>
             
             <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
-              Get a free facility assessment and discover how our Internationally proven expertise can optimize your operations and reduce costs.
+              Discover how our Internationally proven expertise can optimize your operations and reduce costs.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

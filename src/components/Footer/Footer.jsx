@@ -1,31 +1,30 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Link , useLocation } from 'react-router-dom'; // Import Link from react-router-dom
 
 export default function Footer() {
+
+const location = useLocation();
+  
+  const handleNavigation = (path) => {
+    // If we're already on the same page, just scroll to top
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Services', href: '#services' },
-    // { name: 'Projects Portfolio', href: '#projects' },
-    // { name: 'For NRI Clients', href: '#nri-clients' },
-    // { name: 'Testimonials', href: '#testimonials' },
-    // { name: 'Blog & Resources', href: '#resources' },
-    { name: 'Contact Us', href: '#contact' }
+    { name: 'About Us', path: '/about' },
+    { name: 'Our Services', path: '/services' },
+    { name: 'Contact Us', path: '/contact' }
   ];
 
   const services = [
-    { name: 'Construction', href: '#construction' },
-    { name: 'Renovation', href: '#maintenance' },
-    { name: 'Facility Management', href: '#facilities' },
-    { name: 'NRI Property Management', href: '#nri-services' }
-  ];
-
-  const credentials = [
-    'CPWD Registered(earlier) Class III',
-    'Decades of Experience',
-    'Dubai Nakheel Properties',
-    'Hyderabad Airport AMC',
-    'Government Projects',
-    'International Standards'
+    { name: 'Construction', path: '/services/new-construction' },
+    { name: 'Renovation', path: '/services/renovation' },
+    { name: 'Facility Management', path: '/services/facilities' },
+    { name: 'NRI Property Management', path: '/services/nri-property' }
   ];
 
   return (
@@ -41,11 +40,10 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-white font-bold text-lg">AM Construction & Services</div>
-                {/* <div className="text-gray-400 text-xs">& Services</div> */}
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
-             Professional construction, renovation, property and facilities management company that adheres to international best practices and local execution excellence together, serving clients across India and beyond.
+              Professional construction, renovation, property and facilities management company that adheres to international best practices and local execution excellence together, serving clients across India and beyond.
             </p>
             
             {/* Social Media Links */}
@@ -71,13 +69,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.path} 
                     className="text-sm text-gray-400 hover:text-orange-500 transition-colors inline-flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-orange-500 transition-all"></span>
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -89,13 +87,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a 
-                    href={service.href} 
+                  <Link 
+                    to={service.path} 
                     className="text-sm text-gray-400 hover:text-orange-500 transition-colors inline-flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-orange-500 transition-all"></span>
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -124,17 +122,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            
-            <div className="bg-gray-800 rounded-lg p-4">
-              {/* <h4 className="text-white font-semibold text-sm mb-2">Our Credentials</h4> */}
-              {/* <div className="flex flex-wrap gap-2">
-                {credentials.slice(0, 3).map((credential, index) => (
-                  <span key={index} className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">
-                    {credential}
-                  </span>
-                ))}
-              </div> */}
-            </div>
           </div>
         </div>
       </div>
@@ -144,22 +131,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              &copy; 2025 AM Construction & Services & Services. All rights reserved.
+              &copy; 2025 AM Construction & Services. All rights reserved.
             </p>
-            
-            {/* <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <a href="#privacy" className="hover:text-orange-500 transition-colors">
-                Privacy Policy
-              </a>
-              <span className="text-gray-600">|</span>
-              <a href="#terms" className="hover:text-orange-500 transition-colors">
-                Terms & Conditions
-              </a>
-              <span className="text-gray-600">|</span>
-              <a href="#sitemap" className="hover:text-orange-500 transition-colors">
-                Sitemap
-              </a>
-            </div> */}
             
             <div className="text-sm text-gray-500">
               Designed with <span className="text-red-500">❤</span> in India

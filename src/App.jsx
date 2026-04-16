@@ -10,14 +10,19 @@ import UpgradationService from './pages/Servcies/upgradation'
 import MaintenanceService from './pages/Servcies/maintenance'
 import FacilitiesAssetManagement from './pages/Servcies/facilities'
 import NRIPropertyManagement from './pages/Servcies/nriProperty'
+import Gallery from './pages/Gallery'  // ← ADD THIS IMPORT
+import ScrollToTop from './pages/ScrollToTop'
 
 export default function App() {
   return (
     <BrowserRouter>
       <Header />
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/gallery" element={<Gallery />} />  {/* ← ADD THIS ROUTE */}
         <Route path="/services/new-construction" element={<ConstructionService />} />
         <Route path="/services/renovation" element={<RenovationService />} />
         <Route path="/services/upgradation" element={<UpgradationService />} />

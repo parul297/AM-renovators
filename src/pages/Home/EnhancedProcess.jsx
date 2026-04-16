@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import "./EnhancedProcess.css";
+import ProjectTeaser from "../../components/collaborations/ProjectTeaser";
 
 export default function EnhancedProcess() {
   const [expandedStep, setExpandedStep] = useState(0);
@@ -198,6 +199,7 @@ export default function EnhancedProcess() {
           </div>
         </div>
 
+
         {/* Feature Highlights */}
         <div className="features-showcase">
           <div className="features-grid">
@@ -234,6 +236,7 @@ export default function EnhancedProcess() {
                 className="timeline-progress-fill"
                 style={{ width: `${scrollProgress * 100}%` }}
               ></div>
+              
             </div>
 
             <div className="timeline-steps-container">
@@ -284,86 +287,89 @@ export default function EnhancedProcess() {
           </div>
 
           {/* Step Details Panel */}
-          <div className="step-details-panel">
-            {processSteps.map((step, index) => {
-              const isActive = expandedStep === index;
+         {/* Step Details Panel */}
+<div className="step-details-panel">
+  {processSteps.map((step, index) => {
+    const isActive = expandedStep === index;
 
-              return (
-                <div
-                  key={index}
-                  className={`details-panel ${isActive ? "active" : ""} ${step.colorScheme}`}
-                >
-                  {isActive && (
-                    <>
-                      <div className="panel-header">
-                        <div className="panel-title-section">
-                          <div className="step-badge">
-                            <span className="step-number-large">{step.number}</span>
-                            <div>
-                              <span className="step-title-large">{step.title}</span>
-                              <div className="step-subtitle">{step.shortDesc}</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="panel-content">
-                        <div className="content-main">
-                          <div className="description-section">
-                            <p>{step.fullDesc}</p>
-                          </div>
-                          <div className="details-section">
-                            <h3>Key Activities</h3>
-                            <div className="activities-grid">
-                              {step.details.map((detail, i) => (
-                                <div key={i} className="activity-item">
-                                  <div className="activity-check">
-                                    <CheckCircle size={16} />
-                                  </div>
-                                  <span>{detail}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="content-sidebar"></div>
-                      </div>
-
-                      {/* Step Navigation */}
-                      <div className="panel-navigation">
-                        <button
-                          className="nav-btn nav-btn-prev"
-                          onClick={handlePrev}
-                          disabled={expandedStep === 0}
-                        >
-                          ← Previous
-                        </button>
-
-                        <div className="step-dots">
-                          {processSteps.map((_, i) => (
-                            <button
-                              key={i}
-                              className={`step-dot ${i === expandedStep ? "step-dot-active" : ""}`}
-                              onClick={() => handleStepClick(i)}
-                            />
-                          ))}
-                        </div>
-
-                        <button
-                          className="nav-btn nav-btn-next"
-                          onClick={handleNext}
-                          disabled={expandedStep === processSteps.length - 1}
-                        >
-                          Next Step <ArrowRight size={16} />
-                        </button>
-                      </div>
-                    </>
-                  )}
+    return (
+      <div
+        key={index}
+        className={`details-panel ${isActive ? "active" : ""} ${step.colorScheme}`}
+      >
+        {isActive && (
+          <>
+            <div className="panel-header">
+              <div className="panel-title-section">
+                <div className="step-badge">
+                  <span className="step-number-large">{step.number}</span>
+                  <div>
+                    <span className="step-title-large">{step.title}</span>
+                    <div className="step-subtitle">{step.shortDesc}</div>
+                  </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            </div>
+
+            <div className="panel-content">
+              <div className="content-main">
+                <div className="description-section">
+                  <p>{step.fullDesc}</p>
+                </div>
+                <div className="details-section">
+                  <h3>Key Activities</h3>
+                  <div className="activities-grid">
+                    {step.details.map((detail, i) => (
+                      <div key={i} className="activity-item">
+                        <div className="activity-check">
+                          <CheckCircle size={16} />
+                        </div>
+                        <span>{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* Content sidebar removed for centered layout */}
+            </div>
+
+            {/* Step Navigation */}
+            <div className="panel-navigation">
+              <button
+                className="nav-btn nav-btn-prev"
+                onClick={handlePrev}
+                disabled={expandedStep === 0}
+              >
+                ← Previous
+              </button>
+
+              <div className="step-dots">
+                {processSteps.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`step-dot ${i === expandedStep ? "step-dot-active" : ""}`}
+                    onClick={() => handleStepClick(i)}
+                  />
+                ))}
+              </div>
+
+              <button
+                className="nav-btn nav-btn-next"
+                onClick={handleNext}
+                disabled={expandedStep === processSteps.length - 1}
+              >
+                Next Step <ArrowRight size={16} />
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  })}
+</div>
+
         </div>
+            <ProjectTeaser/>
       </div>
     </div>
   );

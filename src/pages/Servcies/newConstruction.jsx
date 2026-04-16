@@ -176,7 +176,7 @@ export default function ConstructionService() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-8 -mt-16 relative z-20">
+      {/* <section className="py-8 -mt-16 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-3xl shadow-2xl p-10 border-4 border-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
@@ -191,7 +191,7 @@ export default function ConstructionService() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* What We Build */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
@@ -329,12 +329,12 @@ export default function ConstructionService() {
       </section> */}
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            {/* <div className="inline-block bg-green-100 text-green-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+            <div className="inline-block bg-green-100 text-green-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
               FAQ
-            </div> */}
+            </div>
             <h2 className="text-5xl font-black text-gray-900 mb-6">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600">Everything you need to know about our construction services</p>
           </div>
@@ -373,43 +373,66 @@ export default function ConstructionService() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-black/10 rounded-full blur-3xl"></div>
-        </div>
+  <section className="relative py-28 md:py-32 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white overflow-hidden">
+  {/* Animated background orbs */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute -top-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute top-1/2 -right-20 w-96 h-96 bg-amber-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <div className="absolute -bottom-32 left-1/3 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
+    
+    {/* Subtle grid pattern - using CSS instead of SVG data URL to avoid parsing issues */}
+    <div 
+      className="absolute inset-0 opacity-20"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        backgroundSize: '60px 60px',
+      }}
+    ></div>
+  </div>
+
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    {/* Enhanced heading with better typography */}
+    <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight tracking-tight">
+      <span className="block">Ready to experience</span>
+      <span className="block mt-2 bg-gradient-to-r from-white via-orange-50 to-white bg-clip-text text-transparent">
+        the Guarantee?
+      </span>
+    </h2>
+    
+    <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-medium">
+      Let's build with <span className="font-bold text-white">trust</span>, 
+      <span className="font-bold text-white"> reliability</span>, and 
+      <span className="font-bold text-white"> quality workmanship</span> you can count on.
+    </p>
+
+    {/* Refined button group */}
+    <div className="flex flex-wrap justify-center gap-5">
+      <a 
+        href="tel:+919876543210" 
+        className="group relative inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-2xl shadow-black/20 border border-white/10 overflow-hidden"
+      >
+        {/* Button shimmer effect */}
+        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
         
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Choose your design, <br className="hidden sm:block" />
-            customise the details, <br className="hidden sm:block" />
-            <span className="text-white/95">receive expert consultation</span> <br className="hidden sm:block" />
-            <span className="bg-white text-orange-600 px-6 py-2 rounded-2xl inline-block mt-2 font-extrabold">and transparent quote</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed font-normal max-w-3xl mx-auto">
-            Get a detailed construction quote with transparent pricing and realistic timelines
-          </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <a 
-              href="#quote" 
-              className="group bg-white text-orange-600 px-12 py-6 rounded-2xl font-bold text-lg hover:bg-orange-50 transition-all shadow-2xl inline-flex items-center gap-3 transform hover:scale-105"
-            >
-              <Hammer size={28} className="group-hover:rotate-12 transition-transform" />
-              Get Construction Quote
-            </a>
-            <a 
-              href="tel:+919876543210" 
-              className="group bg-slate-900 hover:bg-slate-800 text-white px-12 py-6 rounded-2xl font-bold text-lg transition-all shadow-2xl inline-flex items-center gap-3 border-2 border-white/20 transform hover:scale-105"
-            >
-              <Users size={28} className="group-hover:scale-110 transition-transform" />
-              Schedule Consultation
-            </a>
-          </div>
-        </div>
-      </section>
+        <Users size={24} className="relative z-10 group-hover:scale-110 transition-transform duration-300" />
+        <span className="relative z-10">Call or WhatsApp</span>
+      </a>
+    </div>
+
+    {/* Optional subtle trust badge */}
+    <div className="mt-10 flex items-center justify-center gap-2 text-white/70 text-sm">
+      <span className="flex items-center gap-1">
+        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        Free consultation
+      </span>
+      <span className="w-1 h-1 bg-white/30 rounded-full"></span>
+      <span>No obligation quote</span>
+    </div>
+  </div>
+</section>
       
       <Footer/>
     </div>

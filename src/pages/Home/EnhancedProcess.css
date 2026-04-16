@@ -439,11 +439,17 @@
 
 .panel-header {
     padding: 1.75rem 1.75rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .panel-title-section {
     border-bottom: 1px solid #e5e7eb;
     padding-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .step-badge {
@@ -452,13 +458,41 @@
     gap: 1rem;
 }
 
+.step-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+}
+
 .step-number-large {
     font-size: 2.2rem;
     font-weight: 900;
     color: #0c4a6e;
     line-height: 1;
     padding: 0 1rem;
+    text-align: center;
 }
+
+.step-title-large {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+    display: block;
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+.step-subtitle {
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-weight: 500;
+    text-align: center;
+}
+
 
 .details-panel.blue .step-number-large {
     color: #0c4a6e;
@@ -492,50 +526,66 @@
 }
 
 .panel-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2.25rem;
-    padding: 1.75rem;
-}
-
-.content-main,
-.content-sidebar {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 2.25rem;
+    padding: 1.75rem;
+     grid-template-columns: 1fr;
+}
+
+.content-main {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
+}
+
+.description-section {
+    text-align: center;
+    width: 100%;
 }
 
 .description-section p {
     color: #4b5563;
     line-height: 1.7;
     font-size: 1rem;
+    text-align: center;
 }
 
-.details-section h3,
-.deliverables-section h3 {
+.details-section h3 {
     font-size: 1.125rem;
     font-weight: 600;
     color: #111827;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #e5e7eb;
+    text-align: center;
 }
 
 .activities-grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 0.75rem;
+    width: 100%;
 }
 
 .activity-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-start;
     gap: 0.7rem;
     color: #4b5563;
-    padding: 0.7rem;
+    padding: 0.7rem 1.5rem;
     background: #f9fafb;
     border-radius: 6px;
     border: 1px solid #e5e7eb;
     font-size: 0.9rem;
+    width: 100%;
+    max-width: 500px;
 }
 
 .activity-check {
@@ -637,6 +687,12 @@
     border-radius: 20px;
     white-space: nowrap;
 }
+
+
+
+
+
+
 
 .nri-feature svg {
     color: #4ade80;

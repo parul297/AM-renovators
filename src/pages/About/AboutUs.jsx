@@ -134,7 +134,7 @@ export default function AboutUs() {
 
   const credentials = [
     { label: 'Former CPWD Registered', value: 'Class III Contractor', icon: Shield },
-    { label: 'Professional Experience', value: '27+ Years', icon: Award },
+    { label: 'Professional Experience', value: 'Since 1997', icon: Award },
     { label: 'International Exposure', value: 'UAE, Qatar, Saudi Arabia', icon: Globe },
     { label: 'Major Projects', value: 'Airport AMC, Nakheel Dubai', icon: Building2 }
   ];

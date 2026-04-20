@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
         {
             id: 1,
             title: 'Multi-Block Civil Construction',
-            category: 'Civil Construction',
+            category: 'Renovation',
             img: civil1,
             // location: 'Hyderabad, Telangana',
             // rating: 4.9,
@@ -33,7 +33,7 @@ export default function FeaturedProjects() {
         {
             id: 2,
             title: 'Residential Quarter Development',
-            category: 'Civil Construction',
+            category: 'Renovation',
             img: civil2,
             // location: 'Pune, Maharashtra',
             // rating: 4.8,
@@ -44,7 +44,7 @@ export default function FeaturedProjects() {
         {
             id: 3,
             title: 'Civil Corridor Infrastructure',
-            category: 'Civil Construction',
+            category: 'Renovation',
             img: civil3,
             // location: 'Mumbai, Maharashtra',
             // rating: 5.0,
@@ -55,7 +55,7 @@ export default function FeaturedProjects() {
         {
             id: 5,
             title: 'Badminton Court Renovation',
-            category: 'Renovation',
+            category: 'Civil Construction',
             img: badminton,
             // location: 'Hyderabad, Telangana',
             // rating: 4.9,
@@ -66,7 +66,7 @@ export default function FeaturedProjects() {
         {
             id: 6,
             title: 'Indoor Sports Arena Renovation',
-            category: 'Renovation',
+            category: 'Civil Construction',
             img: badminton1,
             // location: 'Hyderabad, Telangana',
             // rating: 5.0,
@@ -77,7 +77,7 @@ export default function FeaturedProjects() {
         {
             id: 7,
             title: 'Sports Complex Modernization',
-            category: 'Renovation',
+            category: 'Civil Construction',
             img: badminton3,
             // location: 'Hyderabad, Telangana',
             // rating: 4.8,

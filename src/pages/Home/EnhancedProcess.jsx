@@ -201,7 +201,7 @@ export default function EnhancedProcess() {
 
 
         {/* Feature Highlights */}
-        <div className="features-showcase">
+        {/* <div className="features-showcase">
           <div className="features-grid">
             {features.map((feature, index) => (
               <div
@@ -217,7 +217,7 @@ export default function EnhancedProcess() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Main Process Timeline */}
         <div ref={timelineRef} className="process-timeline-section">

@@ -316,14 +316,13 @@ export default function FacilitiesAssetManagement() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="block">World-Class</span>
+              {/* <span className="block">World-Class</span> */}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-200">
                 Facilities & Asset Management
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-blue-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Bringing Nakheel Properties' Dubai expertise to India. 
+            <p className="text-xl md:text-2xl text-blue-200 mb-10 max-w-3xl mx-auto leading-relaxed"> 
               Transform your facility operations with international standards.
             </p>
 
@@ -369,7 +368,7 @@ export default function FacilitiesAssetManagement() {
       </section>
 
       {/* Dubai Experience Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      {/* <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-3xl p-8 md:p-12 shadow-xl border border-amber-200">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -423,7 +422,7 @@ export default function FacilitiesAssetManagement() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Section */}
       <section className="py-20 bg-white">
@@ -799,7 +798,7 @@ export default function FacilitiesAssetManagement() {
             </div> */}
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Facility Management?
+              Ready to Transform Your Facility ?
             </h2>
             
             <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">

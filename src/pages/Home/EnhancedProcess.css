@@ -992,19 +992,26 @@
   cursor: not-allowed;
 }
 
-.nav-btn-prev {
-  background: #f3f4f6;
-  color: #374151;
-}
-
-.nav-btn-prev:hover:not(:disabled) {
-  background: #e5e7eb;
-}
-
+/* Make BOTH buttons same by default */
+.nav-btn-prev,
 .nav-btn-next {
   background: linear-gradient(135deg, #0c4a6e, #0369a1);
   color: white;
   box-shadow: 0 4px 12px rgba(12, 74, 110, 0.25);
+}
+
+/* Hover same for both */
+.nav-btn-prev:hover:not(:disabled),
+.nav-btn-next:hover:not(:disabled) {
+  box-shadow: 0 6px 18px rgba(12, 74, 110, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Disabled state (same for both) */
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .nav-btn-next:hover:not(:disabled) {

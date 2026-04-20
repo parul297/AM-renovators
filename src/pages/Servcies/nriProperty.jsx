@@ -117,7 +117,7 @@ export default function NRIPropertyManagement() {
 
   const testimonials = [
     {
-      name: 'Rajesh & Priya Kumar',
+      name: 'Sohail Ahmed Khan',
       location: 'Dubai, UAE',
       property: 'Banjara Hills, Hyderabad',
       project: 'Complete 4BHK Renovation',
@@ -128,8 +128,8 @@ export default function NRIPropertyManagement() {
       image: '🇦🇪'
     },
     {
-      name: 'Anand Krishnan',
-      location: 'Singapore',
+      name: 'Faisal Khan',
+      location: 'Sydney, Australia',
       property: 'Jubilee Hills, Hyderabad',
       project: 'Villa Maintenance & Tenant Management',
       rating: 5,
@@ -139,8 +139,8 @@ export default function NRIPropertyManagement() {
       image: '🇸🇬'
     },
     {
-      name: 'Meera Patel',
-      location: 'London, UK',
+      name: 'Syed Imran Ali',
+      location: 'Dubai, UAE',
       property: 'Kondapur, Hyderabad',
       project: 'New Villa Construction',
       rating: 5,
@@ -173,7 +173,7 @@ export default function NRIPropertyManagement() {
     {
       icon: FileText,
       title: 'Transparent Billing',
-      description: 'Material bills, labor receipts, everything documented and shared',
+      description: 'Bills and expenses are fully documented and shared in percentage-based contracts. For item-rate contracts, clear measurements and cost details are provided.',
       proof: 'Itemized expense tracking'
     }
   ];
@@ -374,10 +374,10 @@ export default function NRIPropertyManagement() {
                   <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                   <p className="text-blue-100 text-sm mb-4">{step.description}</p>
                   
-                  <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                  {/* <div className="bg-white/10 rounded-lg p-3 border border-white/20">
                     <div className="text-xs text-cyan-300 font-semibold mb-1">Deliverable:</div>
                     <div className="text-sm font-medium">{step.deliverable}</div>
-                  </div>
+                  </div> */}
                 </div>
                 
                 {index < communicationProcess.length - 1 && (
@@ -544,7 +544,7 @@ export default function NRIPropertyManagement() {
             Ready to Trust Your Property with Us?
           </h2>
           <p className="text-2xl mb-12 text-blue-100">
-            Join 100+ NRIs worldwide who sleep peacefully knowing their property is in good hands
+            Join NRIs worldwide who sleep peacefully knowing their property is in good hands
           </p>
           
           <div className="flex flex-wrap justify-center gap-6">

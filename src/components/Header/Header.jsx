@@ -25,6 +25,7 @@ export default function Header() {
     { name: 'Renovation', href: '/services/renovation' },
     { name: 'Facility Management', href: '/services/facilities' },
     { name: 'NRI Property Management', href: '/services/nri-property', highlight: true },
+    { name: 'Gallery', href: '/gallery' },
   ];
 
   const handleEnquiryClick = () => {
@@ -81,24 +82,26 @@ export default function Header() {
                   const isActive = location.pathname === item.href;
 
                   return (
-                    <Link
-                      key={index}
-                      to={item.href}
-                      className={`
-                        relative font-medium transition-all duration-300
-                        ${item.highlight
-                          ? 'text-orange-700 bg-orange-50 px-4 py-2 border-l-4 border-orange-600 font-semibold'
-                          : 'text-gray-700 hover:text-blue-900'
-                        }
-                        ${!item.highlight
-                          ? 'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full'
-                          : ''
-                        }
-                        ${isActive && !item.highlight ? 'font-semibold text-blue-900' : ''}
-                      `}
-                    >
-                      {item.name}
-                    </Link>
+                  <Link
+  key={index}
+  to={item.href}
+  className={`
+    relative font-medium text-base tracking-wide transition-all duration-300
+    ${item.highlight
+      ? 'text-white'
+      : 'text-gray-700 hover:text-blue-900 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all after:duration-300 hover:after:w-full'
+    }
+    ${isActive && !item.highlight ? 'font-semibold text-blue-900' : ''}
+  `}
+  style={item.highlight ? {
+    background: 'linear-gradient(135deg, #3b82f6 0%, #f97316 60%, #ea580c 100%)',
+    clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)',
+    textShadow: '0 1px 2px rgba(0,0,0,0.2)',
+    padding: '6px 20px 6px 13px',
+  } : {}}
+>
+  {item.name}
+</Link>
                   );
                 })}
 
